@@ -5,20 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manejo de HTML - Blog Paradigmas de Programacion</title>
-      
+    
     <!-- El css para los temas del codigo que se muestra en la pagina -->
     <link rel="stylesheet" href="../resources/code_themes/prism.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
     <!-- El javascript para los temas del codigo que se muestra en la pagina  -->
     <script src="../resources/code_themes/prism.js"></script>
 
-        <!-- CONTENIDO 2 -->
-        <h2>Manejo de HTML</h2>
+    <!-- CONTENIDO 2 -->
+    <h1>Manejo de HTML</h1>
 
-        <!-- hola -->
-        <h3>¿Que es HTML?:</h3> 
+    <article>
+      El lenguje HTML
+    </article>
+
+    <article>
+        <h3>¿Que es HTML?:</h3>
         <p>
             HTML (HyperText Markup Language) es el lenguaje de marcado estándar utilizado para definir 
             la estructura y el contenido de las páginas web mediante un sistema de etiquetas que actúan 
@@ -43,11 +48,11 @@
         </p>
         <ul id="atriglo">
             <li>
-               <p><span class="code">id</span> Es un identificador único. Como un número de identificación (DNI/Cédula); no debería haber 
+                <p><span class="code">id</span> Es un identificador único. Como un número de identificación (DNI/Cédula); no debería haber 
                 dos elementos con el mismo id en una página. Se usa mucho para aplicar estilos específicos o anclas de navegación.</p>
             </li>
             <li>
-                <p><span class="code">class</span>: Es un identificador grupal normalmente utilizado para aplicarles estilos con CSS.</p> 
+                <p><span class="code">class</span>: Es un identificador grupal normalmente utilizado para aplicarles estilos con CSS.</p>
             </li>
             <li>
                 <p><span class="code">style</span>: Permite escribir código CSS directamente dentro de la etiqueta.</p>
@@ -87,12 +92,11 @@
     &lt;!-- Estructura de la pagina --&gt;
 &lt;/body&gt;
 &lt;/html&gt; </code></pre>
-        
-         
-         <h3>Lista de Etiquetas</h3>
-         <ul>
+
+        <h3>Lista de Etiquetas</h3>
+        <ul>
             <!-- <html> -->
-            <li> 
+            <li>
                 <p><span class="code">&lt;html&gt;</span>: Engloba todo el documento e indica al navegador 
                 cual es el codigo html. Tiene su respectiva etiqueta de cierre, ademas, posee el atributo
                 <span class="code">xmlns</span>para especificar el namespace XML del documento, 
@@ -118,7 +122,7 @@
   &lt;meta charset="UTF-8"&gt;
   &lt;title&gt;Mi sitio&lt;/title&gt;
 &lt;/head&gt;</code></pre>
-            </li> 
+            </li>
             <!-- <body> -->
             <li>
                 <p><span class="code"> &lt;body&gt;</span>: Funciona como el contenedor principal de todo el contenido visible de una 
@@ -126,7 +130,7 @@
                 <pre><code class="language-html">&lt;body&gt;
   &lt;h1&gt;Bienvenido&lt;/h1&gt;
 &lt;/body&gt;</code></pre>
-            </li>   
+            </li>
             <!-- <a> -->
             <li>
                 <p><span class="code">&lt;a&gt;</span>: Utilizado para crear hipervínculos, normalmente se utiliza
@@ -141,13 +145,13 @@
 &lt;/table&gt;</code></pre>
             </li>
             <!-- <input> -->
-           <li>
+            <li>
                 <p><span class="code">&lt;input&gt;</span>: es el elemento principal para crear campos 
                 interactivos en formularios.</p>
                 <pre><code class="language-html">&lt;input type="text" name="nombre"&gt;</code></pre>
-           </li>
-           <!-- <legend> -->
-           <li>
+            </li>
+            <!-- <legend> -->
+            <li>
                 <p><span class="code">&lt;legend&gt;</span>: Se utiliza para proporcionar un título o 
                 descripción a un grupo de campos dentro de un elemento.</p>
                 <pre><code class="language-html">&lt;fieldset&gt;
@@ -158,13 +162,14 @@
             <li>
                 <p><span class="code">&lt;iframe&gt;</span>: Permite incrustar un documento externo 
                 (otra página web, video, mapa o widget).</p>
-                <pre><code class="language-html">&lt;iframe src="https://www.example.com" width="300" height="200"&gt;&lt;/iframe&gt;</code></pre>
+                <            <a class="post_title" href="posts/manejo-html.html">Manejo del HTML</a>
+pre><code class="language-html">&lt;iframe src="https://www.example.com" width="300" height="200"&gt;&lt;/iframe&gt;</code></pre>
             </li>
             <!-- fieldset> -->
             <li>
                 <p><span class="code">&lt;fieldset&gt;</span>: Agrupa elementos relacionados dentro de un 
                 formulario, creando visualmente un borde contenedor que mejora la estructura, organización 
-               y accesibilidad.</p>  
+                y accesibilidad.</p>
                 <pre><code class="language-html">&lt;fieldset&gt;
   &lt;legend&gt;Perfil&lt;/legend&gt;
   &lt;input type="text" name="email"&gt;
@@ -172,141 +177,141 @@
             </li>
             <!-- <textarea> -->
             <li>
-              <p><span class="code">&lt;textarea&gt;</span>: Crea un campo de entrada de texto de 
-             varias líneas.</p>  
-              <pre><code class="language-html">&lt;textarea name="comentario"&gt;&lt;/textarea&gt;</code></pre>
+                <p><span class="code">&lt;textarea&gt;</span>: Crea un campo de entrada de texto de 
+                varias líneas.</p>
+                <pre><code class="language-html">&lt;textarea name="comentario"&gt;&lt;/textarea&gt;</code></pre>
             </li>
             <!-- <select> -->
-             <li>
-              <p><span class="code">&lt;select&gt;</span>: Crea un menú desplegable para 
-                seleccionar una o varias opciones definidas por etiquetas.</p>  
-              <pre><code class="language-html">&lt;select name="pais"&gt;
+            <li>
+                <p><span class="code">&lt;select&gt;</span>: Crea un menú desplegable para 
+                seleccionar una o varias opciones definidas por etiquetas.</p>
+                <pre><code class="language-html">&lt;select name="pais"&gt;
   &lt;option value="ar"&gt;Argentina&lt;/option&gt;
 &lt;/select&gt;</code></pre>
             </li>
-            
             <li>
-              <p><span class="code">&lt;option&gt;</span>: Se utiliza principalmente en 
+                <p><span class="code">&lt;option&gt;</span>: Se utiliza principalmente en 
                 formularios para recopilar datos, enviando el atributo value de la opción 
-                seleccionada al servidor.</p>  
-              <pre><code class="language-html">&lt;option value="ar"&gt;Argentina&lt;/option&gt;</code></pre>
+                seleccionada al servidor.</p>
+                <pre><code class="language-html">&lt;option value="ar"&gt;Argentina&lt;/option&gt;</code></pre>
             </li>
             <!-- <title> -->
-             <li>
-              <p><span class="code">&lt;title&gt;</span>: Crea un titulo para la pagina html.</p>  
-              <pre><code class="language-html">&lt;title&gt;Mi página&lt;/title&gt;</code></pre>
+            <li>
+                <p><span class="code">&lt;title&gt;</span>: Crea un titulo para la pagina html.</p>
+                <pre><code class="language-html">&lt;title&gt;Mi página&lt;/title&gt;</code></pre>
             </li>
             <!-- <p> -->
-             <li>
-              <p><span class="code">&lt;p&gt;</span>: Define que lo que esta adentro de el sera un solo parrafo.</p>  
-              <pre><code class="language-html">&lt;p&gt;Este es un párrafo.&lt;/p&gt;</code></pre>
+            <li>
+                <p><span class="code">&lt;p&gt;</span>: Define que lo que esta adentro de el sera un solo parrafo.</p>
+                <pre><code class="language-html">&lt;p&gt;Este es un párrafo.&lt;/p&gt;</code></pre>
             </li>
             <!-- <td> -->
-             <li>
-              <p><span class="code">&lt;td&gt;</span>:Define una celda estándar dentro de una tabla que contiene datos.</p>  
-              <pre><code class="language-html">&lt;td&gt;Celda&lt;/td&gt;</code></pre>
+            <li>
+                <p><span class="code">&lt;td&gt;</span>:Define una celda estándar dentro de una tabla que contiene datos.</p>
+                <pre><code class="language-html">&lt;td&gt;Celda&lt;/td&gt;</code></pre>
             </li>
             <!-- <buttom> -->
             <li>
-              <p><span class="code">&lt;button&gt;</span>: Crea botones clickeables para formularios, 
-              acciones en la página (JavaScript) o navegación.</p>  
-              <pre><code class="language-html">&lt;button type="button"&gt;Click&lt;/button&gt;</code></pre>
+                <p><span class="code">&lt;button&gt;</span>: Crea botones clickeables para formularios, 
+                acciones en la página (JavaScript) o navegación.</p>
+                <pre><code class="language-html">&lt;button type="button"&gt;Click&lt;/button&gt;</code></pre>
             </li>
             <!-- <table> -->
             <li>
-              <p><span class="code">&lt;table&gt;</span>:Define el inicio y fin de la tabla.</p>  
-              <pre><code class="language-html">&lt;table&gt;
+                <p><span class="code">&lt;table&gt;</span>:Define el inicio y fin de la tabla.</p>
+                <pre><code class="language-html">&lt;table&gt;
   &lt;tr&gt;&lt;td&gt;Fila&lt;/td&gt;&lt;/tr&gt;
 &lt;/table&gt;</code></pre>
             </li>
             <!-- <style> -->
             <li>
-              <p><span class="code">&lt;style&gt;</span>: Permite incrustar código CSS 
-               directamente dentro de un archivo HTML.</p>  
-              <pre><code class="language-html">&lt;style&gt;
+                <p><span class="code">&lt;style&gt;</span>: Permite incrustar código CSS 
+                directamente dentro de un archivo HTML.</p>
+                <pre><code class="language-html">&lt;style&gt;
   body { color: blue; }
 &lt;/style&gt;</code></pre>
             </li>
             <!-- <br> -->
             <li>
-              <p><span class="code">&lt;br&gt;</span>: Se utiliza para insertar un salto de línea en el texto.</p>  
-              <pre><code class="language-html">&lt;br&gt;</code></pre>
+                <p><span class="code">&lt;br&gt;</span>: Se utiliza para insertar un salto de línea en el texto.</p>
+                <pre><code class="language-html">&lt;br&gt;</code></pre>
             </li>
             <!-- <ol> -->
-             <li>
-              <p><span class="code">&lt;ol&gt;</span>: Define una lista ordenada (ordered list),
-               numerada o alfabéticamente ordenada.</p>  
-              <pre><code class="language-html">&lt;ol&gt;
+            <li>
+                <p><span class="code">&lt;ol&gt;</span>: Define una lista ordenada (ordered list),
+                numerada o alfabéticamente ordenada.</p>
+                <pre><code class="language-html">&lt;ol&gt;
   &lt;li&gt;Elemento&lt;/li&gt;
 &lt;/ol&gt;</code></pre>
             </li>
             <!-- <th> -->
-             <li>
-              <p><span class="code">&lt;th&gt;</span>: Define una celda de encabezado en una tabla.</p>  
-              <pre><code class="language-html">&lt;th&gt;Encabezado&lt;/th&gt;</code></pre>
+            <li>
+                <p><span class="code">&lt;th&gt;</span>: Define una celda de encabezado en una tabla.</p>
+                <pre><code class="language-html">&lt;th&gt;Encabezado&lt;/th&gt;</code></pre>
             </li>
             <!-- <div> -->
             <li>
-              <p><span class="code">&lt;div&gt;</span>: Es un contenedor genérico de nivel 
+                <p><span class="code">&lt;div&gt;</span>: Es un contenedor genérico de nivel 
                 de bloque utilizado para agrupar elementos, estructurar el diseño (layout) 
-                y aplicar estilos CSS o manipulación con JavaScript.</p>  
-              <pre><code class="language-html">&lt;div class="contenedor"&gt;Contenido&lt;/div&gt;</code></pre>
-            </li>     
+                y aplicar estilos CSS o manipulación con JavaScript.</p>
+                <pre><code class="language-html">&lt;div class="contenedor"&gt;Contenido&lt;/div&gt;</code></pre>
+            </li>
             <!-- <img> -->
             <li>
-              <p><span class="code">&lt;img&gt;</span>: Se utiliza para incrustar imágenes en una página web.
+                <p><span class="code">&lt;img&gt;</span>: Se utiliza para incrustar imágenes en una página web.
                 requiere dos atributos básicos obligatorios para funcionar correctamente y cumplir con la accesibilidad:
-                 <span class="code">src</span> (fuente), que especifica la ruta o URL de la imagen, y <span class="code">alt</span> 
-                 (texto alternativo), que describe la imagen si no carga o para lectores de pantalla.
-            </p>  
-              <pre><code class="language-html">&lt;img src="img/foto.jpg" alt="Foto"&gt;</code></pre>
+                <span class="code">src</span> (fuente), que especifica la ruta o URL de la imagen, y <span class="code">alt</span> 
+                (texto alternativo), que describe la imagen si no carga o para lectores de pantalla.
+                </p>
+                <pre><code class="language-html">&lt;img src="img/foto.jpg" alt="Foto"&gt;</code></pre>
             </li>
             <!-- <script> -->
             <li>
-              <p><span class="code">&lt;script&gt;</span>: Se utiliza para insertar código de programación, principalmente 
+                <p><span class="code">&lt;script&gt;</span>: Se utiliza para insertar código de programación, principalmente 
                 JavaScript. El más esencial es <span class="code">src</span> (URL del archivo externo), junto con 
-                <span class="code">type</span> (tipo de script).Es obigatorio usar una etiqueta de cierre al usar script.</p>  
-              <pre><code class="language-html">&lt;script src="app.js"&gt;&lt;/script&gt;</code></pre>
+                <span class="code">type</span> (tipo de script).Es obigatorio usar una etiqueta de cierre al usar script.</p>
+                <pre><code class="language-html">&lt;script src="app.js"&gt;&lt;/script&gt;</code></pre>
             </li>
             <!-- <hr> -->
             <li>
-              <p><span class="code">&lt;hr&gt;</span>: Representa una ruptura temática entre párrafos o secciones.No requiere de 
-              atributos basicos ni de una etiqueta de cierre</p>  
-              <pre><code class="language-html">&lt;hr&gt;</code></pre>
+                <p><span class="code">&lt;hr&gt;</span>: Representa una ruptura temática entre párrafos o secciones.No requiere de  
+                atributos basicos ni de una etiqueta de cierre</p>
+                <pre><code class="language-html">&lt;hr&gt;</code></pre>
             </li>
             <!-- <li> -->
             <li>
-              <p><span class="code">&lt;li&gt;</span>: Se utiliza para organizar contenidos, mostrando viñetas por defecto 
+                <p><span class="code">&lt;li&gt;</span>: Se utiliza para organizar contenidos, mostrando viñetas por defecto 
                 en listas no ordenadas o números/letras en las ordenadas. Su etiqueta de cierre.
                 No requiere atributos unicos para funcionar.Esta tiene su atributo de cierre(es recomendable usarlo para tener
                 el codigo mas ordenado).    
-            </p>  
-              <pre><code class="language-html">&lt;li&gt;Elemento de lista&lt;/li&gt;</code></pre>
+                </p>
+                <pre><code class="language-html">&lt;li&gt;Elemento de lista&lt;/li&gt;</code></pre>
             </li>
             <!-- <tr> -->
             <li>
-              <p><span class="code">&lt;tr&gt;</span>: Se utiliza para definir una fila horizontal de celdas dentro de una tabla.
+                <p><span class="code">&lt;tr&gt;</span>: Se utiliza para definir una fila horizontal de celdas dentro de una tabla.
                 Sus atributos básicos principales son  <span class="code">class</span> (para estilos CSS) y tambien  <span class="code">id</span> 
-                 (para identificación única).Esta tambien requiere un atributo de cierre.</p>  
-              <pre><code class="language-html">&lt;tr&gt;&lt;td&gt;Fila&lt;/td&gt;&lt;/tr&gt;</code></pre>
+                (para identificación única).Esta tambien requiere un atributo de cierre.</p>
+                <pre><code class="language-html">&lt;tr&gt;&lt;td&gt;Fila&lt;/td&gt;&lt;/tr&gt;</code></pre>
             </li>
             <!-- <form> (forma xd) -->
             <li>
-              <p><span class="code">&lt;form&gt;</span>: Crea secciones interactivas para recopilar y enviar datos 
+                <p><span class="code">&lt;form&gt;</span>: Crea secciones interactivas para recopilar y enviar datos 
                 del usuario a un servidor,sus atributos son <span class="code">action</span> (URL de destino),
-               <span class="code">method</span>(GET o POST para el método de envío).Esta tambien requiere un atributo de cierre.</p>
-              <pre><code class="language-html">&lt;form action="/submit" method="post"&gt;&lt;/form&gt;</code></pre>
+                <span class="code">method</span>(GET o POST para el método de envío).Esta tambien requiere un atributo de cierre.</p>
+                <pre><code class="language-html">&lt;form action="/submit" method="post"&gt;&lt;/form&gt;</code></pre>
             </li>
             <!-- <label> -->
             <li>
-              <p><span class="code">&lt;label&gt;</span>: Define un texto descriptivo para elementos de formulario, 
+                <p><span class="code">&lt;label&gt;</span>: Define un texto descriptivo para elementos de formulario, 
                 mejorando la accesibilidad y la experiencia de usuario Sus atributos
-                 básicos son <span class="code">for</span> (vincula el ID del input) y soporta atributos globales como id y class.Esta requiere
-                 una etiqueta de cierre </p>    
-              <pre><code class="language-html">&lt;label for="nombre"&gt;Nombre:&lt;/label&gt;</code></pre>
+                básicos son <span class="code">for</span> (vincula el ID del input) y soporta atributos globales como id y class.Esta requiere
+                una etiqueta de cierre </p>
+                <pre><code class="language-html">&lt;label for="nombre"&gt;Nombre:&lt;/label&gt;</code></pre>
             </li>
-         </ul>               
-    <div> 
+        </ul>
+    </article>
+    <div>
         <h2>Referencias</h2>
         <ul>
             <li>
