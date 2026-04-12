@@ -3,6 +3,13 @@
     src: url(resources/Astonpoliz.ttf);
 }
 
+
+a{
+    color: rgb(151, 85, 85);
+
+}
+
+
 /* 
     IMPORTANTE: 
     Cuando vayan a cambiar el tamaño de algo usen porcentajes en vez de pixeles, para que se adapte 

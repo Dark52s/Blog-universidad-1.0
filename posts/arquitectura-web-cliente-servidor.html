@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arquitectura de desarrollo Web Cliente-Servidor - Blog Paradigmas de Programacion</title>
+</head>
+
+<body>
+    <h1>Arquitectura de desarrollo Web Cliente-Servidor</h1>
+
+    <h3>Que es un paradigma de programacion</h3>
+    <p>Un paradigma de programación es un estilo, enfoque o metodología fundamental 
+        para estructurar y resolver problemas mediante código. Define la filosofía 
+        de cómo el programador conceptualiza la lógica del software y cómo el 
+        lenguaje gestiona las acciones, clasificándose principalmente en imperativos
+        y declarativos.</p>  
+
+    <h3>Tipos de paradigmas de programacion</h3>
+    <h4>Paradigma Imperativo:</h4>
+    <ul>
+        <li>
+                <p><strong>Orientado a Objetos (POO):</strong> 
+           
+            <li>
+                <p><strong>Procedural/Estructurado:</strong> Se basa en secuencias lineales de comandos, sentencias 
+                y bloques de control (if, loops) para cambiar el estado deProcedural/Estructurado: la memoria.</p>
+            </li>   
+         </ul>
+
+        <h4>Paradigma Declarativo:</h4>         
+        <ul>
+            <li>
+                <p><strong>Funcional:</strong> Se basa en el uso de funciones matemáticas puras, evitando efectos 
+                secundarios y cambios de estado. Ideal para concurrencia y cálculos complejos.</p>
+            </li> 
+            <li>
+                <p><strong>Lógico:</strong> Basado en la lógica de predicados, donde el programa consta de hechos y 
+                reglas para deducir soluciones (ej. Prolog).</p>
+            </li>
+        </ul>
+        <h4>Otros Paradigmas:</h4>
+        <ul>
+            <li>
+                <p><strong>Basado en Eventos:</strong> El flujo del programa está determinado por acciones del usuario 
+                (clics, pulsaciones) o mensajes de otros programas.</p>
+            </li>
+            <li>
+                <p><strong>Concurrente:</strong> Divide un programa en múltiples tareas que se ejecutan simultáneamente.</p>
+            </li>
+        </ul>
+         
+        <h3>Conceptos basicos de cliente-servidor</h3>
+
+        <p>
+            El modelo cliente-servidor es la arquitectura básica que permite la comunicación en redes 
+            (como Internet). Se basa en la división de tareas entre quienes solicitan recursos y quienes 
+            los proveen.
+        </p>
+        <ul>
+            <li>
+                <p><strong>Cliente:</strong> Es el dispositivo o aplicación que inicia una petición de servicio 
+                (ejemplo: tu navegador web o una aplicación móvil).</p>
+            </li>
+
+            <li>
+                <p><strong>Servidor:</strong> Es una máquina o programa potente que espera peticiones, las procesa 
+                y entrega una respuesta (ejemplo: los servidores de Google o Amazon).</p>    
+            </li>
+
+            <li>
+                <p><strong>Solicitud (Request):</strong> El mensaje que envía el cliente solicitando algo (una web, 
+                un archivo, un dato).</p> 
+            </li>
+    
+            <li>
+                <p><strong>Respuesta (Response):</strong> El mensaje que devuelve el servidor con la información solicitada o un 
+                error.</p>    
+            </li>
+        </ul>
+        <!-- <img src="img/cliente_servidor.jpg" alt="sin referencia :/"> -->
+
+        <h3>Arquitectura de 3 capas: Datos, Negocio y Presentacion:</h3>
+        <ul>
+            <li>
+                <p><strong>La Capa de datos: </strong> Es el mensaje que devuelve el servidor con la información solicitada o un 
+                error.</p>
+            </li>
+
+            <li>
+                <p><strong>La Capa de Negocio:</strong> Actúa como el núcleo o "cerebro" del sistema, situándose entre la 
+                presentación y los datos. Aquí es donde se definen todas las reglas, algoritmos y validaciones 
+                que hacen que la aplicación funcione según lo planeado. Recibe las peticiones del usuario, 
+                procesa la información aplicando la lógica necesaria y decide qué datos deben ser consultados o 
+                guardados, funcionando como el motor que mueve toda la operación.</p>
+            </li>
+            <li>
+           ingenierios     <p><strong>La Capa de Datos:</strong> Es la encargada de la persistencia y gestión de la 
+                información en el sistema. Su responsabilidad exclusiva es almacenar, recuperar y actualizar 
+                los datos en una base de datos o sistema de archivos de forma segura y eficiente. Esta capa no 
+                conoce las reglas del negocio ni cómo se ve la interfaz; simplemente responde a las órdenes de 
+                la capa de negocio para entregar o guardar la información solicitada de manera organizada.</p>
+            </li>
+        </ul>
+
+
+        <h3>Creacion y configuracion de un sitio web:</h3>
+        <p>
+            La creacisón de un sitio web comienza con el entendimiento de que este es, en esencia,
+            un conjunto de archivos digitales alojados en una computadora conectada permanentemente 
+            a la red, llamada servidor. Para que este contenido sea accesible, se requiere de un 
+             Hosting (alojamiento), que es el espacio físico o virtual donde residen los datos, y 
+             un Dominio, que funciona como la dirección legible (ej. google.com) que apunta a la 
+             dirección IP técnica de dicho servidor.
+        </p>
+        <p>
+            La configuración inicial implica vincular estos dos elementos mediante los DNS 
+            (Sistema de Nombres de Dominio), que actúan como un directorio que traduce el nombre del 
+            dominio en la ubicación exacta del servidor. Una vez establecida la conexión, el servidor
+            se encarga de procesar las peticiones de los usuarios y enviar los archivos 
+            correspondientes al navegador del cliente, donde se interpretan para mostrar la interfaz
+            visual.
+        </p>
+
+
+        <h3>Componentes clave</h3>
+        <ul>
+            <li>
+                <p><strong>Servidor Web:</strong> Software (como Apache o Nginx) que gestiona el tráfico y entrega los 
+                archivos al usuario.</p>
+            </li>
+            <li>
+                <p><strong>Servidor Web:</strong> Software (como Apache o Nginx) que gestiona el tráfico y 
+                entrega los archivos al usuario.</p>
+            </li>
+        <li>
+            <p><strong>Protocolo HTTP/HTTPS:</strong> El lenguaje de comunicación que permite la 
+            transferencia segura de datos entre el navegador y el servidor.</p>
+        </li>
+        <li>
+            <p><strong>Base de Datos</strong> Estructura opcional para almacenar información dinámica, como perfiles de 
+            usuario o inventarios.</p>
+        </li>
+    </ul>
+
+    <!-- Aqui uso la etiqueta div por si le llegamos a dar un estilo distinto a las referencias -->
+     <!-- La etiqueta div es una division por si no se acuerdan xd -->
+    <div> 
+        <h2>Referencias</h2>
+        <ul>
+            <li>
+
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
