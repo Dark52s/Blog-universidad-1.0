@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog paradicmas</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- El css para los temas del codigo que se muestra en la pagina -->
+    <link href="resources/code_themes/prism.css" rel="stylesheet" />
+
+</head>
+<body>
+       <!-- El javascript para los temas del codigo que se muestra en la pagina  -->
+    <script src="resources/code_themes/prism.js"></script>
+
+    <header><h1>Blog Paradigmas de Programacion</h1></header>
+
+    <!-- CONTENIDO 1 -->
+    <article>
+        <h2>Arquitectura de desarrollo Web Cliente-Servidor</h2>
+
+        <h3>Que es un paradigma de programacion</h3>
+        <p>Un paradigma de programación es un estilo, enfoque o metodología fundamental 
+            para estructurar y resolver problemas mediante código. Define la filosofía 
+            de cómo el programador conceptualiza la lógica del software y cómo el 
+            lenguaje gestiona las acciones, clasificándose principalmente en imperativos
+            y declarativos.</p>  
+
+        <h3>Tipos de paradigmas de programacion</h3>
+         <h4>Paradigma Imperativo:</h4>
+         <ul>
+            <li>
+                <p><strong>Orientado a Objetos (POO):</strong> 
+           
+            <li>
+                <p><strong>Procedural/Estructurado:</strong> Se basa en secuencias lineales de comandos, sentencias 
+                y bloques de control (if, loops) para cambiar el estado deProcedural/Estructurado: la memoria.</p>
+            </li>   
+         </ul>
+
+        <h4>Paradigma Declarativo:</h4>         
+        <ul>
+            <li>
+                <p><strong>Funcional:</strong> Se basa en el uso de funciones matemáticas puras, evitando efectos 
+                secundarios y cambios de estado. Ideal para concurrencia y cálculos complejos.</p>
+            </li> 
+            <li>
+                <p><strong>Lógico:</strong> Basado en la lógica de predicados, donde el programa consta de hechos y 
+                reglas para deducir soluciones (ej. Prolog).</p>
+            </li>
+        </ul>
+        <h4>Otros Paradigmas:</h4>
+        <ul>
+            <li>
+                <p><strong>Basado en Eventos:</strong> El flujo del programa está determinado por acciones del usuario 
+                (clics, pulsaciones) o mensajes de otros programas.</p>
+            </li>
+            <li>
+                <p><strong>Concurrente:</strong> Divide un programa en múltiples tareas que se ejecutan simultáneamente.</p>
+            </li>
+        </ul>
+         
+        <h3>Conceptos basicos de cliente-servidor</h3>
+
+        <p>
+            El modelo cliente-servidor es la arquitectura básica que permite la comunicación en redes 
+            (como Internet). Se basa en la división de tareas entre quienes solicitan recursos y quienes 
+            los proveen.
+        </p>
+        <ul>
+            <li>
+                <p><strong>Cliente:</strong> Es el dispositivo o aplicación que inicia una petición de servicio 
+                (ejemplo: tu navegador web o una aplicación móvil).</p>
+            </li>
+
+            <li>
+                <p><strong>Servidor:</strong> Es una máquina o programa potente que espera peticiones, las procesa 
+                y entrega una respuesta (ejemplo: los servidores de Google o Amazon).</p>    
+            </li>
+
+            <li>
+                <p><strong>Solicitud (Request):</strong> El mensaje que envía el cliente solicitando algo (una web, 
+                un archivo, un dato).</p> 
+            </li>
+    
+            <li>
+                <p><strong>Respuesta (Response):</strong> El mensaje que devuelve el servidor con la información solicitada o un 
+                error.</p>    
+            </li>
+        </ul>
+        <!-- <img src="img/cliente_servidor.jpg" alt="sin referencia :/"> -->
+
+        <h3>Arquitectura de 3 capas: Datos, Negocio y Presentacion:</h3>
+        <ul>
+            <li>
+                <p><strong>La Capa de datos: </strong> Es el mensaje que devuelve el servidor con la información solicitada o un 
+                error.</p>
+            </li>
+
+            <li>
+                <p><strong>La Capa de Negocio:</strong> Actúa como el núcleo o "cerebro" del sistema, situándose entre la 
+                presentación y los datos. Aquí es donde se definen todas las reglas, algoritmos y validaciones 
+                que hacen que la aplicación funcione según lo planeado. Recibe las peticiones del usuario, 
+                procesa la información aplicando la lógica necesaria y decide qué datos deben ser consultados o 
+                guardados, funcionando como el motor que mueve toda la operación.</p>
+            </li>
+            <li>
+           ingenierios     <p><strong>La Capa de Datos:</strong> Es la encargada de la persistencia y gestión de la 
+                información en el sistema. Su responsabilidad exclusiva es almacenar, recuperar y actualizar 
+                los datos en una base de datos o sistema de archivos de forma segura y eficiente. Esta capa no 
+                conoce las reglas del negocio ni cómo se ve la interfaz; simplemente responde a las órdenes de 
+                la capa de negocio para entregar o guardar la información solicitada de manera organizada.</p>
+            </li>
+        </ul>
+
+
+        <h3>Creacion y configuracion de un sitio web:</h3>
+        <p>
+            La creacisón de un sitio web comienza con el entendimiento de que este es, en esencia,
+            un conjunto de archivos digitales alojados en una computadora conectada permanentemente 
+            a la red, llamada servidor. Para que este contenido sea accesible, se requiere de un 
+             Hosting (alojamiento), que es el espacio físico o virtual donde residen los datos, y 
+             un Dominio, que funciona como la dirección legible (ej. google.com) que apunta a la 
+             dirección IP técnica de dicho servidor.
+        </p>
+        <p>
+            La configuración inicial implica vincular estos dos elementos mediante los DNS 
+            (Sistema de Nombres de Dominio), que actúan como un directorio que traduce el nombre del 
+            dominio en la ubicación exacta del servidor. Una vez establecida la conexión, el servidor
+            se encarga de procesar las peticiones de los usuarios y enviar los archivos 
+            correspondientes al navegador del cliente, donde se interpretan para mostrar la interfaz
+            visual.
+        </p>
+
+
+        <h3>Componentes clave</h3>
+        <ul>
+            <li>
+                <p><strong>Servidor Web:</strong> Software (como Apache o Nginx) que gestiona el tráfico y entrega los 
+                archivos al usuario.</p>
+            </li>
+            <li>
+                <p><strong>Servidor Web:</strong> Software (como Apache o Nginx) que gestiona el tráfico y 
+                entrega los archivos al usuario.</p>
+            </li>
+            <li>
+                <p><strong>Protocolo HTTP/HTTPS:</strong> El lenguaje de comunicación que permite la 
+                transferencia segura de datos entre el navegador y el servidor.</p>
+                </li>
+            <li>
+                <p><strong>Base de Datos</strong> Estructura opcional para almacenar información dinámica, como perfiles de 
+                usuario o inventarios.</p>
+            </li>
+        </ul>
+
+    </article>
+    
+    <!-- CONTENIDO 2 -->
+    <article>
+
+        <h2>Manejo de HTML</h2>
+
+        <!-- hola -->
+        <h3>¿Que es HTML?:</h3> 
+        <p>
+            HTML (HyperText Markup Language) es el lenguaje de marcado estándar utilizado para definir 
+            la estructura y el contenido de las páginas web mediante un sistema de etiquetas que actúan 
+            como el esqueleto del sitio. Estas etiquetas organizan elementos como encabezados, párrafos, 
+            enlaces e imágenes,permitiendo que los navegadores interpreten y presenten la información 
+            de forma jerárquica y legible.
+        </p>
+
+        <h3>Que es una etiqueta HTML?</h3>
+
+        <p>
+            Las etiquetas son palabras clave encerradas entre &lt; y &gt; que le dan instrucciones al navegador de como 
+            mostrar el cPtemas de codigo para pagina estilo visual studio code open sourceetición ontenido de la pagina, ejemplo: <span class="code"> &lt;p&gt;</span>, <span class="code">&lt;h1&gt;</span>, 
+            <span class="code">&lt;div&gt;</span>, etc. Se usan en pares (etiqueta de apertura y cierre) para "envolver" el contenido.
+        </p>
+
+        <h3>Atributos de una etiqueta HTML</h3>
+        <p>
+            Las etiquetas pueden llevar atributos, que proporcionan información adicional sobre el elemento. Siempre van dentro de 
+            la etiqueta de apertura. Existen atributos especificos para cada etiqueta como tambien atributos globales que pueden
+            ser utilizados con cualquier etiqueta, entre estos encontramos:
+        </p>
+        <ul id="atriglo">
+            <li>
+               <p><span class="code">id</span> Es un identificador único. Como un número de identificación (DNI/Cédula); no debería haber 
+                dos elementos con el mismo id en una página. Se usa mucho para aplicar estilos específicos o anclas de navegación.</p>
+            </li>
+            <li>
+                <p><span class="code">class</span>: Es un identificador grupal normalmente utilizado para aplicarles estilos con CSS.</p> 
+            </li>
+            <li>
+                <p><span class="code">style</span>: Permite escribir código CSS directamente dentro de la etiqueta.</p>
+            </li>
+            <li>
+                <p><span class="code">title</span>: Muestra un pequeño cuadro de texto (tooltip) cuando dejas el cursor encima del elemento.</p>
+            </li>
+            <li>
+                <p><span class="code">lang</span>: Indica el idioma del contenido de ese elemento (muy importante para el SEO y los lectores de 
+                pantalla).</p>
+            </li>
+            <li>
+                <p><span class="code">hidden</span>: Un atributo booleano que, si está presente, oculta el elemento de la vista.</p>
+            </li>
+        </ul>
+
+        <!-- <img src="img/estructura etiqueta html.jpg" alt="No se pudo cargar la imagen :()"> -->
+
+        <h3>Estrucura de un documento HTML</h3>
+        <p>
+            La estructura básica de un documento HTML5 comienza con <span class="code">&lt;!DOCTYPE HTML&gt;</span> 
+            para indicar que es un documento HTML, ademas, permite elegir la version  que es utilizara, seguida de 
+            la etiqueta raíz <span class="code">&lt;html&gt;</span> que indica donde comienza y termina el codigo HTML. 
+            La siguiente etiquea es <span class="code">&lt;head&gt;</span>(metadatos, título, enlaces a estilos) por ultimo
+            <span class="code">&lt;body&gt;</span> (contenido visible como texto, imágenes y enlaces). Es esencial 
+            para la correcta visualización en navegadores.
+        </p>
+        <pre><code class="language-html"> &lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;!-- Metadatos de la pagina --&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title>Titulo de la pagina&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Estructura de la pagina --&gt;
+&lt;/body&gt;
+&lt;/html&gt; </code></pre>
+        
+         
+         <h3>Lista de Etiquetas</h3>
+         <ul>
+            <!-- <html> -->
+            <li> 
+                <p><span class="code">&lt;html&gt;</span>: Engloba todo el documento e indica al navegador 
+                cual es el codigo html. Tiene su respectiva etiqueta de cierre, ademas, posee el atributo
+                <span class="code">xmlns</span>para especificar el namespace XML del documento, 
+                indicando que el documento sigue las especificaciones XHTML. Normalmente se utiliza
+                tambien el atributo <span class="code">&lt;lang&gt;</span> para indicar el idioma
+                de la pagina.</p>
+                <!--IMPORTANTE: Los bloques de codigo se deben quedar a la izquierda
+                porque si se usa TAB se vera reflejado en la pagina (no elminen los comentarios
+                sapos) :3 -->
+                <pre><code class="language-html">&lt;html lang="es"&gt;
+  &lt;head&gt;
+    &lt;title&gt;Mi sitio&lt;/title&gt; 
+  &lt;/head&gt;
+  &lt;body&gt;Hola&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </li>
+            <!-- <head> -->
+            <li>
+                <p><span class="code">&lt;head&gt;</span>: Es un contenedor esencial situado al inicio del documento, 
+                justo antes del body. Este se utiliza para indicar informacion de la pagina como su nombre,
+                idioma o guardar metadatos en general. Tiene su eqtiqueta de cierre.</p>
+                <pre><code class="language-html">&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Mi sitio&lt;/title&gt;
+&lt;/head&gt;</code></pre>
+            </li> 
+            <!-- <body> -->
+            <li>
+                <p><span class="code"> &lt;body&gt;</span>: Funciona como el contenedor principal de todo el contenido visible de una 
+                    página web. </p>
+                <pre><code class="language-html">&lt;body&gt;
+  &lt;h1&gt;Bienvenido&lt;/h1&gt;
+&lt;/body&gt;</code></pre>
+            </li>   
+            <!-- <a> -->
+            <li>
+                <p><span class="code">&lt;a&gt;</span>: Utilizado para crear hipervínculos, normalmente se utiliza
+                    para vincular el documento style.css. No necesita etiqueta de cierre</p>
+                <pre><code class="language-html">&lt;a href="https://example.com"&gt;Enlace&lt;/a&gt;</code></pre>
+            </li>
+            <!-- <tablet> -->
+            <li>
+                <p><span class="code">&lt;table&gt;</span>: Define una tabla para organizar datos estructurados.</p>
+                <pre><code class="language-html">&lt;table&gt;
+  &lt;tr&gt;&lt;td&gt;Dato&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+            </li>
+            <!-- <input> -->
+           <li>
+                <p><span class="code">&lt;input&gt;</span>: es el elemento principal para crear campos 
+                interactivos en formularios.</p>
+                <pre><code class="language-html">&lt;input type="text" name="nombre"&gt;</code></pre>
+           </li>
+           <!-- <legend> -->
+           <li>
+                <p><span class="code">&lt;legend&gt;</span>: Se utiliza para proporcionar un título o 
+                descripción a un grupo de campos dentro de un elemento.</p>
+                <pre><code class="language-html">&lt;fieldset&gt;
+  &lt;legend&gt;Datos&lt;/legend&gt;
+&lt;/fieldset&gt;</code></pre>
+            </li>
+            <!-- <iframe> -->
+            <li>
+                <p><span class="code">&lt;iframe&gt;</span>: Permite incrustar un documento externo 
+                (otra página web, video, mapa o widget).</p>
+                <pre><code class="language-html">&lt;iframe src="https://www.example.com" width="300" height="200"&gt;&lt;/iframe&gt;</code></pre>
+            </li>
+            <!-- fieldset> -->
+            <li>
+                <p><span class="code">&lt;fieldset&gt;</span>: Agrupa elementos relacionados dentro de un 
+                formulario, creando visualmente un borde contenedor que mejora la estructura, organización 
+               y accesibilidad.</p>  
+                <pre><code class="language-html">&lt;fieldset&gt;
+  &lt;legend&gt;Perfil&lt;/legend&gt;
+  &lt;input type="text" name="email"&gt;
+&lt;/fieldset&gt;</code></pre>
+            </li>
+            <!-- <textarea> -->
+            <li>
+              <p><span class="code">&lt;textarea&gt;</span>: Crea un campo de entrada de texto de 
+             varias líneas.</p>  
+              <pre><code class="language-html">&lt;textarea name="comentario"&gt;&lt;/textarea&gt;</code></pre>
+            </li>
+            <!-- <select> -->
+             <li>
+              <p><span class="code">&lt;select&gt;</span>: Crea un menú desplegable para 
+                seleccionar una o varias opciones definidas por etiquetas.</p>  
+              <pre><code class="language-html">&lt;select name="pais"&gt;
+  &lt;option value="ar"&gt;Argentina&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+            </li>
+            
+            <li>
+              <p><span class="code">&lt;option&gt;</span>: Se utiliza principalmente en 
+                formularios para recopilar datos, enviando el atributo value de la opción 
+                seleccionada al servidor.</p>  
+              <pre><code class="language-html">&lt;option value="ar"&gt;Argentina&lt;/option&gt;</code></pre>
+            </li>
+            <!-- <title> -->
+             <li>
+              <p><span class="code">&lt;title&gt;</span>: Crea un titulo para la pagina html.</p>  
+              <pre><code class="language-html">&lt;title&gt;Mi página&lt;/title&gt;</code></pre>
+            </li>
+            <!-- <p> -->
+             <li>
+              <p><span class="code">&lt;p&gt;</span>: Define que lo que esta adentro de el sera un solo parrafo.</p>  
+              <pre><code class="language-html">&lt;p&gt;Este es un párrafo.&lt;/p&gt;</code></pre>
+            </li>
+            <!-- <td> -->
+             <li>
+              <p><span class="code">&lt;td&gt;</span>:Define una celda estándar dentro de una tabla que contiene datos.</p>  
+              <pre><code class="language-html">&lt;td&gt;Celda&lt;/td&gt;</code></pre>
+            </li>
+            <!-- <buttom> -->
+            <li>
+              <p><span class="code">&lt;button&gt;</span>: Crea botones clickeables para formularios, 
+              acciones en la página (JavaScript) o navegación.</p>  
+              <pre><code class="language-html">&lt;button type="button"&gt;Click&lt;/button&gt;</code></pre>
+            </li>
+            <!-- <table> -->
+            <li>
+              <p><span class="code">&lt;table&gt;</span>:Define el inicio y fin de la tabla.</p>  
+              <pre><code class="language-html">&lt;table&gt;
+  &lt;tr&gt;&lt;td&gt;Fila&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+            </li>
+            <!-- <style> -->
+            <li>
+              <p><span class="code">&lt;style&gt;</span>: Permite incrustar código CSS 
+               directamente dentro de un archivo HTML.</p>  
+              <pre><code class="language-html">&lt;style&gt;
+  body { color: blue; }
+&lt;/style&gt;</code></pre>
+            </li>
+            <!-- <br> -->
+            <li>
+              <p><span class="code">&lt;br&gt;</span>: Se utiliza para insertar un salto de línea en el texto.</p>  
+              <pre><code class="language-html">&lt;br&gt;</code></pre>
+            </li>
+            <!-- <ol> -->
+             <li>
+              <p><span class="code">&lt;ol&gt;</span>: Define una lista ordenada (ordered list),
+               numerada o alfabéticamente ordenada.</p>  
+              <pre><code class="language-html">&lt;ol&gt;
+  &lt;li&gt;Elemento&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+            </li>
+            <!-- <th> -->
+             <li>
+              <p><span class="code">&lt;th&gt;</span>: Define una celda de encabezado en una tabla.</p>  
+              <pre><code class="language-html">&lt;th&gt;Encabezado&lt;/th&gt;</code></pre>
+            </li>
+            <!-- <div> -->
+            <li>
+              <p><span class="code">&lt;div&gt;</span>: Es un contenedor genérico de nivel 
+                de bloque utilizado para agrupar elementos, estructurar el diseño (layout) 
+                y aplicar estilos CSS o manipulación con JavaScript.</p>  
+              <pre><code class="language-html">&lt;div class="contenedor"&gt;Contenido&lt;/div&gt;</code></pre>
+            </li>     
+            <!-- <img> -->
+            <li>
+              <p><span class="code">&lt;img&gt;</span>: Se utiliza para incrustar imágenes en una página web.
+                requiere dos atributos básicos obligatorios para funcionar correctamente y cumplir con la accesibilidad:
+                 <span class="code">src</span> (fuente), que especifica la ruta o URL de la imagen, y <span class="code">alt</span> 
+                 (texto alternativo), que describe la imagen si no carga o para lectores de pantalla.
+            </p>  
+              <pre><code class="language-html">&lt;img src="img/foto.jpg" alt="Foto"&gt;</code></pre>
+            </li>
+            <!-- <script> -->
+            <li>
+              <p><span class="code">&lt;script&gt;</span>: Se utiliza para insertar código de programación, principalmente 
+                JavaScript. El más esencial es <span class="code">src</span> (URL del archivo externo), junto con 
+                <span class="code">type</span> (tipo de script).Es obigatorio usar una etiqueta de cierre al usar script.</p>  
+              <pre><code class="language-html">&lt;script src="app.js"&gt;&lt;/script&gt;</code></pre>
+            </li>
+            <!-- <hr> -->
+            <li>
+              <p><span class="code">&lt;hr&gt;</span>: Representa una ruptura temática entre párrafos o secciones.No requiere de 
+              atributos basicos ni de una etiqueta de cierre</p>  
+              <pre><code class="language-html">&lt;hr&gt;</code></pre>
+            </li>
+            <!-- <li> -->
+            <li>
+              <p><span class="code">&lt;li&gt;</span>: Se utiliza para organizar contenidos, mostrando viñetas por defecto 
+                en listas no ordenadas o números/letras en las ordenadas. Su etiqueta de cierre.
+                No requiere atributos unicos para funcionar.Esta tiene su atributo de cierre(es recomendable usarlo para tener
+                el codigo mas ordenado).    
+            </p>  
+              <pre><code class="language-html">&lt;li&gt;Elemento de lista&lt;/li&gt;</code></pre>
+            </li>
+            <!-- <tr> -->
+            <li>
+              <p><span class="code">&lt;tr&gt;</span>: Se utiliza para definir una fila horizontal de celdas dentro de una tabla.
+                Sus atributos básicos principales son  <span class="code">class</span> (para estilos CSS) y tambien  <span class="code">id</span> 
+                 (para identificación única).Esta tambien requiere un atributo de cierre.</p>  
+              <pre><code class="language-html">&lt;tr&gt;&lt;td&gt;Fila&lt;/td&gt;&lt;/tr&gt;</code></pre>
+            </li>
+            <!-- <form> (forma xd) -->
+            <li>
+              <p><span class="code">&lt;form&gt;</span>: Crea secciones interactivas para recopilar y enviar datos 
+                del usuario a un servidor,sus atributos son <span class="code">action</span> (URL de destino),
+               <span class="code">method</span>(GET o POST para el método de envío).Esta tambien requiere un atributo de cierre.</p>
+              <pre><code class="language-html">&lt;form action="/submit" method="post"&gt;&lt;/form&gt;</code></pre>
+            </li>
+            <!-- <label> -->
+            <li>
+              <p><span class="code">&lt;label&gt;</span>: Define un texto descriptivo para elementos de formulario, 
+                mejorando la accesibilidad y la experiencia de usuario Sus atributos
+                 básicos son <span class="code">for</span> (vincula el ID del input) y soporta atributos globales como id y class.Esta requiere
+                 una etiqueta de cierre </p>    
+              <pre><code class="language-html">&lt;label for="nombre"&gt;Nombre:&lt;/label&gt;</code></pre>
+            </li>
+         </ul>               
+
+    </article>
+
+    <!-- Aqui uso la etiqueta div por si le llegamos a dar un estilo distinto a las referencias -->
+     <!-- La etiqueta div es una division por si no se acuerdan xd -->
+    <div> 
+        <h2>Referencias</h2>
+        <ul>
+            <li>
+
+            </li>
+        </ul>
+    </div>
+
+    <ul>
+        <summary><strong>Integrantes: </strong></summary>
+        <li>
+            Geremy Tablante
+        </li>
+        <li>
+            Francisco Rodriguez
+        </li>
+        <li>
+            Jose Gabriel Guaran
+        </li>
+        <li>
+            Jose Alejandro Padrino
+        </li>
+    </ul>
+    
+
+    
+
+    
+</body>
+</html>   
