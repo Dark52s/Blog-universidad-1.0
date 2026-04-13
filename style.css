@@ -3,6 +3,11 @@
     src: url(resources/fonts/Jersey25-Regular.ttf);
 }
 
+@font-face {
+    font-family: 'Cabin';
+    src: url(resources/fonts/Cabin/Cabin-VariableFont_wdth\,wght.ttf);
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -10,7 +15,8 @@ html, body {
 }
 
 body {
-    font-family: 'Lexend';
+    font-family: 'Cabin';
+    font-size: 18px;
     background-color: rgb(18, 18, 18);
     color: #e2e8f0;
 }
@@ -32,10 +38,11 @@ h1 {
 
 h2 {
     font-weight: bold;
+    color: #0ceca5;
 }
 
 a {
-    color: rgb(64, 137, 255);
+    color:#0ceca5;
 }
 
 p {
@@ -44,7 +51,7 @@ p {
 
 article {
     max-width: 1000px;
-    margin: 3% auto;
+    margin: 1% auto;
     background-color: rgb(48, 48, 48, 0.7);
     display: block;
     padding: 1%;
@@ -59,11 +66,11 @@ img {
 }
 
 .code {
-    background-color: #252424;
+    background-color: #141414;
     padding: 2px 4px;
     font-family: monospace;
     border-radius: 3px;
-    color: white;
+    color: #0ceca5;
 }
 
 pre {
@@ -74,7 +81,7 @@ pre {
 .post_title {
     font-size: 150%;
     font-weight: bold;
-    color: #e2e8f0;
+    color: #0ceca5;
     text-decoration: none;
 }
 
