@@ -1,55 +1,69 @@
 @font-face {
     font-family: 'Jersey';
-    src: url(fo);
+    src: url(resources/fonts/Jersey25-Regular.ttf);
 }
 
-
-a{
-    color: rgb(0, 68, 177);
-
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
-
-
-/* 
-    IMPORTANTE: 
-    Cuando vayan a cambiar el tamaño de algo usen porcentajes en vez de pixeles, para que se adapte 
-    mejor en el telefono 
-*/
 
 body {
     font-family: 'Lexend';
-    font-size: 130%;
     background-color: rgb(18, 18, 18);
     color: #e2e8f0;
 }
 
-p {
-    text-align: justify;
-} 
+header {
+    text-align: center;
+    font-size: 60px;
+    display: block;
+    background-color: #303030b3;
+    font-family: 'Jersey';
+    margin-bottom: 2%;
+    height: 70px;
+}
 
 h1 {
-    font-family:'Lexend-bold' ;
+    margin: 0;
     text-align: center;
-    font-weight: 500;
 }
+
 h2 {
     font-weight: bold;
 }
 
-/* Es una clase para estilizar todo el codigo html mostrado en la pagina. Usar: &lt;etiqueta&gt;
-para escribir las etiquetas*/
-.code {
-    background-color: #252424; 
-    padding: 2px 4px; 
-    font-family: monospace; 
-    border-radius: 3px; 
-    color: white;
+a {
+    color: rgb(64, 137, 255);
 }
 
-html, body {
-    overflow-x: hidden; /* Esto hace que no te puedas mover hacia los lados en la pagina de telefono */
-    box-sizing: border-box;
-    margin: 1%;
+p {
+    text-align: justify;
+}
+
+article {
+    max-width: 1000px;
+    margin: 3% auto;
+    background-color: rgb(48, 48, 48, 0.7);
+    display: block;
+    padding: 1%;
+    border-radius: 10px;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    max-width: 800px;
+
+}
+
+.code {
+    background-color: #252424;
+    padding: 2px 4px;
+    font-family: monospace;
+    border-radius: 3px;
+    color: white;
 }
 
 pre {
@@ -57,25 +71,26 @@ pre {
     word-break: break-word;
 }
 
-
-
-article {
-    background-color: rgb(48, 48, 48, 0.7);
-    padding: 20px;
-    margin: 20px 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    border-radius: 10px;
-    padding: 20px;
-    backdrop-filter: blur(8px);
-}
-
-#atriglo {
-    margin-bottom: 5%;
-}
-
 .post_title {
     font-size: 150%;
     font-weight: bold;
     color: #e2e8f0;
-    text-decoration: none; /* Quita el subrayado del titulo */
+    text-decoration: none;
+}
+
+@media (max-width: 767px) {
+    img {
+        max-width: 400px;
+    }
+
+    article {
+        margin: 5%;
+        padding: 15px;
+    }
+
+    header {
+        font-size: 35px;
+        height: 45px;
+        margin-bottom: 5%;
+    }
 }
