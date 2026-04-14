@@ -4,8 +4,13 @@
 }
 
 @font-face {
-    font-family: 'Cabin';
-    src: url(resources/fonts/Cabin/Cabin-VariableFont_wdth\,wght.ttf);
+    font-family: 'Open Sans';
+    src: url(resources/fonts/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf);
+}
+
+@font-face {
+    font-family: 'Open Sans Bold';
+    src: url(resources/fonts/Open_Sans/static/OpenSans-Bold.ttf);
 }
 
 html, body {
@@ -15,8 +20,8 @@ html, body {
 }
 
 body {
-    font-family: 'Cabin';
-    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 17,px;
     background-color: rgb(18, 18, 18);
     color: #e2e8f0;
 }
@@ -32,13 +37,10 @@ header {
 }
 
 h1 {
+    color: #0ceca5;
     margin: 0;
     text-align: center;
-}
-
-h2 {
     font-weight: bold;
-    color: #0ceca5;
 }
 
 a {
@@ -58,12 +60,49 @@ article {
     border-radius: 10px;
 }
 
+/* marker es un pseudo elemento para darle un estilo a los asteriscos de las listas */
+li::marker {
+    color: #0ceca5;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    border: 2px solid #0ceca5;
+    background-color: #0ceca518;
+}
+th, td {
+    border: 1px solid #0ceca5;
+    padding: 10px 12px;
+    text-align: left;
+}
+th {
+    color: #e2e8f0;
+    font-weight: bold;
+}
+
+
 img {
     display: block;
     margin: 0 auto;
     max-width: 800px;
 
 }
+
+strong {
+    font-family: 'Open Sans Bold';
+}
+
+iframe {
+    width: 560px;
+    height: 315px;
+    display: block;
+    margin: 0 auto;
+}
+
+
 
 .code {
     background-color: #141414;

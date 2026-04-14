@@ -7,13 +7,12 @@
     <title>Arquitectura de desarrollo Web Cliente-Servidor - Blog Paradigmas de Programacion</title>
 
     <link rel="stylesheet" href="../style.css">
+
 </head>
 
 <body>
     <header>Paradigmas de Programación</header>
     <h1>Arquitectura de desarrollo Web Cliente-Servidor</h1>
-
-
     <article>
         <p>
             La arquitectura cliente-servidor es la base del internet y de la gran mayoria de 
@@ -34,78 +33,186 @@
             lenguaje gestiona las acciones. 
         </p>
         
-    <p>
-        Los distintos paradigmas de programacion suelen ser impuestos por cada lenguaje
-        de programación, a su vez un lenguaje puede implementar uno o varios paradigmas
-        al mismo tiempo. Cada uno de estos paradigmas intentan solventar las necesidades
-        de los programadores al momento de escribir codigo, como puede ser, la necesidad
-        de ordenar y modular el codigo o simplemente manejar un software de una manera 
-        totalmente distinta a como lo hacen otros paradigmas.
-    </p>
-    <h2>Tipos de paradigmas de programacion</h2>
-    <h3>Paradigma Imperativo:</h3>
-    <ul>
-        <li>
-            <p><strong>Orientado a Objetos (POO):</strong> 
-           
-            <li>
-                <p><strong>Procedural/Estructurado:</strong> Se basa en secuencias lineales de comandos, sentencias 
-                y bloques de control (if, loops) para cambiar el estado deProcedural/Estructurado: la memoria.</p>
-            </li>   
-         </ul>
-
-        <h4>Paradigma Declarativo:</h4>         
-        <ul>
-            <li>
-                <p><strong>Funcional:</strong> Se basa en el uso de funciones matemáticas puras, evitando efectos 
-                secundarios y cambios de estado. Ideal para concurrencia y cálculos complejos.</p>
-            </li> 
-            <li>
-                <p><strong>Lógico:</strong> Basado en la lógica de predicados, donde el programa consta de hechos y 
-                reglas para deducir soluciones (ej. Prolog).</p>
-            </li>
-        </ul>
-        <h4>Otros Paradigmas:</h4>
-        <ul>
-            <li>
-                <p><strong>Basado en Eventos:</strong> El flujo del programa está determinado por acciones del usuario 
-                (clics, pulshttp://profesores.fi-b.unam.mx/karinagm/ParadigmasFP.pdfaciones) o mensajes de otros programas.</p>
-            </li>
-            <li>
-                <p><strong>Concurrente:</strong> Divide un programa en múltiples tareas que se ejecutan simultáneamente.</p>
-            </li>
-        </ul>
-         
-        <h3>Conceptos basicos de cliente-servidor</h3>
-
         <p>
-            El modelo cliente-servidor es la arquitectura básica que permite la comunicación en redes 
-            (como Internet). Se basa en la división de tareas entre quienes solicitan recursos y quienes 
-            los proveen.
+            Los distintos paradigmas de programacion suelen ser impuestos por cada lenguaje
+            de programación, a su vez un lenguaje puede implementar uno o varios paradigmas
+            al mismo tiempo. Cada uno de estos paradigmas intentan solventar las necesidades
+            de los programadores al momento de escribir codigo, como puede ser, la necesidad
+            de ordenar y modular el codigo o simplemente manejar un software de una manera 
+            totalmente distinta a como lo hacen otros paradigmas.
+        </p>
+        <h2>Tipos de paradigmas de programacion</h2>
+
+        <h3>Programación imperativo:</h3>
+        <p>
+            En este tipo de paradigma se detalla cada paso que el programa debe seguir para cumplir
+            con el comportamiento esperado, permitiendo un control exacto de su flujo.
+        </p>
+
+        <ul>
+            <li>
+                <h4>Programación procedural</h4> 
+                <p>
+                    En este se ordena el codigo en procedimientos o mas conocidos como funciones, 
+                    ¿Que son las funciones? Son bloques de codigo que podemos reutilizar en cualquier
+                    momento sin tener que rescribir todo el codigo. La idea es ordenar el programa en 
+                    pequeñas funciones que resolveran una tarea cada una hasta que todas logren el 
+                    objetivo del programa.
+                </p>        
+            </li>
+            <li>
+                <h4>Programación orientada a objetos (OOP)</h4>
+                <p>
+                    Se basa, como su nombre lo indica, en objetos. La idea es crear clases de objetos con sus metodos
+                    (Acciones que puede realizar) y atributos (Sus caracteristicas), permitiendo
+                    una modulacion del codigo que la programacion procedural nunca podria alcanzar.
+                </p>
+                <p>
+                    ¿Por que es asi? por ejemplo: Al crear una clase podemos instanciar cuantos nuevos 
+                    objetos de esa clase queramos en cualquier parte del codigo cada uno con 
+                    atributos que tienen una informacion distinta, podemos elegir a que atributos 
+                    y metodos pueden acceder otras clases, se puede heredar los metodos y atributos
+                    de una clase padre a una clase hija y tantas otras cosas que invito investiguen 
+                    por su cuenta, en verdad es muy interesante. Ejemplos de este paradigma tenemos
+                    una barbaridad Java, C++, C#, Python, JavaScript, Kotlin, etc.
+                </p>
+
+        </ul>
+
+        <h3>Programación declarativa</h3>
+        <p>
+            Con este paradigma describimos el resultado final, no tenemos que explicar como
+            conseguirlo la computadora determinara cual es el mejor procedimiento para ello.
         </p>
         <ul>
             <li>
-                <p><strong>Cliente:</strong> Es el dispositivo o aplicación que inicia una petición de servicio 
-                (ejemplo: tu navegador web o una aplicación móvil).</p>
+                <h4>Programación funcional</h4> 
+                <p>
+                    La matriz de la programación funcional es el uso de funciones puras, estas no afectan al exterior (no modifican variables
+                    globales, no imprimen en consola, no guardan en base de datos, etc), ademas,  para una entrada 
+                    siempre devuelven una salida. Normalmente son lenguajes utilizados para funciones matematicas.
+                    Ejemplos: Haskell, Erlang y Lisp.
+                </p>
             </li>
-
             <li>
-                <p><strong>Servidor:</strong> Es una máquina o programa potente que espera peticiones, las procesa 
-                y entrega una respuesta (ejemplo: los servidores de Google o Amazon).</p>    
+                <h4>Programación Lógica</h4>
+                <p>
+                    En el caso de la programaciṕn logica se le entrega al sistema un conjunto de hechos, ejemplo: El agua es azul,
+                    la semana tiene 7 dias, dormir 8 horas es bueno para la salud; y unas reglas (relaciones entre estos
+                    hechos). Luego, podemos preguntarle cualquier cosa a este sistema y el mediante esta información dará una 
+                    respuesta. 
+                </p>
             </li>
-
             <li>
-                <p><strong>Solicitud (Request):</strong> El mensaje que envía el cliente solicitando algo (una web, 
-                un archivo, un dato).</p> 
-            </li>
-    
-            <li>
-                <p><strong>Respuesta (Response):</strong> El mensaje que devuelve el servidor con la información solicitada o un 
-                error.</p>    
+                <h4>Programacion Reactiva</h4>
+                <p>
+                    Es un enfoque centrado en los flujos de datos y la propagación del cambio. En lugar que el programa pida constantemente
+                    información, se queda esperando a que la información llegue y recciona a ella.
+                </p>
             </li>
         </ul>
+         
+        <h2>Conceptos basicos del la arquitectura cliente-servidor</h2>
 
-        <h3>Arquitectura de 3 capas: Datos, Negocio y Presentacion:</h3>
+        <p>
+            En la arquitectura cliente-servidor un cliente realiza peticiones a otro programa, el servidor, quien le da respuesta.
+            Bajo esa simple premisa se construye por ejemplo toda la web. Este modelo destaca por la 
+            centralizacion de la información, ya que, todo se encuentra alojado en el servidor, pero, 
+            esto tiene sus matices.
+        </p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Característica</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Centralizacion</td>
+                    <td>
+                        <p>
+                            Todo se encuentra alojado en un solo servidor, lo que facilita
+                            su manutención y seguridad, en contra, si el servidor cae por
+                            cualquier razon, se perdera el acceso a la información hasta que
+                            se logre levantarlo nuevamente, proceso que se hace mucho mas
+                            facil al ser un solo servidor.
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Escalabilidad</td>
+                    <td>
+                        <p>
+                            Puedes añadir mas clientes facilmente o mejorar la potencia del servidor si
+                            hay mucha demanda.
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Independencia</td>
+                    <td>
+                        <p>
+                            El cliente y el servidor no necesitan saber como funciona el otro internamente, 
+                            solo se comunican pasandose la información que necesitan.
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Componentes de la comunicación entre un cliente y un servidor</h2>
+            
+        <table>
+            <thead>
+                <tr>
+                    <th>Componente</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Cliente</td>
+                    
+                    <td><p>Es el dispositivo o aplicación que inicia una petición de servicio 
+                    (ejemplo: tu navegador web o una aplicación móvil).</p></td>
+                </tr>
+                <tr>
+                    <td>Servidor</td>
+                    <td><p>Es una máquina o programa potente que espera peticiones, las procesa 
+                    y entrega una respuesta (ejemplo: los servidores de Google o Amazon).</p></td>
+                </tr>
+                <tr>
+                    <td>Solicitud (Request)</td>
+                    <td><p>El mensaje que envía el cliente solicitando algo (una web, 
+                    un archivo, un dato).</p></td>
+                </tr>
+                <tr>
+                    <td>Respuesta (Response)</td>
+                    <td><p>El mensaje que devuelve el servidor con la información solicitada o un 
+                    error.</p></td>
+                </tr>
+                <tr>
+                    <td>Mensaje</td>
+                    <td><p>Es la información que viaja por la red, esta dividido en: metadatos ( 
+                    Es información que no es visible en el mensaje como quien lo envia o 
+                    a quien va dirijido), el contenido del mensaje y el trailer o footer que
+                    comprueba si el mensaje llego correctamente.</p></td>
+                </tr>
+                <tr>
+                    <td>Protocolo</td>
+
+                    <td><p>Es el componente mas critico a nivel logico, son las reglas que
+                    establecen como se empaqueta, envian y reciben los datos. Existen
+                    muchisimos protocolos para cada tipo de conexion distinta, ejemplo:
+                    TCP/IP, HTTP/HTTPS, FTP, SSH, etc.</p></td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <h2>Arquitectura de 3 capas: Datos, Negocio y Presentacion:</h2>
         <ul>
             <li>
                 <p><strong>La Capa de datos: </strong> Es el mensaje que devuelve el servidor con la información solicitada o un 
@@ -120,7 +227,7 @@
                 guardados, funcionando como el motor que mueve toda la operación.</p>
             </li>
             <li>
-           ingenierios     <p><strong>La Capa de Datos:</strong> Es la encargada de la persistencia y gestión de la 
+                <p><strong>La Capa de Datos:</strong> Es la encargada de la persistencia y gestión de la 
                 información en el sistema. Su responsabilidad exclusiva es almacenar, recuperar y actualizar 
                 los datos en una base de datos o sistema de archivos de forma segura y eficiente. Esta capa no 
                 conoce las reglas del negocio ni cómo se ve la interfaz; simplemente responde a las órdenes de 
@@ -129,7 +236,7 @@
         </ul>
 
 
-        <h3>Creacion y configuracion de un sitio web:</h3>
+        <h2>Creacion y configuracion de un sitio web:</h2>
         <p>
             La creacisón de un sitio web comienza con el entendimiento de que este es, en esencia,
             un conjunto de archivos digitales alojados en una computadora conectada permanentemente 
@@ -147,26 +254,8 @@
             visual.
         </p>
 
-
-        <h3>Componentes clave</h3>
-        <ul>
-            <li>
-                <p><strong>Servidor Web:</strong> Software (como Apache o Nginx) que gestiona el tráfico y entrega los 
-                archivos al usuario.</p>
-            </li>
-            <li>
-                <p><strong>Servidor Web:</strong> Software (como Apache o Nginx) que gestiona el tráfico y 
-                entrega los archivos al usuario.</p>
-            </li>
-        <li>
-            <p><strong>Protocolo HTTP/HTTPS:</strong> El lenguaje de comunicación que permite la 
-            transferencia segura de datos entre el navegador y el servidor.</p>
-        </li>
-        <li>
-            <p><strong>Base de Datos</strong> Estructura opcional para almacenar información dinámica, como perfiles de 
-            usuario o inventarios.</p>
-        </li>
-    </ul>
+        <iframe src="https://www.youtube.com/watch?v=sLTNgxxSBR4" frameborder="0" allowfullscreen></iframe>
+    
     </article>
 
     <!-- Aqui uso la etiqueta div por si le llegamos a dar un estilo distinto a las referencias -->
