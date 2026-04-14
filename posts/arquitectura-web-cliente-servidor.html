@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <header>Paradigmas de Programación</header>
+    <header><a class="blog_title" href="../index.html">Paradigmas de Programación</a></header>
     <h1>Arquitectura de desarrollo Web Cliente-Servidor</h1>
     <article>
         <p>
@@ -213,25 +213,32 @@
         </table>
 
         <h2>Arquitectura de 3 capas: Datos, Negocio y Presentacion:</h2>
+        <p>La arquitectura de tres capas es una evolución del modelo cliente-servidor que busca
+        resolver problemas de escalabilidad y mantenimiento. Su principio fundamental es la
+        separacion de responsabilidades, dividiendo la aplicación en tres niveles logicos y,
+        a menudo fisicos distintos.</p>
         <ul>
             <li>
-                <p><strong>La Capa de datos: </strong> Es el mensaje que devuelve el servidor con la información solicitada o un 
-                error.</p>
+                <h4>La Capa de presentación: </h4> 
+                <p>Es la interfaz que ve el usuario desde su navegador, la aplicacion o terminal, los 
+                programadores en esta capa solo deben encargarse de la interfaz con herramientas como 
+                HTML, CSS, JavaScript, etc.</p>
             </li>
-
             <li>
-                <p><strong>La Capa de Negocio:</strong> Actúa como el núcleo o "cerebro" del sistema, situándose entre la 
+                <h4>La Capa de Negocio</h4>
+                <p>Actúa como el núcleo o "cerebro" del sistema, situándose entre la 
                 presentación y los datos. Aquí es donde se definen todas las reglas, algoritmos y validaciones 
                 que hacen que la aplicación funcione según lo planeado. Recibe las peticiones del usuario, 
                 procesa la información aplicando la lógica necesaria y decide qué datos deben ser consultados o 
                 guardados, funcionando como el motor que mueve toda la operación.</p>
             </li>
-            <li>
-                <p><strong>La Capa de Datos:</strong> Es la encargada de la persistencia y gestión de la 
-                información en el sistema. Su responsabilidad exclusiva es almacenar, recuperar y actualizar 
-                los datos en una base de datos o sistema de archivos de forma segura y eficiente. Esta capa no 
-                conoce las reglas del negocio ni cómo se ve la interfaz; simplemente responde a las órdenes de 
-                la capa de negocio para entregar o guardar la información solicitada de manera organizada.</p>
+            <li><h4>La Capa de Datos</h4>
+
+                <p>Es la encargada de la persistencia y gestión de la información en el sistema. Su responsabilidad
+                exclusiva es almacenar, recuperar y actualizar los datos en una base de datos o sistema de archivos 
+                de forma segura y eficiente. Esta capa no conoce las reglas del negocio ni cómo se ve la interfaz; 
+                simplemente responde a las órdenes de la capa de negocio para entregar o guardar la información 
+                solicitada de manera organizada.</p>
             </li>
         </ul>
 
