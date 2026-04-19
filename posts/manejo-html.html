@@ -12,10 +12,20 @@
 </head>
 
 <body>
+    
     <!-- El javascript para los temas del codigo que se muestra en la pagina  -->
     <script src="../resources/code_themes/prism.js"></script>
 
     <header><a class="blog_title" href="../index.html">Paradigmas de Programación</a></header>
+      <nav class="menu-blog">
+    <ul>
+        <li class="active"><a href="../index.html">Inicio</a></li>
+        <li><a href="">Integrantes</a></li>
+        <li><a href="paradicmas-definicion.html">Paradigma: Definicion y conceptualizacion de paradigma</a></li>
+        <li><a href="resources/pictures/fondo_pagina.jpg" download="fondo_pagina.jpg" class="boton-descarga">Descargas</a></li>
+        <li><a href="https://www.imdb.com/es-es/name/nm7060064/mediaviewer/rm3724612864/?ref_=nm_ov_ph">Polnito</a></li>
+    </ul>
+</nav>
     <h1>Manejo de HTML</h1>
 
     <article>
@@ -23,6 +33,11 @@
         no se utiliza otro lenguaje mas, En este post nos sumergiremos en la primera de las tres 
         partes que divide el desarrollo web, deglosaremos HTML, etiquetas, atributos, eventos, etc.</p>
     </article>
+
+
+
+
+    
 
     <article>
         <h2>¿Que es HTML?:</h2>
@@ -34,7 +49,99 @@
             de forma jerárquica y legible.
         </p>
 
-        <h2>Que es una etiqueta HTML?</h2>
+        <h2>Tabla de Contenido</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Tema</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><a href="#que-es-una-etiqueta-html">Qué es una etiqueta HTML?</a></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><a href="#atributos-de-una-etiqueta-html">Atributos de una etiqueta HTML</a></td>
+                </tr>
+                <tr>
+                    <td>2.1</td>
+                    <td><a href="#atributo-id">id</a></td>
+                </tr>
+                <tr>
+                    <td>2.2</td>
+                    <td><a href="#atributo-class">class</a></td>
+                </tr>
+                <tr>
+                    <td>2.3</td>
+                    <td><a href="#atributo-style">style</a></td>
+                </tr>
+                <tr>
+                    <td>2.4</td>
+                    <td><a href="#atributo-title">title</a></td>
+                </tr>
+                <tr>
+                    <td>2.5</td>
+                    <td><a href="#atributo-lang">lang</a></td>
+                </tr>
+                <tr>
+                    <td>2.6</td>
+                    <td><a href="#atributo-hidden">hidden</a></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><a href="#estructura-de-un-documento-html">Estructura de un documento HTML</a></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><a href="#lista-de-etiquetas">Lista de Etiquetas</a></td>
+                </tr>
+                <tr>
+                    <td>4.1</td>
+                    <td><a href="#estructura-del-documento">1. Estructura del documento</a></td>
+                </tr>
+                <tr>
+                    <td>4.2</td>
+                    <td><a href="#enlaces-e-hipervinculos">2. Enlaces e hipervínculos</a></td>
+                </tr>
+                <tr>
+                    <td>4.3</td>
+                    <td><a href="#elementos-de-tabla">3. Elementos de tabla</a></td>
+                </tr>
+                <tr>
+                    <td>4.4</td>
+                    <td><a href="#elementos-de-formulario">4. Elementos de formulario</a></td>
+                </tr>
+                <tr>
+                    <td>4.5</td>
+                    <td><a href="#elementos-de-texto">5. Elementos de texto</a></td>
+                </tr>
+                <tr>
+                    <td>4.6</td>
+                    <td><a href="#listas">6. Listas</a></td>
+                </tr>
+                <tr>
+                    <td>4.7</td>
+                    <td><a href="#multimedia-y-recursos-embebidos">7. Multimedia y recursos embebidos</a></td>
+                </tr>
+                <tr>
+                    <td>4.8</td>
+                    <td><a href="#titulo-de-pagina">8. Título de página</a></td>
+                </tr>
+                <tr>
+                    <td>4.9</td>
+                    <td><a href="#contenedor-generico">9. Contenedor genérico</a></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td><a href="#referencias">Referencias</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 id="que-es-una-etiqueta-html">Que es una etiqueta HTML?</h2>
 
         <p>
             Las etiquetas son palabras clave encerradas entre &lt; y &gt; que le dan instrucciones al navegador de como 
@@ -42,7 +149,7 @@
             <span class="code">&lt;div&gt;</span>, etc. Se usan en pares (etiqueta de apertura y cierre) para "envolver" el contenido.
         </p>
 
-        <h2>Atributos de una etiqueta HTML</h2>
+        <h2 id="atributos-de-una-etiqueta-html">Atributos de una etiqueta HTML</h2>
         <p>
             Las etiquetas pueden llevar atributos, que proporcionan información adicional sobre el elemento. Siempre van dentro de 
             la etiqueta de apertura. Existen atributos especificos para cada etiqueta como tambien atributos globales que pueden
@@ -50,34 +157,34 @@
         </p>
         <ul id="atriglo">
             <li>
-                <h3 class="code">id</h3>
+                <h3 class="code" id="atributo-id">id</h3>
                 <p>Es un identificador único. Como un número de identificación (DNI/Cédula); no debería haber 
                 dos elementos con el mismo id en una página. Se usa mucho para aplicar estilos específicos o anclas de navegación.</p>
 <pre><code class="language-html">&lt;h1 id="titulo-principal"&gt;Bienvenido&lt;/h1&gt;</code></pre>
             </li>
             <li>
-                <h3 class="code">class</h3>
+                <h3 class="code" id="atributo-class">class</h3>
                 <p>Es un identificador grupal normalmente utilizado para aplicarles estilos con CSS.</p>
 <pre><code class="language-html">&lt;p class="parrafo-destacado"&gt;Texto importante&lt;/p&gt;</code></pre>
             </li>
             <li>
-                <h3 class="code">style</h3>
+                <h3 class="code" id="atributo-style">style</h3>
                 <p>Permite escribir código CSS directamente dentro de la etiqueta.</p>
 <pre><code class="language-html">&lt;p style="color: red; font-size: 18px;"&gt;Texto rojo&lt;/p&gt;</code></pre>
             </li>
             <li>
-                <h3 class="code">title</h3>
+                <h3 class="code" id="atributo-title">title</h3>
                 <p>Muestra un pequeño cuadro de texto (tooltip) cuando dejas el cursor encima del elemento.</p>
 <pre><code class="language-html">&lt;a href="https://ejemplo.com" title="Visita nuestro sitio"&gt;Enlace&lt;/a&gt;</code></pre>
             </li>
             <li>
-                <h3 class="code">lang</h3>
+                <h3 class="code" id="atributo-lang">lang</h3>
                 <p>Indica el idioma del contenido de ese elemento (muy importante para el SEO y los lectores de 
                 pantalla).</p>
 <pre><code class="language-html">&lt;p lang="es"&gt;Este texto está en español.&lt;/p&gt;</code></pre>
             </li>
             <li>
-                <h3 class="code">hidden</h3>
+                <h3 class="code" id="atributo-hidden">hidden</h3>
                 <p>Un atributo booleano que, si está presente, oculta el elemento de la vista.</p>
 <pre><code class="language-html">&lt;p hidden&gt;Este párrafo está oculto.&lt;/p&gt;</code></pre>
             </li>
@@ -85,7 +192,7 @@
 
         <!-- <img src="img/estructura etiqueta html.jpg" alt="No se pudo cargar la imagen :()"> -->
 
-        <h2>Estrucura de un documento HTML</h2>
+        <h2 id="estructura-de-un-documento-html">Estrucura de un documento HTML</h2>
         <p>
             La estructura básica de un documento HTML5 comienza con <span class="code">&lt;!DOCTYPE HTML&gt;</span> 
             para indicar que es un documento HTML, ademas, permite elegir la version  que es utilizara, seguida de 
@@ -107,10 +214,10 @@
 &lt;/body&gt;
 &lt;/html&gt; </code></pre>
 
-        <h2>Lista de Etiquetas</h2>
+        <h2 id="lista-de-etiquetas">Lista de Etiquetas</h2>
         
         <!-- ==================== 1. ESTRUCTURA DEL DOCUMENTO ==================== -->
-        <h3 class="section-title">1. Estructura del documento</h3>
+        <h3 class="section-title" id="estructura-del-documento">1. Estructura del documento</h3>
         <p>
             Las etiquetas <span class="code">&lt;html&gt;</span>, <span class="code">&lt;head&gt;</span> y <span class="code">&lt;body&gt;</span> 
             forman la base esencial de todo documento HTML. <span class="code">&lt;html&gt;</span> envuelve todo el documento 
@@ -150,7 +257,7 @@
 </table>
 
         <!-- ==================== 2. ENLACES E HIPERVINCULOS ==================== -->
-        <h3 class="section-title">2. Enlaces e hipervínculos</h3>
+        <h3 class="section-title" id="enlaces-e-hipervinculos">2. Enlaces e hipervínculos</h3>
         <p>
             <span class="code">&lt;a&gt;</span> crea enlaces a otras páginas o recursos. 
             <span class="code">&lt;link&gt;</span> enlaza recursos externos como hojas de estilo CSS.
@@ -206,7 +313,7 @@
 </table>
 
         <!-- ==================== 3. ELEMENTOS DE TABLA ==================== -->
-        <h3 class="section-title">3. Elementos de tabla</h3>
+        <h3 class="section-title" id="elementos-de-tabla">3. Elementos de tabla</h3>
         <p>
             <span class="code">&lt;table&gt;</span> define la tabla. <span class="code">&lt;tr&gt;</span> crea filas. 
             <span class="code">&lt;td&gt;</span> define celdas de datos. <span class="code">&lt;th&gt;</span> define celdas de encabezado.
@@ -265,7 +372,7 @@
 </table>
 
         <!-- ==================== 4. ELEMENTOS DE FORMULARIO ==================== -->
-        <h3 class="section-title">4. Elementos de formulario</h3>
+        <h3 class="section-title" id="elementos-de-formulario">4. Elementos de formulario</h3>
         <p>
             Conjunto de etiquetas para crear formularios interactivos que recopilan datos del usuario.
         </p>
@@ -391,7 +498,7 @@
 </table>
 
         <!-- ==================== 5. ELEMENTOS DE TEXTO ==================== -->
-        <h3 class="section-title">5. Elementos de texto</h3>
+        <h3 class="section-title" id="elementos-de-texto">5. Elementos de texto</h3>
         <p>
             <span class="code">&lt;p&gt;</span> define párrafos. <span class="code">&lt;br&gt;</span> inserta saltos de línea. 
             <span class="code">&lt;hr&gt;</span> crea separadores horizontales entre secciones.
@@ -431,7 +538,7 @@
 </table>
 
         <!-- ==================== 6. LISTAS ==================== -->
-        <h3 class="section-title">6. Listas</h3>
+        <h3 class="section-title" id="listas">6. Listas</h3>
         <p>
             <span class="code">&lt;ol&gt;</span> crea listas ordenadas (numeradas). <span class="code">&lt;ul&gt;</span> crea listas 
             desordenadas (con viñetas). <span class="code">&lt;li&gt;</span> define cada elemento de la lista.
@@ -478,7 +585,7 @@
 </table>
 
         <!-- ==================== 7. MULTIMEDIA Y RECURSOS EMBEBIDOS ==================== -->
-        <h3 class="section-title">7. Multimedia y recursos embebidos</h3>
+        <h3 class="section-title" id="multimedia-y-recursos-embebidos">7. Multimedia y recursos embebidos</h3>
         <p>
             <span class="code">&lt;img&gt;</span> inserta imágenes. <span class="code">&lt;iframe&gt;</span> embebe páginas externas. 
             <span class="code">&lt;script&gt;</span> inserta código JavaScript. <span class="code">&lt;style&gt;</span> inserta CSS.
@@ -569,7 +676,7 @@
 </table>
 
         <!-- ==================== 8. TITULO DE PAGINA ==================== -->
-        <h3 class="section-title">8. Título de página</h3>
+        <h3 class="section-title" id="titulo-de-pagina">8. Título de página</h3>
         <p>
             <span class="code">&lt;title&gt;</span> define el título de la página que aparece en la pestaña del navegador 
             y en los resultados de búsqueda.
@@ -578,7 +685,7 @@
 <p><em>Esta etiqueta no tiene atributos propios, solo acepta los atributos globales.</em></p>
 
         <!-- ==================== 9. CONTENEDOR GENERICO ==================== -->
-        <h3 class="section-title">9. Contenedor genérico</h3>
+        <h3 class="section-title" id="contenedor-generico">9. Contenedor genérico</h3>
         <p>
             <span class="code">&lt;div&gt;</span> es un contenedor de nivel de bloque usado para agrupar elementos 
             y aplicar estilos o estructura al diseño. No tiene semántica especial.
@@ -590,7 +697,7 @@
 <p><em>Esta etiqueta no tiene atributos específicos, solo acepta los atributos globales.</em></p>
     </article>
     <div>
-        <h2>Referencias</h2>
+        <h2 id="referencias">Referencias</h2>
         <ul>
             <li>
 
