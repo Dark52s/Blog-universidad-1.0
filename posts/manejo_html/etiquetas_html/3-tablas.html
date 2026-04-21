@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elementos de Tabla - Blog Paradigmas de Programacion</title>
+    
+    <link rel="stylesheet" href="../../../style.css">
+</head>
+
+<body>
+    <header><a class="blog_title" href="../../../index.html">Paradigmas de Programación</a></header>
+<nav class="menu">
+        <a href="../../../index.html">Inicio</a>
+        <a href="../../../menu_blog/integrantes.html">Integrantes</a>
+        <a href="../../../menu_blog/paradicmas-definicion.html">Introducción</a>
+        <a href="../../../resources/pictures/fondo_pagina.jpg" download="fondo_pagina.jpg">Descargar</a>
+</nav>
+    <h1>3. Elementos de Tabla</h1>
+
+    <article>
+        <h3 id="etiqueta-table">&lt;table&gt;</h3>
+        <p>
+            La etiqueta <span class="code">&lt;table&gt;</span> define una tabla en HTML. Es el contenedor principal que agrupa filas y celdas.
+        </p>
+<pre><code class="language-html">&lt;table border="1"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Nombre&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Ana&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+        <table>
+            <thead>
+                <tr>
+                    <th>Atributo</th>
+                    <th>Descripción</th>
+                    <th>Ejemplo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="code">border</span></td>
+                    <td>Ancho del borde de la tabla</td>
+                    <td><span class="code">border="1"</span></td>
+                </tr>
+                <tr>
+                    <td><span class="code">cellpadding</span></td>
+                    <td>Espacio interior de las celdas</td>
+                    <td><span class="code">cellpadding="8"</span></td>
+                </tr>
+                <tr>
+                    <td><span class="code">cellspacing</span></td>
+                    <td>Espacio entre celdas</td>
+                    <td><span class="code">cellspacing="0"</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 id="etiqueta-tr">&lt;tr&gt;</h3>
+        <p>
+            La etiqueta <span class="code">&lt;tr&gt;</span> define una fila dentro de una tabla.
+        </p>
+<pre><code class="language-html">&lt;tr&gt;
+  &lt;td&gt;Celda 1&lt;/td&gt;
+  &lt;td&gt;Celda 2&lt;/td&gt;
+&lt;/tr&gt;</code></pre>
+
+        <h3 id="etiqueta-td">&lt;td&gt;</h3>
+        <p>
+            La etiqueta <span class="code">&lt;td&gt;</span> define una celda de datos dentro de una fila de tabla.
+        </p>
+<pre><code class="language-html">&lt;td colspan="2"&gt;Celda que ocupa 2 columnas&lt;/td&gt;</code></pre>
+        <table>
+            <thead>
+                <tr>
+                    <th>Atributo</th>
+                    <th>Descripción</th>
+                    <th>Ejemplo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="code">colspan</span></td>
+                    <td>Número de columnas que ocupa la celda</td>
+                    <td><span class="code">colspan="2"</span></td>
+                </tr>
+                <tr>
+                    <td><span class="code">rowspan</span></td>
+                    <td>Número de filas que ocupa la celda</td>
+                    <td><span class="code">rowspan="2"</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 id="etiqueta-th">&lt;th&gt;</h3>
+        <p>
+            La etiqueta <span class="code">&lt;th&gt;</span> define una celda de encabezado dentro de una fila de tabla. 
+            El texto dentro de esta etiqueta se muestra en negrita y centrado por defecto.
+        </p>
+<pre><code class="language-html">&lt;th colspan="2"&gt;Encabezado que ocupa 2 columnas&lt;/th&gt;</code></pre>
+        <p><em>Los atributos son los mismos que para <span class="code">&lt;td&gt;</span>: colspan y rowspan.</em></p>
+
+        <p><a href="../manejo-html.html">← Volver a la lista de etiquetas</a></p>
+    </article>
+</body>
+
+</html>

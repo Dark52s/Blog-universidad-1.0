@@ -10,19 +10,41 @@
 
 </head>
 <body>
-    <header><a class="blog_title" href="../index.html">Paradigmas de Programación</a></header>
-     <nav class="menu-blog">
-    <ul>
-        <li class="active"><a href="../index.html">Inicio</a></li>
-        <li><a href="">Integrantes</a></li>
-        <li><a href="paradicmas-definicion.html">Paradigma: Definicion y conceptualizacion de paradigma</a></li>
-        <li><a href="resources/pictures/fondo_pagina.jpg" download="fondo_pagina.jpg" class="boton-descarga">Descargas</a></li>
-        <li><a href="https://www.imdb.com/es-es/name/nm7060064/mediaviewer/rm3724612864/?ref_=nm_ov_ph">Polnito</a></li>
-    </ul>
-</nav>
+    <header class="blog-header">
+        <a class="blog_title" href="../index.html">Paradigmas de Programación</a>
+<nav class="menu">
+            <a href="../index.html">Inicio</a>
+            <a href="">Integrantes</a>
+            <a href="paradicmas-definicion.html">Introducción</a>
+            <a href="resources/pictures/fondo_pagina.jpg" download="fondo_pagina.jpg">Descargas</a>
+            <a href="">Recursos</a>
+        </nav>
+    </header>
     <h1>Arquitectura de desarrollo Web Cliente-Servidor</h1>
+
     <article>
-        <h3>Introducción</h3>
+        <h2>Tabla de Contenido</h2>
+        <table>
+            <tbody>
+                <tr>
+                    <td><a href="#introduccion">1. Introducción</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#conceptos-basicos">2. Conceptos básicos</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#componentes">3. Componentes de la comunicación</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#arquitectura-3-capas">4. Arquitectura de 3 capas</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#creacion-sitio">5. Creación de un sitio web</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 id="introduccion">Introducción</h2>
         <p>
             La arquitectura cliente-servidor es la base del internet y de la gran mayoria de 
             aplicaciones y programas que usamos hoy en dia. Se basa en, como su nombre lo indica,
@@ -34,7 +56,7 @@
     </article>
          
     <article>
-        <h2>Conceptos basicos del la arquitectura cliente-servidor</h2>
+        <h2 id="conceptos-basicos">Conceptos basicos del la arquitectura cliente-servidor</h2>
 
         <p>
             En la arquitectura cliente-servidor un cliente realiza peticiones a otro programa, el servidor, quien le da respuesta.
@@ -84,7 +106,7 @@
             </tbody>
         </table>
 
-        <h2>Componentes de la comunicación entre un cliente y un servidor</h2>
+        <h2 id="componentes">Componentes de la comunicación entre un cliente y un servidor</h2>
             
         <table>
             <thead>
@@ -134,7 +156,7 @@
             </tbody>
         </table>
 
-        <h2>Arquitectura de 3 capas: Datos, Negocio y Presentacion:</h2>
+        <h2 id="arquitectura-3-capas">Arquitectura de 3 capas: Datos, Negocio y Presentacion:</h2>
         <p>La arquitectura de tres capas es una evolución del modelo cliente-servidor que busca
         resolver problemas de escalabilidad y mantenimiento. Su principio fundamental es la
         separacion de responsabilidades, dividiendo la aplicación en tres niveles logicos y,
@@ -165,7 +187,7 @@
         </ul>
 
 
-        <h2>Creacion y configuracion de un sitio web:</h2>
+        <h2 id="creacion-sitio">Creacion y configuracion de un sitio web:</h2>
 
         <p>La creacisón de un sitio web comienza con el entendimiento de que este es, en esencia,
         un conjunto de archivos digitales alojados en una computadora conectada permanentemente 
@@ -187,16 +209,6 @@
         <iframe src="https://www.youtube.com/embed/sLTNgxxSBR4" frameborder="0" allowfullscreen></iframe>
     
     </article>
-
-    <div class="referencias"> 
-        <h2>Referencias</h2>
-        <ul>
-            <li>
-                <a href="https://www.youtube.com/@Programaci%C3%B3nAccesible">Programacion Accesible</a>. 
-                Cómo publicar un sitio web gratis con Github pages <a href="https://www.youtube.com/watch?v=sLTNgxxSBR4">https://www.youtube.com/watch?v=sLTNgxxSBR4</a></p>
-            </li>
-        </ul>
-    </div>
 </body>
 
 </html>

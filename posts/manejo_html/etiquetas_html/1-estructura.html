@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estructura del Documento - Blog Paradigmas de Programacion</title>
+    
+    <link rel="stylesheet" href="../../../style.css">
+</head>
+
+<body>
+<header><a class="blog_title" href="../../../index.html">Paradigmas de Programación</a></header>
+<nav class="menu">
+        <a href="../../../index.html">Inicio</a>
+        <a href="../../../menu_blog/integrantes.html">Integrantes</a>
+        <a href="../../../menu_blog/paradicmas-definicion.html">Introducción</a>
+        <a href="../../../resources/pictures/fondo_pagina.jpg" download="fondo_pagina.jpg">Descargas</a>
+</nav>
+    <h1>1. Estructura del Documento</h1>
+
+    <article>
+        <h3 id="etiqueta-html">&lt;html&gt;</h3>
+        <p>
+            La etiqueta <span class="code">&lt;html&gt;</span> es la etiqueta raíz que envuelve todo el documento HTML. 
+            Es el contenedor principal y acepta atributos como <span class="code">lang</span> para especificar el idioma.
+        </p>
+<pre><code class="language-html">&lt;html lang="es"&gt;
+  &lt;head&gt;...&lt;/head&gt;
+  &lt;body&gt;...&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        <table>
+            <thead>
+                <tr>
+                    <th>Atributo</th>
+                    <th>Descripción</th>
+                    <th>Ejemplo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="code">lang</span></td>
+                    <td>Especifica el idioma del documento (importante para SEO y lectores de pantalla)</td>
+                    <td><span class="code">lang="es"</span></td>
+                </tr>
+                <tr>
+                    <td><span class="code">xmlns</span></td>
+                    <td>Define el namespace XML del documento (para XHTML)</td>
+                    <td><span class="code">xmlns="http://www.w3.org/1999/xhtml"</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 id="etiqueta-head">&lt;head&gt;</h3>
+        <p>
+            La etiqueta <span class="code">&lt;head&gt;</span> contiene metadatos e información sobre el documento que no es visible para el usuario, 
+            como el título de la página, enlaces a hojas de estilo, scripts y metadatos.
+        </p>
+<pre><code class="language-html">&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Mi sitio&lt;/title&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;</code></pre>
+
+        <h3 id="etiqueta-body">&lt;body&gt;</h3>
+        <p>
+            La etiqueta <span class="code">&lt;body&gt;</span> contiene todo el contenido visible de la página: texto, imágenes, enlaces, tablas, formularios, etc.
+        </p>
+<pre><code class="language-html">&lt;body&gt;
+  &lt;h1&gt;Bienvenido&lt;/h1&gt;
+  &lt;p&gt;Este es el contenido visible&lt;/p&gt;
+&lt;/body&gt;</code></pre>
+
+        <p><a href="../manejo-html.html">← Volver a la lista de etiquetas</a></p>
+    </article>
+</body>
+
+</html>

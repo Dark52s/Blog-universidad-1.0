@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo del CSS - Blog Paradicmas de Programacion</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+    <header class="blog-header">
+        <a class="blog_title" href="../../index.html">Paradigmas de Programación</a>
+        <nav class="menu">
+            <a href="../../index.html">Inicio</a>
+            <a href="../../menu_blog/integrantes.html">Integrantes</a>
+            <a href="../../menu_blog/paradicmas-definicion.html">Introducción</a>
+            <a href="../../resources/" download="fondo_pagina.jpg">Descargas</a>
+        </nav>
+    </header>
+    <h1>Manejo de CSS</h1>
+
+    
+    <article>
+        <h2>Tabla de contenido</h2>
+        <table>
+            <tr>
+                <td><a href="#introduccion">Introducción</a></td>
+            </tr>
+            <tr>
+                <td><a href="#sintaxis">Sintaxis</a></td>
+            </tr>
+            <tr>
+                <td><a href="#clases">Clases</a></td>
+            </tr>
+            <tr>
+                <td><a href="#pseudo-clases">Pseudo-clases</a></td>
+            </tr>
+            <tr>
+                <td><a href="#propiedades">Propiedades</a></td>
+            </tr>
+        </table>
+
+        <h3 id="introduccion">Introducción</h3>
+        <p>CSS (Cascading Style Sheets) es un lenguaje especializado en estilizar los documentos <a href="../manejo_html/manejo-html.html">HTML</a> y
+        XML, basicamente, le dice al navegador como debe verse una pagina. Es el segundo pilar de las tecnologias web junto a JavaScript
+         y al ya mencionado HTML. En este post desarrollaremos todolo necesario para empezar a usar CSS, selectores, propiedades y valor.</p>
+    </article>
+
+    <article>
+        <h2 id="sintaxis">Sintaxis</h2>
+        <ul>
+            <li><h3>Selector</h3></li>
+            <p>Es el elemento HTML al que quieres aplicar el estilo, seguido a este se abren unas
+            llaves que indican el bloque de codigo donde se cuentran las propiedades que se le asignara
+            a esta etiqueta.</p>
+
+            <li><h3>Propiedad</h3></li>
+            <p>Es el aspecto en concreto de la etiqueta que se quiere cambiar, como puede ser su color,
+            tamaño, alineación, la fuente de texto, el tamaño de la fuente de texto, el color del fondo,
+            el color de los bordes, el tamaño de los bordes y una infinidad de aspectos mas.</p>
+            
+            <li><h3>Valores</h3></li>
+            <p>El ajuste especifico que se le quiere hacer a la propiedad seleccionada, puede ser
+            la cantidad de pixeles para el tamaño, el color exacto del fondo, cuantos pixeles de
+            margen tendra el objeto, etc.</p>
+            <li><h3>Declaración</h3></li>
+            <p>Es cada propiedad y valor que esta dentro de las llaves. Se utilizan 
+            los : para separar las porpiedades de los valores y los ; para separar declaraciones</p>
+        </ul>
+        <img class="sintaxis-image" src="../../resources/pictures/sintaxis-css.png" alt="sintaxis-css">
+    
+        <h2 id="clases">Clases</h2>
+        <p>Las clases son etiquetas personalizadas que tú creas para agrupar elementos que quieres que se 
+        vean iguales, sin importar qué tipo de etiqueta HTML sean. Se define con un . y se utiliza el
+        atributo global class en la etiqueta html en la que quieres que se aplique el estilo de la
+        clase.</p>
+
+        <h3>Ejemplo de clase en CSS</h3>
+        <pre><code>.mi-boton {
+    background-color: red;
+    color: white;
+}
+</code></pre>
+
+        <h3>Ejemplo de uso en HTML</h3>
+&lt;button class="mi-boton"&gt;Haz clic aquí&lt;/button&gt;</code></pre>
+    
+    <h2 id="pseudo-clases">Pseudo-clases</h2>
+        <p>Las pseudo-clases son palabras clave que se añaden a los selectores para definir un estado especial 
+        de un elemento. Permiten aplicar estilos basándose en interacción del usuario o la posición del elemento 
+        en el documento.</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Pseudo-clase</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="code">:hover</span></td>
+                    <td>Se aplica cuando el ratón está sobre el elemento</td>
+                </tr>
+                <tr>
+                    <td><span class="code">:active</span></td>
+                    <td>Se aplica cuando el elemento está siendo pulsado o activado</td>
+                </tr>
+                <tr>
+                    <td><span class="code">:focus</span></td>
+                    <td>Se aplica cuando el elemento tiene el foco (como inputs)</td>
+                </tr>
+                <tr>
+                    <td><span class="code">:visited</span></td>
+                    <td>Se aplica a enlaces que ya han sido visitados</td>
+                </tr>
+                <tr>
+                    <td><span class="code">:link</span></td>
+                    <td>Se aplica a enlaces que no han sido visitados</td>
+                </tr>
+                <tr>
+                    <td><span class="code">:first-child</span></td>
+                    <td>Se aplica al primer hijo de un elemento</td>
+                </tr>
+                <tr>
+                    <td><span class="code">:last-child</span></td>
+                    <td>Se aplica al último hijo de un elemento</td>
+                </tr>
+                <tr>
+                    <td><span class="code">:nth-child(n)</span></td>
+                    <td>Se aplica al n-ésimo hijo de un elemento</td>
+                </tr>
+                <tr>
+                    <td><span class="code">:not(selector)</span></td>
+                    <td>Se aplica a elementos que no coinciden con el selector especificado</td>
+                </tr>
+                <tr>
+                    <td><span class="code">:checked</span></td>
+                    <td>Se aplica a checkboxes o radio buttons que están marcados</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 id="propiedades">Propiedades</h2>
+        <p>A continuación se presentan las propiedades CSS más utilizadas para estilizar tus páginas web:</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Propiedad</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="propiedades-css/color.html"><span class="code">color</span></a></td>
+                    <td>Define el color del texto de un elemento</td>
+                </tr>
+                <tr>
+                    <td><a href="propiedades-css/background-color.html"><span class="code">background-color</span></a></td>
+                    <td>Establece el color de fondo de un elemento</td>
+                </tr>
+                <tr>
+                    <td><a href="propiedades-css/font-size.html"><span class="code">font-size</span></a></td>
+                    <td>Define el tamaño de la fuente del texto</td>
+                </tr>
+                <tr>
+                    <td><a href="propiedades-css/font-family.html"><span class="code">font-family</span></a></td>
+                    <td>Define la familia de fuente que se utilizará para el texto</td>
+                </tr>
+                <tr>
+                    <td><a href="propiedades-css/margin.html"><span class="code">margin</span></a></td>
+                    <td>Establece el margen externo de un elemento</td>
+                </tr>
+                <tr>
+                    <td><a href="propiedades-css/padding.html"><span class="code">padding</span></a></td>
+                    <td>Define el espacio de relleno interno de un elemento</td>
+                </tr>
+                <tr>
+                    <td><a href="propiedades-css/border.html"><span class="code">border</span></a></td>
+                    <td>Define el borde de un elemento</td>
+                </tr>
+                <tr>
+                    <td><a href="propiedades-css/display.html"><span class="code">display</span></a></td>
+                    <td>Define el tipo de caja que se genera para un elemento</td>
+                </tr>
+                <tr>
+                    <td><a href="propiedades-css/width.html"><span class="code">width</span></a></td>
+                    <td>Establece el ancho de un elemento</td>
+                </tr>
+                <tr>
+                    <td><a href="propiedades-css/height.html"><span class="code">height</span></a></td>
+                    <td>Establece la altura de un elemento</td>
+                </tr>
+            </tbody>
+        </table>
+    </article>
+</body>
+</html>

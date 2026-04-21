@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo de HTML - Blog Paradigmas de Programacion</title>
+    
+    <!-- El css para los temas del codigo que se muestra en la pagina -->
+    <link rel="stylesheet" href="../resources/code_themes/prism.css">
+    <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body>
+
+    <header><a class="blog_title" href="../../index.html">Paradigmas de Programación</a></header>
+    <nav class="menu">
+        <a href="../../index.html">Inicio</a>
+        <a href="../../menu_blog/integrantes.html">Integrantes</a>
+        <a href="../../menu_blog/paradicmas-definicion.html">Introducción</a>
+        <a href="../../resources/pictures/fondo_pagina.jpg" download="fondo_pagina.jpg">Descargas</a>
+    </nav>
+    <h1>Manejo de HTML</h1>
+
+    <article>
+        <h2>Tabla de Contenido</h2>
+        <table>
+            <tbody>
+                <tr>
+                    <td><a href="#introduccion">1. Introducción</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#que-es-una-etiqueta-html">2. Qué es una etiqueta HTML?</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#atributos-de-una-etiqueta-html">3. Atributos de una etiqueta HTML</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#atributo-id">3.1. id</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#atributo-class">3.2. class</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#atributo-style">3.3. style</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#atributo-title">3.4. title</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#atributo-lang">3.5. lang</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#atributo-hidden">3.6. hidden</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#estructura-de-un-documento-html">4. Estructura de un documento HTML</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#lista-de-etiquetas">5. Lista de Etiquetas</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>El lenguaje HTML es el mas utilizado para la estructuración de paginas web, practicamente
+        no se utiliza otro lenguaje mas, En este post nos sumergiremos en la primera de las tres 
+        partes que divide el desarrollo web, deglosaremos HTML, etiquetas, atributos, eventos, etc.</p>
+    </article>
+    
+
+    <article>
+
+
+        <h2>¿Que es HTML?:</h2>
+        <p>
+            HTML (HyperText Markup Language) es el lenguaje de marcado estándar utilizado para definir 
+            la estructura y el contenido de las páginas web mediante un sistema de etiquetas que actúan 
+            como el esqueleto del sitio. Estas etiquetas organizan elementos como encabezados, párrafos, 
+            enlaces e imágenes,permitiendo que los navegadores interpreten y presenten la información 
+            de forma jerárquica y legible.
+        </p>
+
+  
+
+        <h2 id="que-es-una-etiqueta-html">Que es una etiqueta HTML?</h2>
+
+        <p>
+            Las etiquetas son palabras clave encerradas entre &lt; y &gt; que le dan instrucciones al navegador de como 
+            mostrar el cPtemas de codigo para pagina estilo visual studio code open sourceetición ontenido de la pagina, ejemplo: <span class="code"> &lt;p&gt;</span>, <span class="code">&lt;h1&gt;</span>, 
+            <span class="code">&lt;div&gt;</span>, etc. Se usan en pares (etiqueta de apertura y cierre) para "envolver" el contenido.
+        </p>
+
+        <h2 id="atributos-de-una-etiqueta-html">Atributos de una etiqueta HTML</h2>
+        <p>
+            Las etiquetas pueden llevar atributos, que proporcionan información adicional sobre el elemento. Siempre van dentro de 
+            la etiqueta de apertura. Existen atributos especificos para cada etiqueta como tambien atributos globales que pueden
+            ser utilizados con cualquier etiqueta, entre estos encontramos:
+        </p>
+        <ul>
+            <li>
+                <h3 class="code" id="atributo-id">id</h3>
+                <p>Es un identificador único. Como un número de identificación (DNI/Cédula); no debería haber 
+                dos elementos con el mismo id en una página. Se usa mucho para aplicar estilos específicos o anclas de navegación.</p>
+<pre><code class="language-html">&lt;h1 id="titulo-principal"&gt;Bienvenido&lt;/h1&gt;</code></pre>
+            </li>
+            <li>
+                <h3 class="code" id="atributo-class">class</h3>
+                <p>Es un identificador grupal normalmente utilizado para aplicarles estilos con CSS.</p>
+<pre><code class="language-html">&lt;p class="parrafo-destacado"&gt;Texto importante&lt;/p&gt;</code></pre>
+            </li>
+            <li>
+                <h3 class="code" id="atributo-style">style</h3>
+                <p>Permite escribir código CSS directamente dentro de la etiqueta.</p>
+<pre><code class="language-html">&lt;p style="color: red; font-size: 18px;"&gt;Texto rojo&lt;/p&gt;</code></pre>
+            </li>
+            <li>
+                <h3 class="code" id="atributo-title">title</h3>
+                <p>Muestra un pequeño cuadro de texto (tooltip) cuando dejas el cursor encima del elemento.</p>
+<pre><code class="language-html">&lt;a href="https://ejemplo.com" title="Visita nuestro sitio"&gt;Enlace&lt;/a&gt;</code></pre>
+            </li>
+            <li>
+                <h3 class="code" id="atributo-lang">lang</h3>
+                <p>Indica el idioma del contenido de ese elemento (muy importante para el SEO y los lectores de 
+                pantalla).</p>
+<pre><code class="language-html">&lt;p lang="es"&gt;Este texto está en español.&lt;/p&gt;</code></pre>
+            </li>
+            <li>
+                <h3 class="code" id="atributo-hidden">hidden</h3>
+                <p>Un atributo booleano que, si está presente, oculta el elemento de la vista.</p>
+<pre><code class="language-html">&lt;p hidden&gt;Este párrafo está oculto.&lt;/p&gt;</code></pre>
+            </li>
+        </ul>
+
+        <!-- <img src="img/estructura etiqueta html.jpg" alt="No se pudo cargar la imagen :()"> -->
+
+        <h2 id="estructura-de-un-documento-html">Estrucura de un documento HTML</h2>
+        <p>
+            La estructura básica de un documento HTML5 comienza con <span class="code">&lt;!DOCTYPE HTML&gt;</span> 
+            para indicar que es un documento HTML, ademas, permite elegir la version  que es utilizara, seguida de 
+            la etiqueta raíz <span class="code">&lt;html&gt;</span> que indica donde comienza y termina el codigo HTML. 
+            La siguiente etiquea es <span class="code">&lt;head&gt;</span>(metadatos, título, enlaces a estilos) por ultimo
+            <span class="code">&lt;body&gt;</span> (contenido visible como texto, imágenes y enlaces). Es esencial 
+            para la correcta visualización en navegadores.
+        </p>
+        <pre><code class="language-html"> &lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;!-- Metadatos de la pagina --&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title>Titulo de la pagina&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Estructura de la pagina --&gt;
+&lt;/body&gt;
+&lt;/html&gt; </code></pre>
+
+        <h2 id="lista-de-etiquetas">Lista de Etiquetas</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Sección</th>
+                    <th>Descripción</th>
+                    <th>Ver más</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="code">1. Estructura del documento</span></td>
+                    <td>Etiquetas html, head, body</td>
+                    <td><a href="etiquetas_html/1-estructura.html">Ver →</a></td>
+                </tr>
+                <tr>
+                    <td><span class="code">2. Enlaces e hipervínculos</span></td>
+                    <td>Etiquetas a, link</td>
+                    <td><a href="etiquetas_html/2-enlaces.html">Ver →</a></td>
+                </tr>
+                <tr>
+                    <td><span class="code">3. Elementos de tabla</span></td>
+                    <td>Etiquetas table, tr, td, th</td>
+                    <td><a href="etiquetas_html/3-tablas.html">Ver →</a></td>
+                </tr>
+                <tr>
+                    <td><span class="code">4. Elementos de formulario</span></td>
+                    <td>Etiquetas form, label, input, select, option, textarea, button, fieldset, legend</td>
+                    <td><a href="etiquetas_html/4-formularios.html">Ver →</a></td>
+                </tr>
+                <tr>
+                    <td><span class="code">5. Elementos de texto</span></td>
+                    <td>Etiquetas p, br, hr</td>
+                    <td><a href="etiquetas_html/5-texto.html">Ver →</a></td>
+                </tr>
+                <tr>
+                    <td><span class="code">6. Listas</span></td>
+                    <td>Etiquetas ol, ul, li</td>
+                    <td><a href="etiquetas_html/6-listas.html">Ver →</a></td>
+                </tr>
+                <tr>
+                    <td><span class="code">7. Multimedia y recursos</span></td>
+                    <td>Etiquetas img, iframe, script, style</td>
+                    <td><a href="etiquetas_html/7-multimedia.html">Ver →</a></td>
+                </tr>
+                <tr>
+                    <td><span class="code">8. Título de página</span></td>
+                    <td>Etiqueta title</td>
+                    <td><a href="etiquetas_html/8-titulo.html">Ver →</a></td>
+                </tr>
+                <tr>
+                    <td><span class="code">9. Contenedor genérico</span></td>
+                    <td>Etiqueta div</td>
+                    <td><a href="etiquetas_html/9-contenedor.html">Ver →</a></td>
+                </tr>
+            </tbody>
+        </table>        
+</body>
+
+</html>
