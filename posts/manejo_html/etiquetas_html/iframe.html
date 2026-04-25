@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etiqueta iframe - Blog Paradigmas de Programacion</title>
+    
+    <link rel="stylesheet" href="../../../style.css">
+</head>
+
+<body>
+    <header><a class="blog_title" href="../../../index.html">Paradigmas de Programación</a></header>
+    <nav class="menu">
+        <a href="../../../index.html">Inicio</a>
+        <a href="../../arquitectura-web-cliente-servidor.html">Paradigmas</a>
+        <a href="../manejo-html.html">Manejo de HTML</a>
+        <a href="../../manejo-css/manejo-css.html">Manejo de CSS</a>
+        <a href="../../formularios.html">Formularios</a>
+    </nav>
+    <h1>&lt;iframe&gt;</h1>
+
+    <article>
+        <p>
+            La etiqueta <span class="code-inline">&lt;iframe&gt;</span> embebe una página HTML externa dentro de la actual.
+        </p>
+<pre><code>&lt;iframe src="https://example.com" width="500" height="300" allowfullscreen&gt;&lt;/iframe&gt;</code></pre>
+
+        <p><em>Esta etiqueta acepta atributos específicos.</em></p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Atributo</th>
+                    <th>Descripción</th>
+                    <th>Ejemplo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="code-inline">src</span></td>
+                    <td>URL de la página a embedir</td>
+                    <td><span class="code-inline">src="https://example.com"</span></td>
+                </tr>
+                <tr>
+                    <td><span class="code-inline">width</span></td>
+                    <td>Ancho del iframe</td>
+                    <td><span class="code-inline">width="500"</span></td>
+                </tr>
+                <tr>
+                    <td><span class="code-inline">height</span></td>
+                    <td>Alto del iframe</td>
+                    <td><span class="code-inline">height="300"</span></td>
+                </tr>
+                <tr>
+                    <td><span class="code-inline">name</span></td>
+                    <td>Nombre del iframe</td>
+                    <td><span class="code-inline">name="miFrame"</span></td>
+                </tr>
+                <tr>
+                    <td><span class="code-inline">frameborder</span></td>
+                    <td>Mostrar borde (1 o 0)</td>
+                    <td><span class="code-inline">frameborder="0"</span></td>
+                </tr>
+                <tr>
+                    <td><span class="code-inline">scrolling</span></td>
+                    <td>Barras de desplazamiento (yes, no, auto)</td>
+                    <td><span class="code-inline">scrolling="auto"</span></td>
+                </tr>
+                <tr>
+                    <td><span class="code-inline">allowfullscreen</span></td>
+                    <td>Permite pantalla completa</td>
+                    <td><span class="code-inline">allowfullscreen</span></td>
+                </tr>
+                <tr>
+                    <td><span class="code-inline">sandbox</span></td>
+                    <td>Restringe funcionalidades del contenido (allow-forms, allow-scripts, etc.)</td>
+                    <td><span class="code-inline">sandbox="allow-scripts"</span></td>
+                </tr>
+                <tr>
+                    <td><span class="code-inline">loading</span></td>
+                    <td>Carga diferida (lazy, eager)</td>
+                    <td><span class="code-inline">loading="lazy"</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><a href="../manejo-html.html">← Volver a la lista de etiquetas</a></p>
+    </article>
+</body>
+
+</html>

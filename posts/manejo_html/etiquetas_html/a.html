@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etiqueta a - Blog Paradigmas de Programacion</title>
+    
+    <link rel="stylesheet" href="../../../style.css">
+</head>
+
+<body>
+<header><a class="blog_title" href="../../../index.html">Paradigmas de Programación</a></header>
+<nav class="menu">
+    <a href="../../../index.html">Inicio</a>
+    <a href="../../arquitectura-web-cliente-servidor.html">Paradigmas</a>
+    <a href="../manejo-html.html">Manejo de HTML</a>
+    <a href="../../manejo-css/manejo-css.html">Manejo de CSS</a>
+    <a href="../../formularios.html">Formularios</a>
+</nav>
+    <h1>&lt;a&gt;</h1>
+
+    <article>
+        <p>La etiqueta <span class="code-inline">&lt;a&gt;</span> (ancla) crea enlaces a otras páginas, archivos o ubicaciones 
+        dentro de la misma página. Aunque casi siempre se utiliza exclusivamente para crear enlaces a otras paginas o a archivos
+        de descarga. Esta necesita etiqueta de cierre.</p>
+<pre><code>&lt;a href="https://example.com" target="_blank"&gt;Visita Example&lt;/a&gt;</code></pre>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Atributo</th>
+                    <th>Descripción</th>
+                    <th>Ejemplo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="code-inline">href</span></td>
+                    <td>permite seleccionar la URL de destino del enlace</td>
+                    <td><span class="code-inline">&lt;a href="https://www.link-de-la-pagina.com"&gt;</span></td>
+                </tr>
+                <tr>
+                    <td><span class="code-inline">target</span></td>
+                    <td>
+                        Para elegir donde se abre el enlace. Los valores que acepta son:
+
+                        <ul>
+                            <li><span class="code-inline">_blank</span>: Abre en otra pestaña.</li>
+                            <li><span class="code-inline">_self</span>: Abre en la misma pestaña (predeterminado)</li>
+                            <li><span class="code-inline">_parent</span>: Abre el link en el marco padre</li>
+                            <li><span class="code-inline">_top</span>: Abre el link en todo el cuerpo de la ventana.</li>
+                        </ul>
+                    </td>
+                    <td><span class="code-inline">&lt;a target="_blank"&gt;</span></td>
+                </tr>
+                <tr>
+                    <td><span class="code-inline">title</span></td>
+                    <td>Tooltip que aparece al pasar el cursor</td>
+                    <td><span class="code-inline">title="Más info"</span></td>
+                </tr>
+                <tr>
+                    <td><span class="code-inline">download</span></td>
+                    <td>Para crear enlaces de descarga de archivos.</td>
+                    <td><span class="code-inline"> &lt;a href="ruta-del-archivo" download="nombre del archivo"&gt;</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><a href="../manejo-html.html#lista-de-etiquetas">← Volver a la lista de etiquetas</a></p>
+    </article>
+</body>
+
+</html>

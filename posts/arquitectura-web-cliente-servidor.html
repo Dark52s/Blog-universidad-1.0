@@ -12,12 +12,12 @@
 <body>
     <header class="blog-header">
         <a class="blog_title" href="../index.html">Paradigmas de Programación</a>
-<nav class="menu">
+        <nav class="menu">
             <a href="../index.html">Inicio</a>
-            <a href="">Integrantes</a>
-            <a href="paradicmas-definicion.html">Introducción</a>
-            <a href="resources/pictures/fondo_pagina.jpg" download="fondo_pagina.jpg">Descargas</a>
-            <a href="">Recursos</a>
+            <a href="arquitectura-web-cliente-servidor.html">Paradigmas</a>
+            <a href="manejo_html/manejo-html.html">Manejo de HTML</a>
+            <a href="manejo-css/manejo-css.html">Manejo de CSS</a>
+            <a href="formularios.html">Formularios</a>
         </nav>
     </header>
     <h1>Arquitectura de desarrollo Web Cliente-Servidor</h1>
@@ -39,7 +39,7 @@
                     <td><a href="#arquitectura-3-capas">4. Arquitectura de 3 capas</a></td>
                 </tr>
                 <tr>
-                    <td><a href="#creacion-sitio">5. Creación de un sitio web</a></td>
+                    <td><a href="#creacion-sitio">5. Creación y configuración de un sitio web</a></td>
                 </tr>
             </tbody>
         </table>
@@ -53,17 +53,87 @@
             al igual que aplicaciones como redes sociales, tiendas de aplicaciones, tiendas virtuales,
             aplicaciones de banco, etc.
         </p>
+        </article>
+
+        <article>
+            <h2>Que es un paradigma de programación</h2>
+            <p>Un paradigma de programación es un estilo, enfoque o metodología fundamental 
+            para estructurar y resolver problemas mediante código. Define la filosofía 
+            de cómo el programador conceptualiza la lógica del software y cómo el 
+            lenguaje gestiona las acciones. </p>
+        
+            <p>Los distintos paradigmas de programacion suelen ser impuestos por cada lenguaje
+            de programación, a su vez un lenguaje puede implementar uno o varios paradigmas
+            al mismo tiempo. Cada uno de estos paradigmas intentan solventar las necesidades
+            de los programadores al momento de escribir codigo, como puede ser, la necesidad
+            de ordenar y modular el codigo o simplemente manejar un software de una manera 
+            totalmente distinta a como lo hacen otros paradigmas.</p>
+
+            <h2>Tipos de paradigmas de programacion</h2>
+
+            <h3>Programación imperativo:</h3>
+        <p>En este tipo de paradigma se detalla cada paso que el programa debe seguir para cumplir
+        con el comportamiento esperado, permitiendo un control exacto de su flujo.</p>
+
+        <ul>
+            <li>
+                <h4>Programación procedural</h4> 
+                <p>En este se ordena el codigo en procedimientos o mas conocidos como funciones, 
+                ¿Que son las funciones? Son bloques de codigo que podemos reutilizar en cualquier
+                momento sin tener que rescribir todo el codigo. La idea es ordenar el programa en 
+                pequeñas funciones que resolveran una tarea cada una hasta que todas logren el 
+                objetivo del programa.</p>        
+            </li>
+            <li>
+                <h4>Programación orientada a objetos (OOP)</h4>
+                <p>Se basa, como su nombre lo indica, en objetos. La idea es crear clases de objetos con sus metodos
+                (Acciones que puede realizar) y atributos (Sus caracteristicas), permitiendo
+                una modulacion del codigo que la programacion procedural nunca podria alcanzar.</p>
+                
+                <p>¿Por que es asi? por ejemplo: Al crear una clase podemos instanciar cuantos nuevos 
+                objetos de esa clase queramos en cualquier parte del codigo cada uno con 
+                atributos que tienen una informacion distinta, podemos elegir a que atributos 
+                y metodos pueden acceder otras clases, se puede heredar los metodos y atributos
+                de una clase padre a una clase hija y tantas otras cosas que invito investiguen 
+                por su cuenta, en verdad es muy interesante. Ejemplos de este paradigma tenemos
+                una barbaridad Java, C++, C#, Python, JavaScript, Kotlin, etc.</p>
+        </ul>
+
+        <h3>Programación declarativa</h3>
+        <p>Con este paradigma describimos el resultado final, no tenemos que explicar como
+        conseguirlo la computadora determinara cual es el mejor procedimiento para ello.</p>
+
+        <ul>
+            <li>
+                <h4>Programación funcional</h4> 
+                <p>La matriz de la programación funcional es el uso de funciones puras, estas no afectan al exterior (no modifican variables
+                globales, no imprimen en consola, no guardan en base de datos, etc), ademas,  para una entrada 
+                siempre devuelven una salida. Normalmente son lenguajes utilizados para funciones matematicas.
+                Ejemplos: Haskell, Erlang y Lisp.</p>
+            </li>
+            <li>
+                <h4>Programación Lógica</h4>
+                <p>En el caso de la programaciṕn logica se le entrega al sistema un conjunto de hechos, ejemplo: El agua es azul,
+                la semana tiene 7 dias, dormir 8 horas es bueno para la salud; y unas reglas (relaciones entre estos
+                hechos). Luego, podemos preguntarle cualquier cosa a este sistema y el mediante esta información dará una 
+                respuesta.</p>
+            </li>
+            <li>
+                <h4>Programacion Reactiva</h4>
+                <p>Es un enfoque centrado en los flujos de datos y la propagación del cambio. En lugar que el programa pida constantemente
+                información, se queda esperando a que la información llegue y recciona a ella.</p>
+            </li>
+        </ul>
     </article>
          
+
     <article>
         <h2 id="conceptos-basicos">Conceptos basicos del la arquitectura cliente-servidor</h2>
 
-        <p>
-            En la arquitectura cliente-servidor un cliente realiza peticiones a otro programa, el servidor, quien le da respuesta.
-            Bajo esa simple premisa se construye por ejemplo toda la web. Este modelo destaca por la 
-            centralizacion de la información, ya que, todo se encuentra alojado en el servidor, pero, 
-            esto tiene sus matices.
-        </p>
+        <p>En la arquitectura cliente-servidor un cliente realiza peticiones a otro programa, el servidor, quien le da respuesta.
+        Bajo esa simple premisa se construye por ejemplo toda la web. Este modelo destaca por la 
+        centralizacion de la información, ya que, todo se encuentra alojado en el servidor, pero, 
+        esto tiene sus matices.</p>
 
         <table>
             <thead>
@@ -76,32 +146,22 @@
                 <tr>
                     <td>Centralizacion</td>
                     <td>
-                        <p>
-                            Todo se encuentra alojado en un solo servidor, lo que facilita
-                            su manutención y seguridad, en contra, si el servidor cae por
-                            cualquier razon, se perdera el acceso a la información hasta que
-                            se logre levantarlo nuevamente, proceso que se hace mucho mas
-                            facil al ser un solo servidor.
-                        </p>
+                        <p>Todo se encuentra alojado en un solo servidor, lo que facilita
+                        su manutención y seguridad, en contra, si el servidor cae por
+                        cualquier razon, se perdera el acceso a la información hasta que
+                        se logre levantarlo nuevamente, proceso que se hace mucho mas
+                        facil al ser un solo servidor.</p>
                     </td>
                 </tr>
                 <tr>
                     <td>Escalabilidad</td>
-                    <td>
-                        <p>
-                            Puedes añadir mas clientes facilmente o mejorar la potencia del servidor si
-                            hay mucha demanda.
-                        </p>
-                    </td>
+                    <td><p>Puedes añadir mas clientes facilmente o mejorar la potencia del servidor si hay mucha 
+                    demanda.</p></td>
                 </tr>
                 <tr>
                     <td>Independencia</td>
-                    <td>
-                        <p>
-                            El cliente y el servidor no necesitan saber como funciona el otro internamente, 
-                            solo se comunican pasandose la información que necesitan.
-                        </p>
-                    </td>
+                    <td><p>El cliente y el servidor no necesitan saber como funciona el otro internamente, 
+                    solo se comunican pasandose la información que necesitan.</p></td>
                 </tr>
             </tbody>
         </table>
@@ -146,7 +206,6 @@
                 </tr>
                 <tr>
                     <td>Protocolo</td>
-
                     <td><p>Es el componente mas critico a nivel logico, son las reglas que
                     establecen como se empaqueta, envian y reciben los datos. Existen
                     muchisimos protocolos para cada tipo de conexion distinta, ejemplo:
@@ -156,7 +215,7 @@
             </tbody>
         </table>
 
-        <h2 id="arquitectura-3-capas">Arquitectura de 3 capas: Datos, Negocio y Presentacion:</h2>
+        <h2 id="arquitectura-3-capas">Arquitectura de 3 capas</h2>
         <p>La arquitectura de tres capas es una evolución del modelo cliente-servidor que busca
         resolver problemas de escalabilidad y mantenimiento. Su principio fundamental es la
         separacion de responsabilidades, dividiendo la aplicación en tres niveles logicos y,
@@ -187,13 +246,13 @@
         </ul>
 
 
-        <h2 id="creacion-sitio">Creacion y configuracion de un sitio web:</h2>
+        <h2 id="creacion-sitio">Creacion y configuración de un sitio web:</h2>
 
-        <p>La creacisón de un sitio web comienza con el entendimiento de que este es, en esencia,
+        <p>La creación de un sitio web comienza con el entendimiento de que este es, en esencia,
         un conjunto de archivos digitales alojados en una computadora conectada permanentemente 
         a la red, llamada servidor. Para que este contenido sea accesible, se requiere de un 
         Hosting (alojamiento), que es el espacio físico o virtual donde residen los datos, y 
-        un Dominio, que funciona como la dirección legible (ej. google.com) que apunta a la 
+        un dominio, que funciona como la dirección legible (ej. google.com) que apunta a la 
         dirección IP técnica de dicho servidor.</p>
 
         <p>La configuración inicial implica vincular estos dos elementos mediante los DNS 
@@ -203,11 +262,56 @@
         correspondientes al navegador del cliente, donde se interpretan para mostrar la interfaz
         visual.</p>
 
-        <p> A continuacion un video tutuorial de <a href="https://www.youtube.com/@Programaci%C3%B3nAccesible">Programacion Accesible</a>
+        <p>A continuacion un video tutuorial de <a href="https://www.youtube.com/@Programaci%C3%B3nAccesible">Programación Accesible</a>
         sobre como crear una pagina web con Github pages al igual que este blog:</p>
 
         <iframe src="https://www.youtube.com/embed/sLTNgxxSBR4" frameborder="0" allowfullscreen></iframe>
     
+        <div class="quiz-container">
+            <h2>Evaluación: Arquitectura Cliente-Servidor</h2>
+            
+            <div class="quiz-question">
+                <p>1. En la arquitectura cliente-servidor, el cliente siempre inicia la comunicación.</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="q1" value="v"> Verdadero</label>
+                    <label><input type="radio" name="q1" value="f"> Falso</label>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <p>2. El servidor no necesita estar conectado a internet para funcionar.</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="q2" value="v"> Verdadero</label>
+                    <label><input type="radio" name="q2" value="f"> Falso</label>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <p>3. La arquitectura de 3 capas incluye: Presentación, Negocio y Datos.</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="q3" value="v"> Verdadero</label>
+                    <label><input type="radio" name="q3" value="f"> Falso</label>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <p>4. Los DNS traducen direcciones IP a nombres de dominio legibles.</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="q4" value="v"> Verdadero</label>
+                    <label><input type="radio" name="q4" value="f"> Falso</label>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <p>5. El protocolo HTTP es un ejemplo de protocolo de comunicación.</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="q5" value="v"> Verdadero</label>
+                    <label><input type="radio" name="q5" value="f"> Falso</label>
+                </div>
+            </div>
+        </div>
+
+        <br><a href="../index.html"><-Regresar al inicio</a>
     </article>
 </body>
 

@@ -6,19 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manejo de HTML - Blog Paradigmas de Programacion</title>
     
-    <!-- El css para los temas del codigo que se muestra en la pagina -->
-    <link rel="stylesheet" href="../resources/code_themes/prism.css">
     <link rel="stylesheet" href="../../style.css">
 </head>
 
 <body>
-
     <header><a class="blog_title" href="../../index.html">Paradigmas de Programación</a></header>
     <nav class="menu">
         <a href="../../index.html">Inicio</a>
-        <a href="../../menu_blog/integrantes.html">Integrantes</a>
-        <a href="../../menu_blog/paradicmas-definicion.html">Introducción</a>
-        <a href="../../resources/pictures/fondo_pagina.jpg" download="fondo_pagina.jpg">Descargas</a>
+        <a href="../arquitectura-web-cliente-servidor.html">Paradigmas</a>
+        <a href="manejo-html.html">Manejo de HTML</a>
+        <a href="../manejo-css/manejo-css.html">Manejo de CSS</a>
+        <a href="../formularios.html">Formularios</a>
     </nav>
     <h1>Manejo de HTML</h1>
 
@@ -57,11 +55,12 @@
                     <td><a href="#estructura-de-un-documento-html">4. Estructura de un documento HTML</a></td>
                 </tr>
                 <tr>
-                    <td><a href="#lista-de-etiquetas">5. Lista de Etiquetas</a></td>
+                    <td><a href="#lista-de-etiquetas">5. Lista de etiquetas</a></td>
                 </tr>
             </tbody>
         </table>
 
+        <h2 id="introduccion">Introducción</h2> 
         <p>El lenguaje HTML es el mas utilizado para la estructuración de paginas web, practicamente
         no se utiliza otro lenguaje mas, En este post nos sumergiremos en la primera de las tres 
         partes que divide el desarrollo web, deglosaremos HTML, etiquetas, atributos, eventos, etc.</p>
@@ -69,8 +68,6 @@
     
 
     <article>
-
-
         <h2>¿Que es HTML?:</h2>
         <p>
             HTML (HyperText Markup Language) es el lenguaje de marcado estándar utilizado para definir 
@@ -86,8 +83,9 @@
 
         <p>
             Las etiquetas son palabras clave encerradas entre &lt; y &gt; que le dan instrucciones al navegador de como 
-            mostrar el cPtemas de codigo para pagina estilo visual studio code open sourceetición ontenido de la pagina, ejemplo: <span class="code"> &lt;p&gt;</span>, <span class="code">&lt;h1&gt;</span>, 
-            <span class="code">&lt;div&gt;</span>, etc. Se usan en pares (etiqueta de apertura y cierre) para "envolver" el contenido.
+            mostrar el cPtemas de codigo para pagina estilo visual studio code open sourceetición ontenido de la pagina, ejemplo: <span class="code-inline"> &lt;p&gt;</span>, <span class="code-inline">&lt;h1&gt;</span>, 
+            <span class="code-inline">&lt;div&gt;</span>, etc. La mayoria de etiquetas se utilizan en pares, una etiqueta
+            de apertura y una de cierre, aunque no siempre es asi.
         </p>
 
         <h2 id="atributos-de-una-etiqueta-html">Atributos de una etiqueta HTML</h2>
@@ -98,36 +96,36 @@
         </p>
         <ul>
             <li>
-                <h3 class="code" id="atributo-id">id</h3>
+                <h3 class="code-inline" id="atributo-id">id</h3>
                 <p>Es un identificador único. Como un número de identificación (DNI/Cédula); no debería haber 
                 dos elementos con el mismo id en una página. Se usa mucho para aplicar estilos específicos o anclas de navegación.</p>
-<pre><code class="language-html">&lt;h1 id="titulo-principal"&gt;Bienvenido&lt;/h1&gt;</code></pre>
+<pre><code>&lt;h1 id="titulo-principal"&gt;Bienvenido&lt;/h1&gt;</code></pre>
             </li>
             <li>
-                <h3 class="code" id="atributo-class">class</h3>
+                <h3 class="code-inline" id="atributo-class">class</h3>
                 <p>Es un identificador grupal normalmente utilizado para aplicarles estilos con CSS.</p>
-<pre><code class="language-html">&lt;p class="parrafo-destacado"&gt;Texto importante&lt;/p&gt;</code></pre>
+<pre><code>&lt;p class="parrafo-destacado"&gt;Texto importante&lt;/p&gt;</code></pre>
             </li>
             <li>
-                <h3 class="code" id="atributo-style">style</h3>
+                <h3 class="code-inline" id="atributo-style">style</h3>
                 <p>Permite escribir código CSS directamente dentro de la etiqueta.</p>
-<pre><code class="language-html">&lt;p style="color: red; font-size: 18px;"&gt;Texto rojo&lt;/p&gt;</code></pre>
+<pre><code>&lt;p style="color: red; font-size: 18px;"&gt;Texto rojo&lt;/p&gt;</code></pre>
             </li>
             <li>
-                <h3 class="code" id="atributo-title">title</h3>
+                <h3 class="code-inline" id="atributo-title">title</h3>
                 <p>Muestra un pequeño cuadro de texto (tooltip) cuando dejas el cursor encima del elemento.</p>
-<pre><code class="language-html">&lt;a href="https://ejemplo.com" title="Visita nuestro sitio"&gt;Enlace&lt;/a&gt;</code></pre>
+<pre><code>&lt;a href="https://ejemplo.com" title="Visita nuestro sitio"&gt;Enlace&lt;/a&gt;</code></pre>
             </li>
             <li>
-                <h3 class="code" id="atributo-lang">lang</h3>
+                <h3 class="code-inline" id="atributo-lang">lang</h3>
                 <p>Indica el idioma del contenido de ese elemento (muy importante para el SEO y los lectores de 
                 pantalla).</p>
-<pre><code class="language-html">&lt;p lang="es"&gt;Este texto está en español.&lt;/p&gt;</code></pre>
+<pre><code>&lt;p lang="es"&gt;Este texto está en español.&lt;/p&gt;</code></pre>
             </li>
             <li>
-                <h3 class="code" id="atributo-hidden">hidden</h3>
+                <h3 class="code-inline" id="atributo-hidden">hidden</h3>
                 <p>Un atributo booleano que, si está presente, oculta el elemento de la vista.</p>
-<pre><code class="language-html">&lt;p hidden&gt;Este párrafo está oculto.&lt;/p&gt;</code></pre>
+<pre><code>&lt;p hidden&gt;Este párrafo está oculto.&lt;/p&gt;</code></pre>
             </li>
         </ul>
 
@@ -135,83 +133,185 @@
 
         <h2 id="estructura-de-un-documento-html">Estrucura de un documento HTML</h2>
         <p>
-            La estructura básica de un documento HTML5 comienza con <span class="code">&lt;!DOCTYPE HTML&gt;</span> 
+            La estructura básica de un documento HTML5 comienza con <span class="code-inline">&lt;!DOCTYPE HTML&gt;</span> 
             para indicar que es un documento HTML, ademas, permite elegir la version  que es utilizara, seguida de 
-            la etiqueta raíz <span class="code">&lt;html&gt;</span> que indica donde comienza y termina el codigo HTML. 
-            La siguiente etiquea es <span class="code">&lt;head&gt;</span>(metadatos, título, enlaces a estilos) por ultimo
-            <span class="code">&lt;body&gt;</span> (contenido visible como texto, imágenes y enlaces). Es esencial 
+            la etiqueta raíz <span class="code-inline">&lt;html&gt;</span> que indica donde comienza y termina el codigo HTML. 
+            La siguiente etiquea es <span class="code-inline">&lt;head&gt;</span> (metadatos, título, enlaces a estilos) por ultimo
+            <span class="code-inline">&lt;body&gt;</span> (contenido visible como texto, imágenes y enlaces). Es esencial 
             para la correcta visualización en navegadores.
         </p>
-        <pre><code class="language-html"> &lt;!DOCTYPE html&gt;
+        <pre><code> &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
     &lt;!-- Metadatos de la pagina --&gt;
     &lt;meta charset="UTF-8"&gt;
     &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;title>Titulo de la pagina&lt;/title&gt;
+    &lt;title&gt;Titulo de la pagina&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
     &lt;!-- Estructura de la pagina --&gt;
 &lt;/body&gt;
 &lt;/html&gt; </code></pre>
 
-        <h2 id="lista-de-etiquetas">Lista de Etiquetas</h2>
+        <h2 id="lista-de-etiquetas">Lista de Etiquetas HTML</h2>
         <table>
             <thead>
                 <tr>
-                    <th>Sección</th>
-                    <th>Descripción</th>
-                    <th>Ver más</th>
+                    <th>Categoría</th>
+                    <th>Etiqueta</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><span class="code">1. Estructura del documento</span></td>
-                    <td>Etiquetas html, head, body</td>
-                    <td><a href="etiquetas_html/1-estructura.html">Ver →</a></td>
+                    <td rowspan="3">Estructura del documento</td>
+                    <td><a href="etiquetas_html/html.html">&lt;html&gt;</a></td>
                 </tr>
                 <tr>
-                    <td><span class="code">2. Enlaces e hipervínculos</span></td>
-                    <td>Etiquetas a, link</td>
-                    <td><a href="etiquetas_html/2-enlaces.html">Ver →</a></td>
+                    <td><a href="etiquetas_html/head.html">&lt;head&gt;</a></td>
                 </tr>
                 <tr>
-                    <td><span class="code">3. Elementos de tabla</span></td>
-                    <td>Etiquetas table, tr, td, th</td>
-                    <td><a href="etiquetas_html/3-tablas.html">Ver →</a></td>
+                    <td><a href="etiquetas_html/body.html">&lt;body&gt;</a></td>
                 </tr>
                 <tr>
-                    <td><span class="code">4. Elementos de formulario</span></td>
-                    <td>Etiquetas form, label, input, select, option, textarea, button, fieldset, legend</td>
-                    <td><a href="etiquetas_html/4-formularios.html">Ver →</a></td>
+                    <td rowspan="2">Enlaces e hipervínculos</td>
+                    <td><a href="etiquetas_html/a.html">&lt;a&gt;</a></td>
                 </tr>
                 <tr>
-                    <td><span class="code">5. Elementos de texto</span></td>
-                    <td>Etiquetas p, br, hr</td>
-                    <td><a href="etiquetas_html/5-texto.html">Ver →</a></td>
+                    <td><a href="etiquetas_html/link.html">&lt;link&gt;</a></td>
                 </tr>
                 <tr>
-                    <td><span class="code">6. Listas</span></td>
-                    <td>Etiquetas ol, ul, li</td>
-                    <td><a href="etiquetas_html/6-listas.html">Ver →</a></td>
+                    <td rowspan="4">Elementos de tabla</td>
+                    <td><a href="etiquetas_html/table.html">&lt;table&gt;</a></td>
                 </tr>
                 <tr>
-                    <td><span class="code">7. Multimedia y recursos</span></td>
-                    <td>Etiquetas img, iframe, script, style</td>
-                    <td><a href="etiquetas_html/7-multimedia.html">Ver →</a></td>
+                    <td><a href="etiquetas_html/tr.html">&lt;tr&gt;</a></td>
                 </tr>
                 <tr>
-                    <td><span class="code">8. Título de página</span></td>
-                    <td>Etiqueta title</td>
-                    <td><a href="etiquetas_html/8-titulo.html">Ver →</a></td>
+                    <td><a href="etiquetas_html/td.html">&lt;td&gt;</a></td>
                 </tr>
                 <tr>
-                    <td><span class="code">9. Contenedor genérico</span></td>
-                    <td>Etiqueta div</td>
-                    <td><a href="etiquetas_html/9-contenedor.html">Ver →</a></td>
+                    <td><a href="etiquetas_html/th.html">&lt;th&gt;</a></td>
+                </tr>
+                <tr>
+                    <td rowspan="9">Elementos de formulario</td>
+                    <td><a href="etiquetas_html/form.html">&lt;form&gt;</a></td>
+                </tr>
+                <tr>
+                    <td><a href="etiquetas_html/label.html">&lt;label&gt;</a></td>
+                </tr>
+                <tr>
+                    <td><a href="etiquetas_html/input.html">&lt;input&gt;</a></td>
+                </tr>
+                <tr>
+                    <td><a href="etiquetas_html/select.html">&lt;select&gt;</a></td>
+                </tr>
+                <tr>
+                    <td><a href="etiquetas_html/option.html">&lt;option&gt;</a></td>
+                </tr>
+                <tr>
+                    <td><a href="etiquetas_html/textarea.html">&lt;textarea&gt;</a></td>
+                </tr>
+                <tr>
+                    <td><a href="etiquetas_html/button.html">&lt;button&gt;</a></td>
+                </tr>
+                <tr>
+                    <td><a href="etiquetas_html/fieldset.html">&lt;fieldset&gt;</a></td>
+                </tr>
+                <tr>
+                    <td><a href="etiquetas_html/legend.html">&lt;legend&gt;</a></td>
+                </tr>
+                <tr>
+                    <td rowspan="3">Elementos de texto</td>
+                    <td><a href="etiquetas_html/p.html">&lt;p&gt;</a></td>
+                </tr>
+                <tr>
+                    <td><a href="etiquetas_html/br.html">&lt;br&gt;</a></td>
+                </tr>
+                <tr>
+                    <td><a href="etiquetas_html/hr.html">&lt;hr&gt;</a></td>
+                </tr>
+                <tr>
+                    <td rowspan="3">Listas</td>
+                    <td><a href="etiquetas_html/ol.html">&lt;ol&gt;</a></td>
+                </tr>
+                <tr>
+                    <td><a href="etiquetas_html/ul.html">&lt;ul&gt;</a></td>
+                </tr>
+                <tr>
+                    <td><a href="etiquetas_html/li.html">&lt;li&gt;</a></td>
+                </tr>
+                <tr>
+                    <td rowspan="4">Multimedia y recursos</td>
+                    <td><a href="etiquetas_html/img.html">&lt;img&gt;</a></td>
+                </tr>
+                <tr>
+                    <td><a href="etiquetas_html/iframe.html">&lt;iframe&gt;</a></td>
+                </tr>
+                <tr>
+                    <td><a href="etiquetas_html/script.html">&lt;script&gt;</a></td>
+                </tr>
+                <tr>
+                    <td><a href="etiquetas_html/style.html">&lt;style&gt;</a></td>
+                </tr>
+                <tr>
+                    <td rowspan="2">Otros</td>
+                    <td><a href="etiquetas_html/title.html">&lt;title&gt;</a></td>
+                </tr>
+                <tr>
+                    <td><a href="etiquetas_html/div.html">&lt;div&gt;</a></td>
                 </tr>
             </tbody>
         </table>        
+
+        <div class="quiz-container">
+            <h2>Evaluación: Manejo de HTML</h2>
+            
+            <div class="quiz-question">
+                <p>1. Las etiquetas HTML siempre necesitan etiqueta de apertura y cierre.</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="q1" value="v"> Verdadero</label>
+                    <label><input type="radio" name="q1" value="f"> Falso</label>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <p>2. La etiqueta <span class="code-inline">&lt;a&gt;</span> se utiliza mas para
+                enalces externos y <span class="code-inline">&lt;link&gt;</span> para enlazar archivos internos 
+                como un stylesheet.</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="q2" value="v"> Verdadero</label>
+                    <label><input type="radio" name="q2" value="f"> Falso</label>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <p>3. La etiqueta <span class="code-inline">&lt;table&gt;</span> no posee atributos propios, solo acepta
+                atributos globales.</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="q3" value="v"> Verdadero</label>
+                    <label><input type="radio" name="q3" value="f"> Falso</label>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <p>4. La etiqeuta <span class="code-inline">&lt;li&gt;</span> se utiliza para crear filas en una tabla.</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="q4" value="v"> Verdadero</label>
+                    <label><input type="radio" name="q4" value="f"> Falso</label>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <p>5. La etiqueta <span class="code-inline">&lt;!DOCTYPE html&gt;</span> a HTML 5 como
+                la version del documento por predeterminado.</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="q5" value="v"> Verdadero</label>
+                    <label><input type="radio" name="q5" value="f"> Falso</label>
+                </div>
+            </div>
+        </div>
+
+        <br><a href="../../index.html"><-Regresar al inicio</a>
 </body>
 
 </html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etiqueta script - Blog Paradigmas de Programacion</title>
+    
+    <link rel="stylesheet" href="../../../style.css">
+</head>
+
+<body>
+    <header><a class="blog_title" href="../../../index.html">Paradigmas de Programación</a></header>
+    <nav class="menu">
+        <a href="../../../index.html">Inicio</a>
+        <a href="../../arquitectura-web-cliente-servidor.html">Paradigmas</a>
+        <a href="../manejo-html.html">Manejo de HTML</a>
+        <a href="../../manejo-css/manejo-css.html">Manejo de CSS</a>
+        <a href="../../formularios.html">Formularios</a>
+    </nav>
+    <h1>&lt;script&gt;</h1>
+
+    <article>
+        <p>
+            La etiqueta <span class="code-inline">&lt;script&gt;</span> inserta o define código JavaScript en el documento.
+        </p>
+<pre><code>&lt;script src="app.js" defer&gt;&lt;/script&gt;</code></pre>
+
+        <p><em>Esta etiqueta acepta atributos específicos.</em></p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Atributo</th>
+                    <th>Descripción</th>
+                    <th>Ejemplo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="code-inline">src</span></td>
+                    <td>Ruta al archivo JavaScript externo</td>
+                    <td><span class="code-inline">src="app.js"</span></td>
+                </tr>
+                <tr>
+                    <td><span class="code-inline">type</span></td>
+                    <td>Tipo de script (text/javascript, module)</td>
+                    <td><span class="code-inline">type="text/javascript"</span></td>
+                </tr>
+                <tr>
+                    <td><span class="code-inline">defer</span></td>
+                    <td>El script se ejecuta después de parsear el HTML</td>
+                    <td><span class="code-inline">defer</span></td>
+                </tr>
+                <tr>
+                    <td><span class="code-inline">async</span></td>
+                    <td>El script se ejecuta de forma asíncrona</td>
+                    <td><span class="code-inline">async</span></td>
+                </tr>
+                <tr>
+                    <td><span class="code-inline">charset</span></td>
+                    <td>Codificación de caracteres del script</td>
+                    <td><span class="code-inline">charset="UTF-8"</span></td>
+                </tr>
+                <tr>
+                    <td><span class="code-inline">crossorigin</span></td>
+                    <td>Permite scripts de otros dominios (anonymous, use-credentials)</td>
+                    <td><span class="code-inline">crossorigin="anonymous"</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><a href="../manejo-html.html">← Volver a la lista de etiquetas</a></p>
+    </article>
+</body>
+
+</html>
