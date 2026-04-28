@@ -197,19 +197,46 @@ li::marker {
     margin-top: 2%;
 }
 
-
 .integrantes {
     display: flex;
     justify-content: center;
     gap: 30px;
-    max-width: 1000px;
-    margin: 1% auto 0 auto;
+    max-width: 1200px;
+    margin: 1% auto 2% auto;
     flex-wrap: wrap;
 }
 
 .integrante {
     text-align: center;
     width: 200px;
+    position: relative;
+}
+
+.toggle-info {
+    display: none;
+}
+
+.clickable {
+    cursor: pointer;
+    display: block;
+}
+
+.info-popup {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background: #2a2a2a;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #0ceca5;
+    width: 180px;
+    z-index: 10;
+    margin-left: 10px;
+}
+
+.toggle-info:checked + .clickable + .info-popup {
+    display: block;
 }
 
 .integrante img {
@@ -279,25 +306,7 @@ li::marker {
     margin-right: 8px;
 }
 
-/* CSS para la pagina en telefono */
-@media (max-width: 767px) {
-    img {
-        max-width: 400px;
-    }
-
-    article {
-        margin: 5%;
-        padding: 15px;
-    }
-
-    header {
-        font-size: 35px;
-        height: 45px;
-        margin-bottom: 5%;
-    }
-}
-
-/* TABLA DE CONTENIDO (SIDEBAR) */
+/* TABLA DE CONTENIDO */
 .toc-sidebar {
     position: fixed;
     top: 150px;
@@ -351,7 +360,23 @@ aside.toc-sidebar ~ article, aside.toc-sidebar ~ h1 {
     max-width: 1000px;
 }
 
-@media (max-width: 900px) {
+/* CSS para la pagina en telefono */
+@media (max-width: 767px) {
+    img {
+        max-width: 400px;
+    }
+
+    article {
+        margin: 5%;
+        padding: 15px;
+    }
+
+    header {
+        font-size: 35px;
+        height: 45px;
+        margin-bottom: 5%;
+    }
+
     .toc-sidebar {
         position: static;
         width: auto;
