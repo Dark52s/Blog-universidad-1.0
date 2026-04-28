@@ -203,7 +203,7 @@ li::marker {
     justify-content: center;
     gap: 30px;
     max-width: 1000px;
-    margin: 1% auto 0 21.5%;
+    margin: 1% auto 0 auto;
     flex-wrap: wrap;
 }
 
@@ -294,5 +294,72 @@ li::marker {
         font-size: 35px;
         height: 45px;
         margin-bottom: 5%;
+    }
+}
+
+/* TABLA DE CONTENIDO (SIDEBAR) */
+.toc-sidebar {
+    position: fixed;
+    top: 150px;
+    left: 20px;
+    width: 200px;
+    background-color: rgb(48, 48, 48);
+    padding: 15px;
+    border-radius: 10px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.toc-sidebar h2 {
+    font-size: 18px;
+    color: #0ceca5;
+    margin-top: 0;
+    text-align: center;
+}
+
+.toc-sidebar table {
+    border: none;
+    background: none;
+    margin: 0;
+}
+
+.toc-sidebar td {
+    border: none;
+    border-bottom: 1px solid #3c4043;
+    padding: 8px 5px;
+}
+
+.toc-sidebar td:last-child {
+    border-bottom: none;
+}
+
+.toc-sidebar a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #bdc1c6;
+    display: block;
+}
+
+.toc-sidebar a:hover {
+    color: #0ceca5;
+}
+
+/* Movemos el contenido principal a la derecha si existe el sidebar centrando con margen dinámico */
+aside.toc-sidebar ~ article, aside.toc-sidebar ~ h1 {
+    margin-left: max(260px, calc(50vw - 500px));
+    width: calc(100% - 310px); /* Al menos 50px de margen derecho siempre */
+    max-width: 1000px;
+}
+
+@media (max-width: 900px) {
+    .toc-sidebar {
+        position: static;
+        width: auto;
+        margin: 5%;
+        max-height: none;
+    }
+    aside.toc-sidebar ~ article, aside.toc-sidebar ~ h1 {
+        margin-left: 5%;
+        max-width: 90%;
     }
 }
