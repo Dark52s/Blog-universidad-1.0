@@ -10,7 +10,7 @@
 
 @font-face {
     font-family: 'Open Sans Bold';
-    src: url(resources/fonts/Open_Sans/static/OpenSans-Bold.ttf);
+    src: url(resources/fonts/Open_Sans/OpenSans-Bold.ttf);
 }
 
 html, body {
@@ -76,7 +76,7 @@ h1 {
 
 /* LINKS */
 a {
-    color:#0ceca5;
+    color: #0ceca5;
 }
 
 
@@ -100,7 +100,7 @@ table {
     border-collapse: collapse;
     margin: 15px 0;
     border: 2px solid #0ceca5;
-    background-color: #0ceca518;
+    background-color: #07e81318;
 }
 
 th, td {
