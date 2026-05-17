@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo del CSS - Blog Paradicmas de Programacion</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+    <header class="blog-header">
+        <a class="blog_title" href="../../index.html">Paradigmas de Programación</a>
+        <nav class="menu">
+            <a href="../../index.html">Inicio</a>
+            <a href="../arquitectura-web-cliente-servidor.html">Paradigmas</a>
+            <a href="../manejo_html/manejo-html.html">Manejo de HTML</a>
+            <a href="../manejo-css/manejo-css.html">Manejo de CSS</a>
+            <a href="manejo_js.html">Manejo de JavaScript</a>
+            <a href="../formularios.html">Formularios</a>
+        </nav>
+    </header>
+    <aside class="toc-sidebar">
+        <h2>Tabla de contenido</h2>
+        <table>
+            <tr>
+                <td><a href="#introduccion">1. Introducción</a></td>
+            </tr>
+            <tr>
+                <td><a href="#manejo-de-variables">2. Manejo de Variables</a></td>
+            </tr>
+            <tr>
+                <td><a href="#ciclos">3. Ciclos</a></td>
+            </tr>
+            <tr>
+                <td><a href="#condicionales">4. Condicionales</a></td>
+            </tr>
+            <tr>
+                <td><a href="#funciones">5. Funciones</a></td>
+            </tr>
+            <tr>
+                <td><a href="#formulario">6. Formulario</a></td>
+            </tr>
+            <tr>
+                <td><a href="../../resources/pdf/Manejo del CSS - Blog Paradicmas de Programacion.pdf" download="Manejo de CSS">Descargar esta pagina</a></td>
+            </tr>
+        </table>
+    </aside>
+
+    <h1>Manejo de JavaScript</h1>
+
+    
+    <article>
+        <h2 id="introduccion">Introducción</h2>
+        <p>JavaScript (JS) es un lenguaje de programación especializado en dar interactividad
+            y dinamismo a las páginas web, básicamente, le dice al navegador cómo debe comportarse 
+            un sitio. Es el tercer pilar de las tecnologías web junto a HTML y CSS. 
+            En este post desarrollaremos todo lo necesario para empezar a usar JS: variables, funciones y manipulación del DOM.</p>
+    </article>
+
+    <article>
+        <h2 id="manejo-de-variables">Manejo de Variables</h2>
+        <ul>
+            <li><h3>Var</h3></li>
+            <p>Es la forma antigua de declarar variables. Tiene
+               un alcance global o de función, lo que significa
+               que puede ser accesible desde lugares inesperados
+               y permite volver a declarar la misma variable sin que  
+               el sistema muestre un error, lo que suele causar fallos
+               en el código moderno.</p>
+               
+               <pre><code>
+               var nombre = "Gabriel";  
+               var edad = 18;              
+               var esEstudiante = true;    
+               </code></pre>
+
+                
+            <li><h3>Let</h3></li>
+            <p>Es la forma moderna de declarar variables. Tiene un alcance de bloque, lo que significa
+            que solo es accesible dentro del bloque donde se declara, evitando problemas de scope
+            que pueden surgir con var.</p>
+
+            <pre><code>
+               let nombre = "Gabriel";  
+               let edad = 18;              
+               let esEstudiante = true;    
+            </code></pre>
+
+            <li><h3>Const</h3></li>
+            <p>Es la forma de declarar constantes en JavaScript. Una vez asignado un valor,
+            no puede ser reasignado ni redeclarado.</p>
+
+            <pre><code>
+               const CI = 33863444;  
+               const NOMBRE = "Gabriel";              
+               const EDAD = 18;    
+            </code></pre>
+
+            
+        </ul>
+        <img class="sintaxis-image" src="../../resources/pictures/variables-js.png" alt="sintaxis-css">
+    
+        <h2 id="ciclos">Ciclos</h2>
+        <p>Los ciclos son estructuras de control que permiten repetir un bloque de código varias veces. En JavaScript, existen diferentes tipos de ciclos, como el ciclo for, el ciclo while y el ciclo do-while.</p>
+
+        <h3>Ciclo for</h3>
+        <pre><code>for (let i = 0; i < 10; i++) {
+    console.log(i);
+}
+</code></pre>
+
+        <h3>Ciclo while</h3>
+        <pre><code>let i = 0;
+while (i < 10) {
+    console.log(i);
+    i++;
+}
+</code></pre>
+
+      <h3>Ciclo do-while</h3>
+        <pre><code>let i = 0;
+do {
+    console.log(i);
+    i++;
+} while (i < 10);   
+</code></pre>
+
+        <h2 id="condicionales">Condicionales</h2>
+        <p></p>
+        
+       
+
+        <h2 id="funciones">Funciones</h2>
+        <p></p>
+        
+      
+        <div id="formulario" class="quiz-container">
+            <h2>Evaluación: Manejo de CSS</h2>
+            
+            <div class="quiz-question">
+                <p>1. CSS significa Cascading Style Sheets.</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="q1" value="v"> Verdadero</label>
+                    <label><input type="radio" name="q1" value="f"> Falso</label>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <p>2. Las clases en CSS se definen con un punto.</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="q2" value="v"> Verdadero</label>
+                    <label><input type="radio" name="q2" value="f"> Falso</label>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <p>3. El padding es el espacio fuera del borde de un elemento.</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="q3" value="v"> Verdadero</label>
+                    <label><input type="radio" name="q3" value="f"> Falso</label>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <p>4. La pseudo-clase :hover se aplica cuando el ratón está sobre el elemento.</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="q4" value="v"> Verdadero</label>
+                    <label><input type="radio" name="q4" value="f"> Falso</label>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <p>5. La propiedad display define el tipo de caja de un elemento.</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="q5" value="v"> Verdadero</label>
+                    <label><input type="radio" name="q5" value="f"> Falso</label>
+                </div>
+            </div>
+        </div>
+        <br><a href="../../index.html"><-Regresar al inicio</a>
+    </article>
+</body>
+</html>
