@@ -37,17 +37,19 @@
                 <td><a href="#funciones">5. Funciones</a></td>
             </tr>
             <tr>
-                <td><a href="#formulario">6. Formulario</a></td>
+                <td><a href="#enlazamiento">6. Enlazamiento con HTML</a></td>
             </tr>
             <tr>
-                <td><a href="../../resources/pdf/Manejo del CSS - Blog Paradicmas de Programacion.pdf" download="Manejo de CSS">Descargar esta pagina</a></td>
+                <td><a href="#formulario">7. Formulario</a></td>
+            </tr>
+            <tr>
+                <td><a href="../../resources/pdf/Manejo del Java Script - Blog Paradicmas de Programacion.pdf" download="Manejo de JavaScript">Descargar esta pagina</a></td>
             </tr>
         </table>
     </aside>
 
     <h1>Manejo de JavaScript</h1>
 
-    
     <article>
         <h2 id="introduccion">Introducción</h2>
         <p>JavaScript (JS) es un lenguaje de programación especializado en dar interactividad
@@ -67,77 +69,166 @@
                el sistema muestre un error, lo que suele causar fallos
                en el código moderno.</p>
                
-               <pre><code>
-               var nombre = "Gabriel";  
-               var edad = 18;              
-               var esEstudiante = true;    
-               </code></pre>
-
+               <pre><code>var nombre = "Gabriel";  
+var edad = 18;              
+var esEstudiante = true;</code></pre>
                 
             <li><h3>Let</h3></li>
             <p>Es la forma moderna de declarar variables. Tiene un alcance de bloque, lo que significa
             que solo es accesible dentro del bloque donde se declara, evitando problemas de scope
             que pueden surgir con var.</p>
 
-            <pre><code>
-               let nombre = "Gabriel";  
-               let edad = 18;              
-               let esEstudiante = true;    
-            </code></pre>
+            <pre><code>let nombre = "Gabriel";  
+let edad = 18;              
+let esEstudiante = true;</code></pre>
 
             <li><h3>Const</h3></li>
             <p>Es la forma de declarar constantes en JavaScript. Una vez asignado un valor,
             no puede ser reasignado ni redeclarado.</p>
 
-            <pre><code>
-               const CI = 33863444;  
-               const NOMBRE = "Gabriel";              
-               const EDAD = 18;    
-            </code></pre>
-
-            
+            <pre><code>const CI = 33863444;  
+const NOMBRE = "Gabriel";              
+const EDAD = 18;</code></pre>
         </ul>
         <img class="sintaxis-image" src="../../resources/pictures/variables-js.png" alt="sintaxis-css">
     
         <h2 id="ciclos">Ciclos</h2>
-        <p>Los ciclos son estructuras de control que permiten repetir un bloque de código varias veces. En JavaScript, existen diferentes tipos de ciclos, como el ciclo for, el ciclo while y el ciclo do-while.</p>
+        <p>Los ciclos son estructuras de control que permiten repetir un bloque de código
+        varias veces. En JavaScript, existen diferentes tipos de ciclos, como el ciclo for, 
+        el ciclo while y el ciclo do-while.</p>
+        <ul>
+            <li>
+                <h3>Ciclo for</h3>
+                <pre><code>for (let i = 0; i < 10; i++) {
+console.log(i);
+}</code></pre>
+            </li>
 
-        <h3>Ciclo for</h3>
-        <pre><code>for (let i = 0; i < 10; i++) {
-    console.log(i);
-}
-</code></pre>
-
-        <h3>Ciclo while</h3>
-        <pre><code>let i = 0;
+            <li>
+                <h3>Ciclo while</h3>
+                <pre><code>let i = 0;
 while (i < 10) {
-    console.log(i);
-    i++;
-}
-</code></pre>
+console.log(i);
+i++;
+}</code></pre>
+            </li>
 
-      <h3>Ciclo do-while</h3>
-        <pre><code>let i = 0;
+            <li>
+                <h3>Ciclo do-while</h3>
+                <pre><code>let i = 0;
 do {
-    console.log(i);
-    i++;
-} while (i < 10);   
-</code></pre>
-
-        <h2 id="condicionales">Condicionales</h2>
-        <p></p>
+console.log(i);
+i++;
+} while (i < 10);</code></pre>
+            </li>
+        </ul>
         
-       
+        <h2 id="condicionales">Condicionales</h2>
+        <p>JavaScript también contiene estructuras condicionales. 
+        Son herramientas especializadas en la toma de decisiones 
+        dentro del código; básicamente, le dicen al navegador qué 
+        camino debe seguir según la situación.</p>
+        
+        <ul>
+            <li>
+                <h3>Estructura if y else</h3>
+                <p>La combinación if y else funciona como una bofurcación en el camino: 
+                el if evalúa si una condición es verdadera para ejecutar un bloque de código
+                específico, mientras que el else actúa como un respaldo automático que se 
+                ejecuta inmediatamente si esa condición resulta ser falsa.</p>
+                <pre><code>let velocidad = 52;
+
+if (velocidad > 50) {
+console.log("Velocidad alta.");
+} else {
+console.log("Velocidad normal.");
+}</code></pre>
+            </li>
+
+            <li>
+                <h3>Estructura else if</h3>
+                <p>Permite comprobar una nueva condición específica en caso de que las anteriores hayan fallado.
+                Es ideal para encadenar múltiples evaluaciones en un orden jerárquico antes de llegar al final.</p>
+                <pre><code>let nivel = 2;
+if (nivel === 1) {
+console.log("Nivel inicial.");
+} else if (nivel === 2) {
+console.log("Nivel intermedio.");
+} else {
+console.log("Nivel avanzado.");
+}</code></pre>
+            </li>
+
+            <li>
+                <h3>Estructura Switch</h3>
+                <p>Evalúa una única variable y compara su valor directamente con una lista de casos
+                predefinidos. Es la alternativa más limpia y organizada para evitar acumular 
+                demasiados if y else if seguidos.</p>
+                <pre><code>let nivel = 2;
+switch (nivel) {
+    case 1:
+        console.log("Nivel inicial.");
+        break;
+    case 2:
+        console.log("Nivel intermedio.");
+        break;
+    default:
+        console.log("Nivel avanzado.");
+}</code></pre>
+            </li>
+        </ul>
 
         <h2 id="funciones">Funciones</h2>
-        <p></p>
+        <ul>
+            <li>
+                <h3>Funciones normales</h3>
+                <p>Las funciones normales se declaran utilizando la palabra clave function, 
+                tienen la ventaja de admitir hoisting y poseen su propio contexto para la palabra clave this.</p>
+                <pre><code>// Declaración
+function saludar(nombre) {
+return "Hola, " + nombre;
+}
+
+// Llamada a la función
+saludar("Jose");</code></pre>
+            </li>
+            
+            <li>
+                <h3>Funciones flecha</h3>
+                <p>Por otro lado, las funciones flecha son una alternativa moderna que utiliza el
+                operador => para reducir la sintaxis al mínimo, permitiendo omitir las llaves y la
+                palabra return si el bloque tiene una sola línea; además, heredan el contexto de this.</p>
+                <pre><code>// Declaración
+const saludarFlecha = (nombre) => "Hola, " + nombre;
+
+// Llamada a la función
+saludarFlecha("Jose");</code></pre>
+            </li>
+        </ul>
+
+        <h2 id="enlazamiento">Enlazamiento con HTML</h2>
+        <p>Para que el navegador ejecute JavaScript, debes conectarlo al documento HTML mediante la etiqueta <code>&lt;script&gt;</code>. Tienes dos formas principales:</p>
         
-      
+        <ul>
+            <li>
+                <h3>Script Interno</h3>
+                <p>El código se escribe directamente en el archivo HTML. Ideal para scripts muy cortos.</p>
+                <pre><code>&lt;script&gt;
+    console.log("Hola desde el HTML");
+&lt;/script&gt;</code></pre>
+            </li>
+            <li>
+                <h3>Script Externo</h3>
+                <p>El código se guarda en un archivo <code>.js</code> aparte y se vincula usando el atributo <code>src</code>. Es la forma más limpia y recomendada.</p>
+                <pre><code>&lt;script src="codigo.js"&gt;&lt;/script&gt;</code></pre>
+            </li>
+        </ul>
+
         <div id="formulario" class="quiz-container">
-            <h2>Evaluación: Manejo de CSS</h2>
+            <h2>Evaluación: Manejo de JavaScript</h2>
             
             <div class="quiz-question">
-                <p>1. CSS significa Cascading Style Sheets.</p>
+                <p>1. Las variables declaradas con `let` tienen un alcance de bloque.</p>
                 <div class="quiz-options">
                     <label><input type="radio" name="q1" value="v"> Verdadero</label>
                     <label><input type="radio" name="q1" value="f"> Falso</label>
@@ -145,7 +236,7 @@ do {
             </div>
 
             <div class="quiz-question">
-                <p>2. Las clases en CSS se definen con un punto.</p>
+                <p>2. Una variable declarada con `const` puede ser reasignada con un nuevo valor más adelante.</p>
                 <div class="quiz-options">
                     <label><input type="radio" name="q2" value="v"> Verdadero</label>
                     <label><input type="radio" name="q2" value="f"> Falso</label>
@@ -153,7 +244,7 @@ do {
             </div>
 
             <div class="quiz-question">
-                <p>3. El padding es el espacio fuera del borde de un elemento.</p>
+                <p>3. El ciclo `do-while` evalúa su condición al final, asegurando que el código se ejecute al menos una vez.</p>
                 <div class="quiz-options">
                     <label><input type="radio" name="q3" value="v"> Verdadero</label>
                     <label><input type="radio" name="q3" value="f"> Falso</label>
@@ -161,7 +252,7 @@ do {
             </div>
 
             <div class="quiz-question">
-                <p>4. La pseudo-clase :hover se aplica cuando el ratón está sobre el elemento.</p>
+                <p>4. Las funciones flecha utilizan el operador `=>` para reducir su sintaxis.</p>
                 <div class="quiz-options">
                     <label><input type="radio" name="q4" value="v"> Verdadero</label>
                     <label><input type="radio" name="q4" value="f"> Falso</label>
@@ -169,7 +260,7 @@ do {
             </div>
 
             <div class="quiz-question">
-                <p>5. La propiedad display define el tipo de caja de un elemento.</p>
+                <p>5. Para enlazar un archivo externo de JavaScript se utiliza la etiqueta `&lt;link&gt;`.</p>
                 <div class="quiz-options">
                     <label><input type="radio" name="q5" value="v"> Verdadero</label>
                     <label><input type="radio" name="q5" value="f"> Falso</label>
