@@ -83,11 +83,40 @@ h3.code-inline {
     color: #0ceca5;
 }
 
+.post {
+    text-decoration: none;
+    color: white;
+}
+
 .post_title {
+    font-size: 40px;
     text-decoration: none;
     font-family: "Open Sans Bold";
-    font-size: 30px;
+    color: #e2e8f0;
 }
+
+.post-link {
+    text-decoration: none;
+    color: #e2e8f0;
+    display: block;
+}
+
+.post-link:hover article {
+    background-color: #3a3a3a;
+}
+
+/* Aseguramos que los enlaces con la clase post_title no hereden el color verde ni el subrayado global */
+a.post_title, .post_title {
+    color: #e2e8f0;
+    text-decoration: none;
+}
+
+a.post_title:hover, .post_title:hover {
+    color: #bdc1c6;
+    text-decoration: none;
+}
+
+
 
 /* LINKS */
 a {
@@ -139,11 +168,32 @@ img {
     width: 500px;
 }
 
-iframe {
-    width: 560px;
-    height: 315px;
+/* Iframes responsivos para ejemplos y multimedia */
+.iframe-container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 10px;
+}
+
+iframe, .example-iframe {
+
+    width: 100%;
+    max-width: 1000px;
+    height: 600px;
     display: block;
     margin: 0 auto;
+    border: 2px solid #0ceca5;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+}
+
+@media (max-width: 1024px) {
+    iframe, .example-iframe { height: 520px; }
+}
+
+@media (max-width: 767px) {
+    iframe, .example-iframe { height: 420px; }
 }
 
 
