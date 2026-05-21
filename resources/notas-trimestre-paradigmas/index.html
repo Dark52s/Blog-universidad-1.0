@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script defer src="index.js" ></script>
+    <link rel="stylesheet" href="style.css">
+    
+    <title>notas trimestre paradigmas</title>
+</head>
+<body>
+    <h1>Notas del trimestre de los estudiantes</h1>
+
+    <form name="formEstudiantes" id="formEstudiantes">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="apellido">Apellido</label>
+        <input type="text" name="apellido" id="apellido" required>
+
+        <label for="cedula">Cedula</label>
+        <input type="number" name="cedula" id="cedula" required>
+
+        <label for="nota1">Nota 1</label>
+        <input type="number" min="0" max="100" name="nota1" id="nota1" required>
+
+        <label for="nota2">Nota 2</label>
+        <input type="number" min="0" max="100" name="nota2" id="nota2" required>
+
+        <label for="nota3">Nota 3</label>
+        <input type="number" min="0" max="100" name="nota3" id="nota3" required>
+
+        <label for="nota4">Nota 4</label>
+        <input type="number" min="0" max="100" name="nota4" id="nota4" required>
+    
+        <button type="submit">Guardar</button>
+    </form>
+
+    <table id="tablaEstudiantes">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Cedula</th>
+                <th>Nota 1</th>
+                <th>Nota 2</th>
+                <th>Nota 3</th>
+                <th>Nota 4</th>
+                <th>Promedio</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <div><h2>
+        Aprobados: <span id="aprobados">0</span>
+        Reprobados: <span id="reprobados">0</span>
+    </h2></div>
+
+</body>
+</html>
