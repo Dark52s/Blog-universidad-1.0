@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Acceso al Sistema</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="caja-login" class="contenedor-pequeno">
+        <h2>☕ Iniciar Sesión</h2>
+        <p>Usuario: <input type="text" id="usuario"></p>
+        <p>Contraseña: <input type="password" id="clave"></p>
+        <button onclick="entrar()">Ingresar</button>
+        <p id="mensaje-error" style="color: red;"></p>
+    </div>
+
+    
+    <div id="caja-menu" class="oculto">
+        <h2>Sistema de Café - Menú</h2>
+        <div class="botones-menu">
+            <a href="proveedores/proveedores.html">📦 Módulo 1: Proveedores</a>
+            <a href="clientes/clientes.html">👥 Módulo 2: Clientes</a>
+            <a href="gestion/gestion.html">🛒 Módulo 3: Compra y Venta</a>
+            <a href="reportes/reportes.html">📊 Módulo 4: Reportes</a>
+        </div>
+        <br><br>
+        <button onclick="salir()" style="background: red; color: rgb(0, 0, 0);">Cerrar Sesión</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

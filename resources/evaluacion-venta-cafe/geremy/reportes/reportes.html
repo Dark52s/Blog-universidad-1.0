@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reportes</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="caja-modulo">
+        <h2>📊 Panel de Reportes Generales</h2>
+        <a href="../index.html">⬅️ Volver al Menú</a>
+        <br><br>
+
+        <div class="bloque-reporte">
+            <h3>-Reporte de Ganancia Total (Conversión General en USD)</h3>
+            <p>Balance Neto: <span id="ganancia-total" class="resaltado-verde">$0.00</span></p><br>
+        </div>
+
+        <div class="bloque-reporte">
+            <h3>-Cuentas por Cobrar de la Semana (Ventas Financiadas)</h3>
+            <p>Total pendiente de cobro: <span id="total-cxc" class="resaltado-rojo"> 0.00 Bs.</span></p><br>
+        </div>
+
+        <div class="bloque-reporte">
+            <h3>-Reporte Extra 1: Cantidad de operaciones hechas</h3>
+            <p id="total-operaciones">Total: 0</p><br>
+        </div>
+
+        <div class="bloque-reporte">
+            <h3>-Reporte Extra 2: Estado del flujo del Negocio</h3>
+            <p id="estado-negocio">Calculando...</p><br>
+        </div>
+    </div>
+    <script src="reportes.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Transacciones</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="caja-modulo">
+        <h2>🛒 Registro de Compra / Venta de Café</h2>
+        <a href="../index.html">⬅️ Volver al Menú</a>
+        <br><br>
+
+        <form onsubmit="procesarOperacion(event)">
+            <p>Tipo de Operación:
+                <select id="tipo-op" onchange="actualizarListaNegocios()" required>
+                    <option value="">-- Seleccionar --</option>
+                    <option value="Compra">Compra (A Proveedor - Pago en $)</option>
+                    <option value="Venta">Venta (A Cliente - Crédito en Bs.)</option>
+                </select>
+            </p>
+
+            <p>Seleccionar Empresa:
+                <select id="negocio-seleccionado" required>
+                    <option value="">Primero elige el tipo...</option>
+                </select>
+            </p>
+
+            <p>Fecha: <input type="date" id="fecha-op" required></p>
+
+            <h3>Precios por Kg (editable)</h3>
+            <p>Precio Café Suave: $ <input type="number" id="precio-suave" step="0.01" min="0" value="4.00"></p>
+            <p>Precio Café Normal: $ <input type="number" id="precio-normal" step="0.01" min="0" value="5.00"></p>
+            <p>Precio Café Fuerte: $ <input type="number" id="precio-fuerte" step="0.01" min="0" value="6.00"></p>
+            <p><button type="button" onclick="guardarPrecios()">Guardar Precios</button></p>
+
+            <h3>Cantidad de Café por Tipo (en Kg):</h3>
+            <p>☕ Café Suave: <input type="number" id="kg-suave" min="0" value="0"></p>
+            <p>☕ Café Normal: <input type="number" id="kg-normal" min="0" value="0"></p>
+            <p>☕ Café Fuerte: <input type="number" id="kg-fuerte" min="0" value="0"></p>
+
+            <button type="submit">Procesar Operación</button>
+        </form>
+
+        <h3>Historial General de Movimientos</h3>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Tipo</th>
+                    <th>Negocio</th>
+                    <th>Detalle de Kilos</th>
+                    <th>Monto Total</th>
+                </tr>
+            </thead>
+            <tbody id="historial-tabla"></tbody>
+        </table>
+    </div>
+    <script src="gestion.js"></script>
+</body>
+</html>

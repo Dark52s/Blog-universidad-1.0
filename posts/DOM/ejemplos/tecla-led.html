@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo: Tecla LED</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #121212;
+            font-family: 'Open Sans', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .panel {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+        .led {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: #2a2a2a;
+            border: 2px solid #444;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+            font-weight: bold;
+            color: #555;
+            transition: background 0.15s, border-color 0.15s, color 0.15s, box-shadow 0.15s;
+            user-select: none;
+        }
+        .led.activo {
+            background: #0ceca5;
+            border-color: #0ceca5;
+            color: #121212;
+            box-shadow: 0 0 20px rgba(12, 236, 165, 0.5);
+        }
+        .info {
+            text-align: center;
+            margin-top: 20px;
+            color: #bdc1c6;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="panel">
+            <div id="a" class="led">A</div>
+            <div id="s" class="led">S</div>
+            <div id="d" class="led">D</div>
+            <div id="f" class="led">F</div>
+        </div>
+        <div class="info">Presiona A, S, D o F (Hacer click en el recuadro del ejemplo para interactuar)</div>
+    </div>
+
+    <script>
+        // Escucha cuando se presiona una tecla en toda la pagina
+        document.addEventListener("keydown", (e) => {
+            // Cuando la tecla presionada coincida con el id de uno de los led obtendremoos su referencia
+            let led = document.getElementById(e.key.toLowerCase()); 
+            if (led) led.classList.add("activo"); 
+        });
+
+        // Escucha que se haya soltado una tecla en toda la pagina
+        document.addEventListener("keyup", (e) => {
+            let led = document.getElementById(e.key.toLowerCase());
+            if (led) led.classList.remove("activo");
+        });
+    </script>
+</body>
+</html>

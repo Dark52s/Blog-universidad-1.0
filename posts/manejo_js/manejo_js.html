@@ -3,23 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manejo del CSS - Blog Paradicmas de Programacion</title>
+    <title>Manejo de JavaScript - Blog Paradicmas de Programacion</title>
     <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../resources/highlight/styles/codepen-embed.css">
 </head>
 <body>
-    <header class="blog-header">
-        <a class="blog_title" href="../../index.html">Paradigmas de Programación</a>
-        <nav class="menu">
-            <a href="../../index.html">Inicio</a>
-            <a href="../arquitectura-web-cliente-servidor.html">Paradigmas</a>
-            <a href="../manejo_html/manejo-html.html">Manejo de HTML</a>
-            <a href="../manejo-css/manejo-css.html">Manejo de CSS</a>
-            <a href="manejo_js.html">Manejo de JavaScript</a>
-            <a href="../formularios.html">Formularios</a>
-        </nav>
-    </header>
+    <!-- Header -->
+    <script src="../../index.js" data-depth="2"></script>
+
     <aside class="toc-sidebar">
-        <h2>Tabla de contenido</h2>
+        <h2>Manejo de JavaScript</h2>
+        <h3>Tabla de contenido</h3>
         <table>
             <tr>
                 <td><a href="#introduccion">1. Introducción</a></td>
@@ -311,9 +305,9 @@ function promediar(notas = [nota1, nota2, nota3, nota4]) {
 }</code></pre>
 
 
-        <h2><a href="../../resources/notas-trimestre-paradigmas/index.html">Probar programa</a></h2>
+        <h2><a href="../../resources/ejemplo-estudiantes/francisco-padrino/index.html" target="_blank" rel="noopener noreferrer">Probar programa</a></h2>
         <div id="programaEjemplo">
-            <h2><a href="../../resources/notas-trimestre-paradigmas.zip" download="notas-trimestre-paradigmas">Descargar programa ejemplo</a></h2>
+            <h2><a href="../../resources/ejemplo-estudiantes/francisco-padrino/francisco-padrino.zip" download="francisco-padrino ">Descargar programa ejemplo</a></h2>
         </div>
 
         <h3>Programa Gabriel y Geremy</h3>
@@ -373,7 +367,7 @@ async function calcularNotas() {
 }
 
 calcularNotas();</code></pre>
-        <h2><a href="../../resources/gabriel/Programa_notas_gabriel.zip" download="programa_notas_gabriel">Descargar programa ejemplo</a></h2>
+        <h2><a href="../../resources/ejemplo-estudiantes/gabriel-geremy/gabriel-geremy.zip" download="gabriel-geremy">Descargar programa ejemplo</a></h2>
 
         <div id="formulario" class="quiz-container">
             <h2>Evaluación: Manejo de JavaScript</h2>
@@ -420,5 +414,7 @@ calcularNotas();</code></pre>
         </div>
         <br><a href="../../index.html"><-Regresar al inicio</a>
     </article>
+    <script src="../../resources/highlight/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
 </body>
 </html>

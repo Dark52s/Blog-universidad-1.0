@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo: Foco</title>
+
+</head>
+
+<body>
+    <style>
+        * { font-family: sans-serif;}
+
+        body {
+            background-color: #121212;
+        }
+
+        .contenedor {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #foco {
+            background-color: #444;
+            width: 120px;         
+            height: 120px;
+            border-radius: 50%; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #estado {
+            color: #bdc1c6;
+            margin-top: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+    </style>
+
+    <div class="contenedor">
+        <div id="foco">Foco</div>
+        <p id="estado">Apagado</p>
+        </div>
+    </div>
+        
+    <script>
+        // Obtenemos la referencia a los elementos mediante su ID
+        let f = document.getElementById("foco");
+        let e = document.getElementById("estado");
+
+        // El mouse entra al espacio del elemento
+        f.addEventListener("mouseenter", () => { 
+            f.style.background = "#ffe066";
+            f.style.boxShadow = "0 0 30px #ffe066";
+            e.textContent = "Iluminando...";
+        });
+
+        // El mouse sale del espacio del elemento
+        f.addEventListener("mouseleave", () => {
+            f.style.background = "#444";
+            f.style.boxShadow = "none";
+            e.textContent = "Apagado";
+        });
+
+        // Usuario hace click
+        f.addEventListener("click", () => {
+            f.style.background = "#ff8c00";
+            f.style.boxShadow = "0 0 40px #ff8c00";
+            e.textContent = "Luz maxima";
+        });
+
+        // Usuario hace doble click
+        f.addEventListener("dblclick", () => {
+            f.style.background = "#444";
+            f.style.boxShadow = "none";
+            e.textContent = "Fundido";
+        });
+    </script>
+</body>
+</html>

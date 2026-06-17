@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Proveedores</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="caja-modulo">
+        <h2>📦 Módulo de Proveedores (Contado $)</h2>
+        <a href="../index.html">⬅️ Volver al Menú</a>
+        <br><br>
+
+        <form id="formulario" onsubmit="guardarProveedor(event)">
+            <input type="hidden" id="id-editar">
+            
+            <p>Nombre del Negocio: <br><input type="text" id="negocio" required></p>
+            <p>RIF: <br> <input type="text" id="rif" placeholder="J-12345678-0" required></p>
+            
+            <h3>Datos de Contacto</h3>
+            <p>Nombre: <input type="text" id="nombre" required></p>
+            <p>Cédula: <input type="text" id="cedula" required></p>
+            <p>Teléfono: <input type="text" id="telefono" required></p>
+            <p>Correo: <input type="email" id="correo" required></p>
+            
+            <button type="submit">Guardar Proveedor</button>
+        </form>
+
+        <h3>Lista de Proveedores Registrados</h3>
+        <table border="1" id="tabla">
+            <thead>
+                <tr>
+                    <th>Negocio</th>
+                    <th>RIF</th>
+                    <th>Contacto</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="lista-proveedores"></tbody>
+        </table>
+    </div>
+    <script src="proveedores.js"></script>
+</body>
+</html>

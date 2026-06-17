@@ -13,6 +13,17 @@
     src: url(resources/fonts/Open_Sans/OpenSans-Bold.ttf);
 }
 
+:root {
+    /* Colores de la pagina */
+    --bg-color: #121212; /* Color del fondo */
+    --font-color: #e2e8f0;
+    --second-font-color: #bdc1c6;
+    --primary-color: #303030; /*El color de los bloques de texto principales como los articles */
+    --secundary-color: #0ceca5; /* Color contrastante de la pagina como para titulos u otros elementos que destacar */
+    --tertiary-color: #1f1f1f; /* Tercer color para diferenciar elementos de los bloques de texto como los quiz o popups */
+    --code-bg: #1a1a1a;
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -21,8 +32,8 @@ html, body {
 body {
     font-family: 'Open Sans', sans-serif;
     font-size: 17px;
-    background-color: rgb(18, 18, 18);
-    color: #e2e8f0;
+    background-color: var(--bg-color);
+    color: var(--font-color)
 }
 header {
     position: sticky;
@@ -40,87 +51,73 @@ h2{
     scroll-margin-top: 150px;
 }
 
-h3.code-inline {
+h3.code-inline, h2.code-inline {
     display: inline-block;
     margin: 10px 0 5px 0;
     padding: 4px 8px;
     border-radius: 3px;
-    background-color: #1a1a1a;
+    background-color: var(--code-bg);
 }
+
+
 
 
 .blog_title {
     text-align: center;
-    color: #0ceca5;
+    color: var(--secundary-color);
     font-size: 60px;
     display: block;
-    background-color: #303030;
+    background-color: var(--primary-color);
     font-family: 'Jersey';
     margin-bottom: 0;
     height: 70px;
     text-decoration: none;
 }
 
-
 /* Menu de navegación */
 .menu {
-    background: #1f1f1f;
+    background: var(--tertiary-color);
     padding: 12px 20px;
     display: flex;
     gap: 20px;
     justify-content: center;
-    border-bottom: 1px solid #3c4043;
     margin-bottom: 2%;
 }
 
 .menu a {
-    color: #bdc1c6;
+    color: var(--second-font-color);
     text-decoration: none;
     font-size: 14px;
 }
 
 .menu a:hover {
-    color: #0ceca5;
+    color: var(--secundary-color);
+}
+
+.menu a.selected {
+    color: var(--secundary-color);
+    font-weight: bold;
 }
 
 .post {
     text-decoration: none;
-    color: white;
+    color: var(--font-color);
+    display: block;
+}
+
+article:has(a.post):hover {
+    background-color: #3a3a3a;
 }
 
 .post_title {
     font-size: 40px;
     text-decoration: none;
     font-family: "Open Sans Bold";
-    color: #e2e8f0;
 }
-
-.post-link {
-    text-decoration: none;
-    color: #e2e8f0;
-    display: block;
-}
-
-.post-link:hover article {
-    background-color: #3a3a3a;
-}
-
-/* Aseguramos que los enlaces con la clase post_title no hereden el color verde ni el subrayado global */
-a.post_title, .post_title {
-    color: #e2e8f0;
-    text-decoration: none;
-}
-
-a.post_title:hover, .post_title:hover {
-    color: #bdc1c6;
-    text-decoration: none;
-}
-
-
 
 /* LINKS */
 a {
-    color: #0ceca5;
+    color: var(--secundary-color);
 }
 
 
@@ -134,6 +131,7 @@ article {
     margin: 1% auto 1% auto;
     background-color: rgb(48, 48, 48);
     display: block;
+    max-width: 1000px;
     padding: 1%;
     border-radius: 10px;
 }
@@ -143,17 +141,17 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin: 15px 0;
-    border: 2px solid #0ceca5;
+    border: 2px solid var(--secundary-color);
     background-color: #07e81318;
 }
 
 th, td {
-    border: 1px solid #0ceca5;
+    border: 1px solid var(--secundary-color);
     padding: 10px 12px;
     text-align: left;
 }
 th {
-    color: #e2e8f0;
+    color: var(--font-color);
     font-weight: bold;
 }
 
@@ -182,7 +180,7 @@ iframe, .example-iframe {
     height: 600px;
     display: block;
     margin: 0 auto;
-    border: 2px solid #0ceca5;
+    border: 2px so6lid var(--secundary-color);
     border-radius: 8px;
     background: #ffffff;
     box-shadow: 0 6px 18px rgba(0,0,0,0.6);
@@ -199,31 +197,12 @@ iframe, .example-iframe {
 
 /* CODIGO EN LÍNEA (dentro de párrafos) */
 .code-inline {
-    background-color: #1a1a1a;
+    background-color: var(--code-bg);
     padding: 2px 6px;
     font-family: 'Courier New', monospace;
     border-radius: 3px;
-    color: #0ceca5;
+    color: var(--secundary-color);
     font-size: 0.95em;
-}
-
-/* BLOQUES DE CÓDIGO */
-pre {
-    background-color: #1a1a1a ;
-    border: 2px solid #0ceca5;
-    border-radius: 8px;
-    padding: 15px 20px;
-    overflow-x: auto;
-    margin: 15px 0;
-}
-
-pre code {
-    font-family: 'Courier New', Consolas, monospace;
-    font-size: 14px;
-    line-height: 1.5;
-    color: #ffffff;
-    white-space: pre-wrap;
-    word-break: break-word;
 }
 
 /* REFERENCIAS */
@@ -245,7 +224,7 @@ strong {
 
 /* marker es un pseudo elemento para darle un estilo a los asteriscos de las listas */
 li::marker {
-    color: #0ceca5;
+    color: var(--secundary-color);
 }
 
 /* INTEGRANTES */
@@ -286,7 +265,7 @@ li::marker {
     background: #2a2a2a;
     padding: 10px;
     border-radius: 8px;
-    border: 1px solid #0ceca5;
+    border: 1px solid var(--secundary-color);
     width: 180px;
     z-index: 10;
     margin-left: 10px;
@@ -301,7 +280,7 @@ li::marker {
     height: 150px;
     border-radius: 50%;
     object-fit: contain; /* Hace que la imagen se adapte a la forma del borde sin deformarse */
-    border: 3px solid #0ceca5;
+    border: 3px solid var(--secundary-color);
 }
 
 .integrante .nombre {
@@ -309,13 +288,13 @@ li::marker {
     font-size: 18px;
     font-family: 'Open Sans Bold';
     margin: 10px 0 5px 0;
-    color: #e2e8f0;
+    color: var(--font-color);
 }
 
 .integrante .cedula {
     text-align: center;
     font-size: 14px;
-    color: #bdc1c6;
+    color: var(--second-font-color);
     margin: 0;
 }
 
@@ -323,28 +302,28 @@ li::marker {
 .quiz-container {
     margin-top: 30px;
     padding: 20px;
-    background-color: #1f1f1f;
+    background-color: var(--tertiary-color);
     border-radius: 10px;
-    border: 2px solid #0ceca5;
+    border: 2px solid var(--secundary-color);
 }
 
 .quiz-container h2 {
     text-align: center;
-    color: #0ceca5;
+    color: var(--secundary-color);
     margin-bottom: 20px;
 }
 
 .quiz-question {
     margin-bottom: 20px;
     padding: 15px;
-    background-color: #2a2a2a;
+    background-color: var(--primary-color);
     border-radius: 8px;
 }
 
 .quiz-question p {
     margin: 0 0 10px 0;
     font-weight: bold;
-    color: #e2e8f0;
+    color: var(--font-color);
 }
 
 .quiz-options {
@@ -354,12 +333,12 @@ li::marker {
 }
 
 .quiz-options label {
-    color: #bdc1c6;
+    color: var(--second-font-color);
     cursor: pointer;
 }
 
 .quiz-options input[type="radio"] {
-    accent-color: #0ceca5;
+    accent-color: var(--secundary-color);
     margin-right: 8px;
 }
 
@@ -368,9 +347,9 @@ li::marker {
     position: fixed;
     top: 150px;
     left: 20px;
-    width: 200px;
-    background-color: rgb(48, 48, 48);
-    padding: 15px;
+    width:350px;
+    background-color: var(--primary-color);
+    padding: 10px;
     border-radius: 10px;
     max-height: 80vh;
     overflow-y: auto;
@@ -378,9 +357,12 @@ li::marker {
 }
 
 .toc-sidebar h2 {
-    font-size: 18px;
-    color: #0ceca5;
+    color: var(--secundary-color);
     margin-top: 0;
+    text-align: center;
+}
+
+.toc-sidebar h3 {
     text-align: center;
 }
 
@@ -392,7 +374,6 @@ li::marker {
 
 .toc-sidebar td {
     border: none;
-    border-bottom: 1px solid #3c4043;
     padding: 8px 5px;
 }
 
@@ -400,15 +381,22 @@ li::marker {
     border-bottom: none;
 }
 
-.toc-sidebar a {
+.toc-sidebar a {    
+    overflow-y: auto;
     text-decoration: none;
     font-size: 14px;
-    color: #bdc1c6;
+    color: var(--second-font-color);
     display: block;
 }
 
 .toc-sidebar a:hover {
-    color: #0ceca5;
+    color: var(--secundary-color);
+}
+
+.recientes {
+    text-align: center;
+    color: var(--secundary-color);
+    margin-top: 40px;
 }
 
 /* Movemos el contenido principal a la derecha si existe el sidebar centrando con margen dinámico */
@@ -416,6 +404,17 @@ aside.toc-sidebar ~ article, aside.toc-sidebar ~ h1 {
     margin-left: max(260px, calc(50vw - 500px));
     width: calc(100% - 310px); /* Al menos 50px de margen derecho siempre */
     max-width: 1000px;
+}
+
+/* OTROS */
+
+/* TOC - sub items indentados */
+.toc-sub-item {
+    padding-left: 35px !important;
+}
+
+.toc-sub-sub-item {
+    padding-left: 50px !important;
 }
 
 /* CSS para la pagina en telefono */
@@ -437,10 +436,7 @@ aside.toc-sidebar ~ article, aside.toc-sidebar ~ h1 {
     }
 
     .toc-sidebar {
-        position: static;
-        width: auto;
-        margin: 5%;
-        max-height: none;
+        display: none;
     }
     aside.toc-sidebar ~ article, aside.toc-sidebar ~ h1 {
         margin-left: 5%;

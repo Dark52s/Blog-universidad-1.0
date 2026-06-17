@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - Blog Paradigmas de Programación</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../resources/highlight/styles/codepen-embed.css">
+</head>
+<body>
+    <!-- Header -->
+    <script src="../../index.js" data-depth="2"></script>
+    <aside class="toc-sidebar">
+        <h2>DOM</h2>
+        <h3>Tabla de contenido</h3>
+        <table>
+            <tr><td><a href="#introduccion">1. Introducci&oacute;n</a></td></tr>
+            <tr><td><a href="#DOM">2. &iquest;Qu&eacute; es el DOM?</a></td></tr>
+            <tr><td><a href="#dom-js">3. DOM y JavaScript</a></td></tr>
+            <tr><td><a href="#obtener-referencia">4. Obtener referencia</a></td></tr>
+            <tr><td class="toc-sub-item"><a href="#getElementById">4.1. getElementById()</a></td></tr>
+            <tr><td class="toc-sub-item"><a href="#getElementsByClassName">4.2. getElementsByClassName()</a></td></tr>
+            <tr><td class="toc-sub-item"><a href="#getElementsByTagName">4.3. getElementsByTagName()</a></td></tr>
+            <tr><td class="toc-sub-item"><a href="#getElementsByName">4.4. getElementsByName()</a></td></tr>
+            <tr><td class="toc-sub-item"><a href="#querySelector">4.5. querySelector()</a></td></tr>
+            <tr><td class="toc-sub-item"><a href="#querySelectorAll">4.6. querySelectorAll()</a></td></tr>
+            <tr><td><a href="#insertar-eliminar-modificar">5. Insertar, eliminar y modificar HTML</a></td></tr>
+            <tr><td class="toc-sub-item"><a href="#innerHTML">5.1. innerHTML</a></td></tr>
+            <tr><td class="toc-sub-item"><a href="#textContent">5.2. textContent</a></td></tr>
+            <tr><td class="toc-sub-item"><a href="#createElement">5.3. createElement() y appendChild()</a></td></tr>
+            <tr><td class="toc-sub-item"><a href="#remove">5.4. remove()</a></td></tr>
+            <tr><td class="toc-sub-item"><a href="#removeChild">5.5. removeChild()</a></td></tr>
+            <tr><td><a href="#manipulacion-atributos">6. Manipulaci&oacute;n de atributos</a></td></tr>
+            <tr><td class="toc-sub-item"><a href="#setAttribute">6.1. setAttribute()</a></td></tr>
+            <tr><td class="toc-sub-item"><a href="#removeAttribute">6.2. removeAttribute()</a></td></tr>
+            <tr><td><a href="#manipulacion-estilos">7. Manipulaci&oacute;n de estilos CSS</a></td></tr>
+            <tr><td class="toc-sub-item"><a href="#style">7.1. style</a></td></tr>
+            <tr><td class="toc-sub-item"><a href="#cssText">7.2. style.cssText</a></td></tr>
+            <tr><td class="toc-sub-item"><a href="#getComputedStyle">7.3. getComputedStyle()</a></td></tr>
+            <tr><td class="toc-sub-item"><a href="#classList">7.4. classList</a></td></tr>
+            <tr><td><a href="#addEventListener">8. addEventListener()</a></td></tr>
+            <tr><td class="toc-sub-item"><a href="#sintaxis">8.1. Sintaxis</a></td></tr>
+            <tr><td class="toc-sub-item"><a href="#eventos">8.2. Eventos</a></td></tr>
+            <tr><td class="toc-sub-sub-item"><a href="#mouse">8.2.1. Mouse</a></td></tr>
+            <tr><td class="toc-sub-sub-item"><a href="#teclado">8.2.2. Teclado</a></td></tr>
+            <tr><td class="toc-sub-sub-item"><a href="#formularios">8.2.3. Formularios</a></td></tr>
+            <tr><td><a href="#programas-evaluacion">9. Programas de la evaluaci&oacute;n</a></td></tr>
+            <tr><td><a href="#formulario">10. Formulario</a></td></tr>
+        </table>
+    </aside>
+
+    <h1>DOM (Document Object Model)</h1>
+
+    <article>
+        <h2 id="introduccion">Introducci&oacute;n</h2>
+        <p>El DOM es una API web que representa a la pagima como tal y nos permite mediante un lenguaje de scripting
+        como JavaScript crear paginas dinamicas que reaccionan a la interacción del usuario de maneras en las que 
+        HTML por si solo no puede lograr, es clave conocer como funciona y como utilizarlo para una carrera profesional
+        en el desarrollo web, sobre todo en el frontend.</p>
+    </article>
+
+    <article>
+        <h2 id="DOM">¿Que es el DOM?</h2>
+        <p>Es una API (Application Programing Interface) que representa el documento (HTML, XML o SVG) 
+        de nuestra pagina por los que nos permite modificar la estructura y el estilo de la 
+        misma dinamicamente. Cuando el navegador analiza el documento HTML construye una arbol
+        que lo representa y sera utilizado para renderizar la pagina, un ejemplo del arbol
+        del DOM seria el siguiente:</p>
+
+        <img src="../../resources/pictures/DOM_tree.jpg" alt="No reference :&gt;">
+
+        <p>Cada rama de este arbol termina en un nodo que tiene dentro un objeto (como una etiqueta HTML) 
+        que puede ser accedido y modificado con un lenguaje de scripting como JavaScript o Python. 
+        En codigo HTML este arbol se veria asi:</p>
+
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Mi pagina&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p&gt;Parrafo&lt;/p&gt;
+    &lt;lu&gt;
+        &lt;!--Al ser hijos del elemento lu los elementos li estan mas abajos en el arbol--&gt;    
+        &lt;li&gt;Elemento 1&lt;/li&gt;
+        &lt;li&gt;Elemento 2&lt;/li&gt;
+    &lt;/lu&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre> 
+
+        <h2 id="dom-js">DOM y Javascript</h2>
+        <p>Mediante lenguajes como Python, Ruby o PHP podemos acceder y manipular al DOM pero
+        en este caso utilizaremos JavaScript para ejemplificar el uso de esta API.</p>
+
+
+
+        <!-- SECCION OBTENER REFERENCIA -->
+        <h2 id="obtener-referencia">Obtener referencia</h2>
+        <p>Esto nos permitira modificar distintos elementos en nuestro documento HTML, para hacer
+        esto existen distintos metodos para obtener acceso a elementos HTML o selectores de CSS
+        entre estos encontramos:</p>
+
+        <h3 class="code-inline" id="getElementById">getElementById()</h3>
+        <p>Es un metodo que nos permite acceder a etiquetas HTML mediante su atributo ID unico.
+        Guardaremos la referencia en una variable (ya sea <span class="code-inline">let</span>,
+        <span class="code-inline">var</span> o <span class="code-inline">const</span>).</p>
+        <pre><code>&lt;body&gt;
+    &lt;h1 id="tituloRecetas"&gt;Pagina de Recetas&lt;/h1&gt;
+
+    &lt;script&gt;
+        const titulo = document.getElementById("tituloRecetas")
+    &lt;/script&gt;
+&lt;/body&gt;</code></pre>
+
+        <p>En este ejemplo obtenemos la etiqueta <span class="code-inline">&lt;h1&gt;</span> mediante
+        su id "tituloRecetas" y la almacenamos en una variable llamada titulo.</p>
+
+        <h3 class="code-inline" id="getElementsByClassName">getElementsByClassName()</h3>
+        <p>Es un metodo que nos permite capturar distintos elementos HTML que compartan una
+        misma clase, con la particularidad que no lo regresa como una variable o un arreglo sino
+        como un HTMLCollection vivo.</p>
+                <pre><code>&lt;body&gt;
+    &lt;p class="parrafosCanciones"&gt;Easier to Run - Linkin Park&lt;/p&gt;
+    &lt;p class="parrafosCanciones"&gt;Doll - Foo Fighters&lt;/p&gt;
+    &lt;p class="parrafosCanciones"&gt;Spoken For - FLAVOR FOLEY&lt;/p&gt;
+
+
+    &lt;script&gt;
+        const misCanciones = document.getElementByClassName("parrafosCanciones")
+    &lt;/script&gt;
+&lt;/body&gt;</code></pre>
+        <p>En este ejemplo seleccionamos los elementos <span class="code-inline">&lt;p&gt;</span>
+        con la clase "parrafosCanciones" que son almacenadas en el HTMLCollection misCanciones.</p>
+        
+
+        <h3 class="code-inline" id="getElementsByTagName">getElementsByTagName()</h3>
+        <p>Este metodo obtiene los elementos HTML mediante su tipo de etiqueta y regresa un 
+        HTMLCollection vivo.</p>
+        
+        <pre><code>&lt;body&gt;
+    &lt;p&gt;Lionel Messi&lt;/p&gt;
+    &lt;p&gt;Cristiano Ronaldo&lt;/p&gt;
+    &lt;p&gt;Bruno Fernandes&lt;/p&gt;
+
+
+    &lt;script&gt;
+        const pFutbolistas = document.getElementByTagName("p")
+    &lt;/script&gt;
+&lt;/body&gt;</code></pre>
+        <p>En este caso obtenemos los elementos <span class="code-inline">&lt;p&gt;</span>
+        que son guardados en el HTMLCollection pFutbolistas.</p>
+
+        <h3 class="code-inline" id="getElementsByName">getElementsByName()</h3>
+        <p>Este metodo obtiene los elementos HTML mediante su atributo <span class="code-inline">name</span>
+        y devuelve un NodeList. Es muy util para acceder a elementos de formularios.</p>
+        <pre><code>&lt;body&gt;
+    &lt;form&gt;
+        &lt;input type="radio" name="genero" value="masculino"&gt; Masculino
+        &lt;input type="radio" name="genero" value="femenino"&gt; Femenino
+        &lt;input type="radio" name="genero" value="otro"&gt; Otro
+    &lt;/form&gt;
+
+    &lt;script&gt;
+        const generos = document.getElementsByName("genero")
+    &lt;/script&gt;
+&lt;/body&gt;</code></pre>
+        <p>En este caso obtenemos todos los elementos con el atributo <span class="code-inline">name="genero"</span>
+        que son guardados en el NodeList generos, permitiendo iterar sobre ellos para saber cual esta seleccionado.</p>
+
+
+        <h3 class="code-inline" id="querySelector">querySelector()</h3>
+        <p>Es un metodo que nos permite acceder a un elemento HTML mediante un selector de CSS,
+        devolviendo unicamente la primera coincidencia que encuentre en el documento.</p>
+        <pre><code>&lt;body&gt;
+    &lt;ul id="listaCompras"&gt;
+        &lt;li class="producto"&gt;Manzanas&lt;/li&gt;
+        &lt;li class="producto"&gt;Pan&lt;/li&gt;
+        &lt;li class="producto"&gt;Leche&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;script&gt;
+        const primerProducto = document.querySelector(".producto")
+    &lt;/script&gt;
+&lt;/body&gt;</code></pre>
+        <p>En este ejemplo seleccionamos el primer elemento con la clase "producto"
+        (Manzanas) y lo almacenamos en la variable primerProducto. Tambien podemos usar
+        selectores mas especificos como <span class="code-inline">"#listaCompras .producto"</span>.</p>
+
+        <h3 class="code-inline" id="querySelectorAll">querySelectorAll()</h3>
+        <p>Este metodo funciona igual que <span class="code-inline">querySelector()</span> pero
+        devuelve todas las coincidencias en un NodeList en lugar de solo la primera.</p>
+        <pre><code>&lt;body&gt;
+    &lt;ul id="listaCompras"&gt;
+        &lt;li class="producto"&gt;Manzanas&lt;/li&gt;
+        &lt;li class="producto"&gt;Pan&lt;/li&gt;
+        &lt;li class="producto"&gt;Leche&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;script&gt;
+        const todosLosProductos = document.querySelectorAll(".producto")
+    &lt;/script&gt;
+&lt;/body&gt;</code></pre>
+        <p>A diferencia de <span class="code-inline">getElementsByClassName()</span>,
+        <span class="code-inline">querySelectorAll()</span> devuelve un NodeList estatico
+        y no una HTMLCollection viva, y permite usar cualquier selector de CSS.</p>
+
+
+
+        <!-- SECCION INSERTAR, ELIMINAR Y MODIFICAR HTML -->
+            <h2 id="insertar-eliminar-modificar">Insertar, eliminar y modificar HTML</h2>
+        <p>Ahora que sabemos como obtener la referencia a un elemento podemos modificar su contenido,
+        crear nuevas etiquetas, eliminar etiquetas, manipular sus atributos, etc. Estos son algunos metodos y
+        propiedades para hacerlo:</p>
+
+        <h3 class="code-inline" id="innerHTML">innerHTML</h3>
+        <p>Es una propiedad que permite obtener o asignar contenido HTML dentro de un elemento.
+        Al asignar, el string se parsea como HTML, por lo que puede crear nuevas etiquetas hijas.</p>
+        <pre><code>&lt;body&gt;
+    &lt;div id="contenedor"&gt;&lt;/div&gt;
+
+    &lt;script&gt;
+        const contenedor = document.getElementById("contenedor")
+        contenedor.innerHTML = "&lt;h2&gt;Bienvenido&lt;/h2&gt;&lt;p&gt;Este es un parrafo&lt;/p&gt;"
+    &lt;/script&gt;
+&lt;/body&gt;</code></pre>
+        <p>En este ejemplo insertamos un <span class="code-inline">&lt;h2&gt;</span> y un
+        <span class="code-inline">&lt;p&gt;</span> dentro del <span class="code-inline">div</span>
+        contenedor. El contenido previo se reemplaza por completo.</p>
+
+        <h3 class="code-inline" id="textContent">textContent</h3>
+        <p>Esta propiedad permite obtener o asignar solo el texto de un elemento, ignorando
+        cualquier etiqueta HTML. Es mas seguro que <span class="code-inline">innerHTML</span>
+        para evitar inyeccion de codigo.</p>
+        <pre><code>&lt;body&gt;
+    &lt;p id="mensaje"&gt;Hola Mundo&lt;/p&gt;
+
+    &lt;script&gt;
+        const mensaje = document.getElementById("mensaje");
+        mensaje.textContent = "Texto actualizado";
+    &lt;/script&gt;
+&lt;/body&gt;</code></pre>
+        <p>Aqui cambiamos el texto del parrafo por "Texto actualizado". Si asignamos un string
+        con etiquetas HTML, estas se mostraran como texto literal sin interpretarse.</p>
+
+        <!-- createElement() -->
+        <h3 id="createElement"><span class="code-inline">createElement()</span>  y  <span class="code-inline">appendChild()</span></h3>
+        <p>Con <span class="code-inline">createElement()</span> creamos una nueva etiqueta HTML,
+        y con <span class="code-inline">appendChild()</span> la agregamos como hija de un elemento
+        existente en el DOM.</p>
+        <pre><code>&lt;body&gt;
+    &lt;ul id="lista"&gt;&lt;/ul&gt;
+
+    &lt;script&gt;
+        const lista = document.getElementById("lista");
+        const nuevoItem = document.createElement("li");
+        nuevoItem.textContent = "Elemento nuevo";
+        lista.appendChild(nuevoItem);
+    &lt;/script&gt;
+&lt;/body&gt;</code></pre>
+        <p>Primero creamos un elemento <span class="code-inline">&lt;li&gt;</span>, le asignamos
+        texto con <span class="code-inline">textContent</span> y finalmente lo agregamos como
+        hijo de la lista con <span class="code-inline">appendChild()</span>.</p>
+
+        <h3 class="code-inline" id="remove">remove()</h3>
+        <p>Este metodo puede eliminar un elemento HTML, ademas no retorna nada.</p>
+        <pre><code>&lt;body&gt;
+    &lt;p id="nombre"&gt;Manuel&lt;/p&gt;
+
+    &lt;script&gt;
+        const nombre = document.getElementById("nombre");
+        nombre.remove();
+    &lt;/script&gt;
+&lt;/body&gt;</code></pre>
+
+        <p>En este ejemplo removemos el elemento <span class="code-inline">&lt;p&gt;</span> el ID nombre</p>
+
+
+         <h3 class="code-inline" id="removeChild">removeChild()</h3>
+         <p>Con este metodo podemos eliminar el nodo (elemento) hijo de un nodo padre  y a diferencia de 
+        <span class="code-inline">remove()</span> este si regresa el elemento eliminado.</p>
+<pre><code>&lt;body&gt;
+    &lt;ul id="padre"&gt;
+        &lt;li id="hijo"&gt;Juan Carlos&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;script&gt;
+        const padre = document.getElementById("padre");
+        const hijo = document.getElementById("hijo");
+        
+        const removido = padre.removeChild(hijo);
+    &lt;/script&gt;
+&lt;/body&gt;</code></pre>
+
+        <p>En este ejemplo removemos el nodo hijo de su nodo padre y lo almacenamos en un objeto llamado "removido".</p>
+
+
+        <h2 id="manipulacion-atributos">Manipulaci&oacute;n de atributos</h2>
+
+        <h3 class="code-inline" id="setAttribute">setAttribute()</h3>
+        <p>Este metodo permite asignar o modificar un atributo a un elemento HTML. Recibe el
+        nombre del atributo y el valor que se le quiere dar.</p>
+        <pre><code>&lt;body&gt;
+    &lt;img id="logo" src="default.png"&gt;
+
+    &lt;script&gt;
+        const logo = document.getElementById("logo")
+        logo.setAttribute("src", "nuevo-logo.png")
+        logo.setAttribute("alt", "Logo actualizado")
+    &lt;/script&gt;
+&lt;/body&gt;</code></pre>
+        <p>En este ejemplo cambiamos la imagen cambiando su atributo <span class="code-inline">src</span>
+        y agregamos un <span class="code-inline">alt</span> descriptivo usando
+        <span class="code-inline">setAttribute()</span>.</p>
+
+        <h3 class="code-inline" id="removeAttribute">removeAttribute()</h3>
+        <p>Este metodo elimina un atributo de un elemento HTML. Recibe el nombre del atributo
+        que se quiere eliminar. Si el atributo no existe, no hace nada.</p>
+        <pre><code>&lt;body&gt;
+    &lt;img id="logo" src="default.png" alt="Logo antiguo"&gt;
+
+    &lt;script&gt;
+        const logo = document.getElementById("logo")
+        logo.removeAttribute("alt")
+    &lt;/script&gt;
+&lt;/body&gt;</code></pre>
+        <p>En este ejemplo eliminamos el atributo <span class="code-inline">alt</span> de la imagen
+        usando <span class="code-inline">removeAttribute()</span>. El atributo
+        <span class="code-inline">src</span> permanece intacto.</p>
+
+
+        <h2 id="manipulacion-estilos">Manipulaci&oacute;n de estilos CSS</h2>
+
+        <p>Tambien podemos modificar los estilos de un elemento desde JavaScript, ya sea
+        asignando propiedades directas con <span class="code-inline">style</span>, escribiendo
+        CSS inline completo, o leyendo los estilos finales que el navegador calculo.</p>
+
+        <h3 class="code-inline" id="style">style</h3>
+        <p>La propiedad <span class="code-inline">style</span> permite acceder o modificar los estilos
+        inline de un elemento. Las propiedades CSS se escriben en camelCase en lugar de kebab-case.</p>
+        <pre><code>&lt;body&gt;
+    &lt;p id=&quot;texto&quot;&gt;Hola Mundo&lt;/p&gt;
+
+    &lt;script&gt;
+        const texto = document.getElementById(&quot;texto&quot;)
+        texto.style.color = &quot;#0ceca5&quot;
+        texto.style.fontSize = &quot;24px&quot;
+        texto.style.backgroundColor = &quot;#303030&quot;
+    &lt;/script&gt;
+&lt;/body&gt;</code></pre>
+        <p>Las propiedades como <span class="code-inline">background-color</span> se escriben como
+        <span class="code-inline">backgroundColor</span> (sin guion y la siguiente palabra en mayuscula).
+        El valor siempre se pasa como string.</p>
+
+        <h3 class="code-inline" id="cssText">style.cssText</h3>
+        <p>Permite asignar varios estilos de una sola vez usando la sintaxis CSS normal (kebab-case).
+        Sobrescribe todos los estilos inline previos del elemento.</p>
+        <pre><code>&lt;body&gt;
+    &lt;p id=&quot;texto&quot;&gt;Hola Mundo&lt;/p&gt;
+
+    &lt;script&gt;
+        const texto = document.getElementById(&quot;texto&quot;)
+        texto.style.cssText = &quot;color: #0ceca5; font-size: 24px; background: #303030; padding: 10px; border-radius: 5px;&quot;
+    &lt;/script&gt;
+&lt;/body&gt;</code></pre>
+        <p>Es util cuando necesitas aplicar varios estilos a la vez sin tener que asignarlos uno por uno.
+        A diferencia de <span class="code-inline">style</span>, aca se usa la sintaxis normal de CSS
+        con guiones.</p>
+
+        <h3 class="code-inline" id="getComputedStyle">getComputedStyle()</h3>
+        <p>Es una funcion que devuelve el valor real de una propiedad CSS de un elemento,
+        incluyendo los estilos heredados de clases (no solo los inline). Es de solo lectura.</p>
+        <pre><code>&lt;body&gt;
+    &lt;style&gt;
+        .caja { color: #0ceca5; font-size: 20px; }
+    &lt;/style&gt;
+
+    &lt;div id=&quot;caja&quot; class=&quot;caja&quot;&gt;Texto de ejemplo&lt;/div&gt;
+
+    &lt;script&gt;
+        const caja = document.getElementById(&quot;caja&quot;)
+        const color = getComputedStyle(caja).color
+        console.log(color) // rgb(12, 236, 165)
+    &lt;/script&gt;
+&lt;/body&gt;</code></pre>
+        <p>A diferencia de <span class="code-inline">style</span> que solo lee estilos inline,
+        <span class="code-inline">getComputedStyle()</span> devuelve el estilo final que el navegador
+        renderiza (clases CSS + inline combinados).</p>
+
+        <h3 id="classList"><span class="code-inline">classList</span></h3>
+        <p>Es una propiedad de los elementos DOM que permite manipular las clases CSS
+        de forma sencilla. Devuelve un <span class="code-inline">DOMTokenList</span> vivo
+        con métodos como <span class="code-inline">add()</span>,
+        <span class="code-inline">remove()</span>,
+        <span class="code-inline">toggle()</span>,
+        <span class="code-inline">contains()</span> y
+        <span class="code-inline">replace()</span>.</p>
+
+        <pre><code>&lt;body&gt;
+    &lt;style&gt;
+        .destacado { background-color: #0ceca5; color: #000; padding: 10px; }
+        .oculto { display: none; }
+        .borde { border: 3px solid #ff8c00; }
+    &lt;/style&gt;
+
+    &lt;div id=&quot;caja&quot;&gt;Hola Mundo&lt;/div&gt;
+
+    &lt;button id=&quot;btnToggle&quot;&gt;Toggle clase&lt;/button&gt;
+
+    &lt;script&gt;
+        const caja = document.getElementById(&quot;caja&quot;)
+
+        // Agrega una clase
+        caja.classList.add(&quot;destacado&quot;);
+
+        // Verifica si tiene una clase
+        if (caja.classList.contains(&quot;destacado&quot;)) {
+            console.log(&quot;Tiene la clase destacado&quot;);
+        }
+
+        // Alterna una clase (si existe la quita, si no la agrega)
+        document.getElementById(&quot;btnToggle&quot;).addEventListener(&quot;click&quot;, () => {
+            caja.classList.toggle(&quot;borde&quot;);
+        });
+
+        // Reemplaza una clase por otra
+        caja.classList.replace(&quot;destacado&quot;, &quot;oculto&quot;);
+
+        // Elimina una clase
+        caja.classList.remove(&quot;oculto&quot;);
+    &lt;/script&gt;
+&lt;/body&gt;</code></pre>
+
+        <p>A diferencia de <span class="code-inline">className</span> que trabaja con cadenas
+        de texto y requiere parsear o reconstruir la cadena entera de clases,
+        <span class="code-inline">classList</span> ofrece metodos dedicados que son mas
+        semanticos, seguros y eficientes. Cada metodo modifica solo la clase indicada sin
+        afectar las demas clases del elemento.</p>
+
+        <h2 id="addEventListener"><span class="code-inline">addEventListener()</span></h2>
+        <p>Aunque tengamos todos estos metodos y atributos que nos permiten modificar el HTML como queramos
+        desde nuestro lenguaje de scripting, donde realmente se saca partido de esta herramienta es mediante
+        <span class="code-inline">addEventListener()</span>.</p>
+
+        <p>Este es un metodo que poseé todas las variables u objetos que almacenen una referencia a un elemento
+        HTML que sirve para escuchar y reaccionar a acciones que el usuario realiza sobre ese elemento en especifico,
+        como por ejemplo: un click, enviar un formulario, presionar una tecla, etc.</p>
+
+        <h3 id="sintaxis">Sintaxis</h3>
+        <pre><code>elemento.addEventListener(evento, funcion, opciones);</code></pre>
+        <ul>
+            <li><p><span class="code-inline">elemento</span>: El objeto HTML que quieres vigilar (un botón, un formulario, 
+            una imagen, o incluso toda la página).</p></li>
+
+            <li><p><span class="code-inline">evento</span>: Un texto que define qué estamos esperando que pase, ejemplo: "click", 
+            "keyup", "submit". Va siempre entre comillas.</p></li>
+
+            <li><p><span class="code-inline">funcion</span>: El bloque de código (ya sea una función o una función anonima) 
+            que se ejecutará en cuando ocurra el evento. A esta funcion se le puede dar un parametro con el nombre que queramos,
+            (normalmente "e" o event) este se convertira en un objeto evento que tendra distintos metodos y atributos  que
+            nos permitira cambiar el comportamiento del evento o obtener información del mismo, dependiendo del
+            tipo de evento. Ejemplo:</p></li>
+            <pre><code>document.addEventListener("keyup", (event) => {
+    console.log(event.key) // Imprime la letra que se esta presionando
+})</code></pre>
+
+            <li><p><span class="code-inline">opciones</span> (Opcional): Un objeto para configurar detalles avanzados 
+            (como si el evento se debe ejecutar solo una vez).</p></li>
+        </ul> 
+
+        <!-- Eventos -->
+        <h3 id="eventos">Eventos</h3>
+        <p>Los eventos son acciones que ocurren en la pagina, como mover el mouse, hacer clic
+        o presionar una tecla. Con <span class="code-inline">addEventListener()</span> podemos
+        escuchar esos eventos y ejecutar codigo cuando ocurran.</p>
+
+        <!-- Mouse -->
+        <h4 id="mouse">Mouse</h4>
+        <ul>
+            <li><p><span class="code-inline">mouseenter</span>: Se dispara cuando el cursor del mouse entra en la zona del elemento.</p></li>
+            
+            <li><p><span class="code-inline">mouseleave</span>: Se dispara cuando el cursor del mouse sale del elemento.</p></li>
+            
+            <li><p><span class="code-inline">click</span>: Se dispara al presionar y soltar el click izquierdo del mouse sobre el elemento.</p></li>
+            
+            <li><p><span class="code-inline">dblclick</span>: Se dispara al hacer doble click sobre el elemento.</p></li>
+        </ul>
+
+        <p>Ejemplo:</p>
+
+        <pre><code>&lt;div id=&quot;foco&quot;&gt;Foco&lt;/div&gt;
+&lt;p id=&quot;estado&quot;&gt;Apagado&lt;/p&gt;
+
+&lt;script&gt;
+// Obtenemos la referencia a los elementos mediante su ID
+        let f = document.getElementById("foco");
+        let e = document.getElementById("estado");
+
+        // El mouse entra al espacio del elemento
+        f.addEventListener("mouseenter", () => { 
+            f.style.background = "#ffe066";
+            f.style.boxShadow = "0 0 30px #ffe066";
+            e.textContent = "Iluminando...";
+        });
+
+        // El mouse sale del espacio del elemento
+        f.addEventListener("mouseleave", () => {
+            f.style.background = "#444";
+            f.style.boxShadow = "none";
+            e.textContent = "Apagado";
+        });
+
+        // Usuario hace click
+        f.addEventListener("click", () => {
+            f.style.background = "#ff8c00";
+            f.style.boxShadow = "0 0 40px #ff8c00";
+            e.textContent = "Luz maxima";
+        });
+
+        // Usuario hace doble click
+        f.addEventListener("dblclick", () => {
+            f.style.background = "#444";
+            f.style.boxShadow = "none";
+            e.textContent = "Fundido";
+        });
+&lt;/script&gt;</code></pre>
+
+        <div class="iframe-container">
+            <iframe src="ejemplos/foco.html" title="Ejemplo Mouse" ></iframe>
+        </div>
+
+        <p>En este tenemos un foco que cambia de color segun que hacemos con el mouse, utilizamos los cuatro 
+        eventos que mencionamos para cambiar el estilo del elemento <span class="code-inline">f</span> (el foco), 
+        mas exactamente el color del fondo y la sombra del mismo y el contenido del texto de <span class="code-inline">e</span> que indica el estado del foco 
+        (Iluminado, Apagado, Luz Maxima o Fundido)</p>
+
+        <!-- Teclado -->
+        <h4 id="teclado">Teclado</h4>
+
+        <ul>
+            <li><p><span class="code-inline">keydown</span>: Se dispara cuando se presiona una tecla.</p></li>
+            
+            <li><p><span class="code-inline">keyup</span>: Se dispara cuando se suelta una tecla.</p></li>
+        </ul>
+        <p>Esto dos metodos tienen la particularidad de que no estan ligados a ningun elemento del HTML, es 
+        decir no necesitamos obtener la referencia a un <span class="code-inline">&lt;button&gt;</span> por
+        ejemplo ya que escucha si se ha presionado una tecla en toda la pagina en general.</p>
+
+        <p>Ejemplo:</p>
+
+        <pre><code>&lt;div id=&quot;a&quot; class=&quot;led&quot;&gt;A&lt;/div&gt;
+&lt;div id=&quot;s&quot; class=&quot;led&quot;&gt;S&lt;/div&gt;
+&lt;div id=&quot;d&quot; class=&quot;led&quot;&gt;D&lt;/div&gt;
+&lt;div id=&quot;f&quot; class=&quot;led&quot;&gt;F&lt;/div&gt;
+
+&lt;script&gt;
+    // Escucha cuando se presiona una tecla en toda la pagina
+    document.addEventListener("keydown", (e) => {
+        // Cuando la tecla presionada coincida con el id de uno de los led obtendremoos su referencia
+        let led = document.getElementById(e.key.toLowerCase()); 
+        if (led) led.classList.add("activo"); 
+    });
+
+    // Escucha que se haya soltado una tecla en toda la pagina
+    document.addEventListener("keyup", (e) => {
+        let led = document.getElementById(e.key.toLowerCase());
+        if (led) led.classList.remove("activo");
+    });
+&lt;/script&gt;</code></pre>
+
+        <div class="iframe-container">
+            <iframe src="ejemplos/tecla-led.html" title="Ejemplo Teclado"></iframe>
+        </div>
+        
+        <p>En este ejemplo escuchamos los eventos <span class="code-inline">keyup</span> y 
+        <span class="code-inline">keydown</span>, el objeto <span class="code-inline">e</span> que 
+        es un parametro de la funcion flecha que tiene un atributo <span class="code-inline">key</span>
+        que nos dice cual tecla se esta presionando o dejando de presionar dependiendo del evento y 
+        <span class="code-inline">toLowerCase()</span> convierte el valor de este atributo a minuscula.
+        Por ultimo, si la tecla presionada coincide con uno de los ID de los led toma su referencia y
+        le agrega o quita la clase "activo" cambiando su estilo.</p>
+
+
+        <!-- Formularios -->
+        <h4 id="formularios">Formularios</h4 >
+
+        <p>Los formularios tambien tienen eventos propios que nos permiten reaccionar a las
+        acciones del usuario sobre los campos de entrada.</p>
+
+        <ul>
+            <li><p><span class="code-inline">change</span>: Se dispara cuando el valor de un elemento de formulario
+            cambia (input, select, textarea). En los <span class="code-inline">&lt;input&gt;</span> se dispara al perder
+            el foco si hubo cambios, en los <span class="code-inline">&lt;select&gt;</span> se dispara al seleccionar
+            una opcion.</p></li>
+
+            <li><p><span class="code-inline">submit</span>: Se dispara cuando se envia un formulario, ya sea
+            presionando un boton con <span class="code-inline">type="submit"</span> o presionando Enter dentro
+            de un campo. Es comun usar <span class="code-inline">preventDefault()</span> para evitar que la pagina
+            se recargue.</p></li>
+        </ul>
+
+        <p>Ejemplo: un selector de color con vista previa y boton para guardar:</p>
+
+        <pre><code>&lt;select id=&quot;color&quot;&gt;
+    &lt;option value=&quot;#444&quot;&gt;Ninguno&lt;/option&gt;
+    &lt;option value=&quot;#ff4444&quot;&gt;Rojo&lt;/option&gt;
+    &lt;option value=&quot;#0ceca5&quot;&gt;Verde&lt;/option&gt;
+    &lt;option value=&quot;#4488ff&quot;&gt;Azul&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;div id=&quot;vista&quot;&gt;Vista previa&lt;/div&gt;
+
+&lt;form id=&quot;form-color&quot;&gt;
+    &lt;button&gt;Guardar&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;p id=&quot;estado&quot;&gt;Selecciona un color&lt;/p&gt;
+
+&lt;script&gt;
+    let s = document.getElementById(&quot;color&quot;);
+    let v = document.getElementById(&quot;vista&quot;);
+    let f = document.getElementById(&quot;form-color&quot;);
+    let estado  = document.getElemenFocotById(&quot;estado&quot;);
+
+    // Se ejecuta al cambiar la seleccion del &lt;select&gt;
+    s.addEventListener(&quot;change&quot;, () =&gt; {
+        v.style.background = s.value;
+        estado.textContent = &quot;Color seleccionado&quot;;
+    });
+
+    // Se ejecuta al enviar el formulario
+    f.addEventListener(&quot;submit&quot;, (e) =&gt; {
+        e.preventDefault(); // Evita recargar la pagina
+        estado.textContent = &quot;Guardado!&quot;;
+
+    });
+&lt;/script&gt;</code></pre>
+
+        <div class="iframe-container">
+            <iframe src="ejemplos/formulario.html" title="Ejemplo Formularios"></iframe>
+        </div>
+
+        <p>En este ejemplo usamos el evento <span class="code-inline">change</span> para detectar cuando el usuario
+        selecciona un color del <span class="code-inline">&lt;select&gt;</span>, actualizando el fondo del div
+        <span class="code-inline">vista</span> con el color elegido. Luego, el evento <span class="code-inline">submit</span>
+        del formulario captura cuando se presiona el boton "Guardar", usando
+        <span class="code-inline">preventDefault()</span> para evitar que la pagina se recargue y mostrando un mensaje
+        de confirmacion.</p>
+
+        <h2 id="programas-evaluacion">Programas de la evaluaci&oacute;n</h2>
+        <p>(Enlaces de descarga de los programas de los integrantes del grupo)</p>
+        <ul>
+            <li><a href="../../resources/evaluacion-venta-cafe/geremy/cafeGeremy.zip" download="cafeGeremy">Geremy Tablante</a></li>
+
+        </ul>
+
+                <div id="formulario" class="quiz-container">
+            <h2>Evaluación: DOM</h2>
+            
+            <div class="quiz-question">
+                <p>1. El manejo de DOM es exclusivo del lenguaje JavaScript.</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="q1" value="v"> Verdadero</label>
+                    <label><input type="radio" name="q1" value="f"> Falso</label>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <p>2. Se puede cambiar el estilo de elementos HTML con los atributos 
+                <span class="code-inline">innerHTML</span> y <span class="code-inline">textContent</span></p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="q2" value="v"> Verdadero</label>
+                    <label><input type="radio" name="q2" value="f"> Falso</label>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <p>3. El evento <span class="code-inline">mouseenter</span> detecta cuando el mouse pasa por encima
+                del elemento.</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="q3" value="v"> Verdadero</label>
+                    <label><input type="radio" name="q3" value="f"> Falso</label>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <p>3. Con el metodo <span class="code-inline">getElementByTagName()</span> podemos obtener la referencia de
+                un nodo mediante su atributo <span class="code-inline">name</span>.</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="q4" value="v"> Verdadero</label>
+                    <label><input type="radio" name="q4" value="f"> Falso</label>
+                </div>
+            </div>
+
+            <div class="quiz-question">
+                <p>5. Con el metodo <span class="code-inline">querySelector()</span> podemos seleccionar a un elemento
+                por su selector de CSS</p>
+                <div class="quiz-options">
+                    <label><input type="radio" name="q5" value="v"> Verdadero</label>
+                    <label><input type="radio" name="q5" value="f"> Falso</label>
+                </div>
+            </div>
+        </div>
+
+    </article>
+
+    <!-- Temas de codigo de ejemplo -->
+    <script src="../../resources/highlight/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+
+</html>

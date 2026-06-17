@@ -1,0 +1,95 @@
+body {
+/* Estilos para el cuerpo de la página */
+    font-family: Arial, sans-serif;
+    background-color: #f7ecd3;
+    text-align: center;
+    padding-top: 50px;
+}
+/* Estilos para el contenedor del menú */
+.contenedor-pequeno {
+    background: rgba(243, 72, 72, 0);
+    border: 3px solid #ccc;
+    padding: 20px;
+    width: 300px;
+    margin: auto;
+    border-radius: 5px;
+}
+/* lo que estan dentro del menu */
+/* Estilos globales para inputs (ancho controlado por contenedores) */
+input {
+    padding: 8px;
+    box-sizing: border-box;
+}
+.contenedor-pequeno input {
+    width: 90%;
+}
+/* Estilos para el boton de ingresar */
+button {
+    padding: 8px 15px;
+    cursor: pointer;
+}
+/* los 4 botones principales (provedores,clientes.....)*/
+.botones-menu a {
+    display: block;
+    background: white;
+    border: 2px solid #4e3629;
+    color: #262c4b;
+    padding: 15px;
+    margin: 10px auto;
+    width: 250px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.oculto {
+    display: none;
+}
+
+/* Estilos compartidos para módulos */
+.caja-modulo {
+    background: white;
+    padding: 20px;
+    max-width: 650px;
+    margin: auto;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+/* Centrar inputs dentro de los contenedores de módulo */
+.caja-modulo input {
+    display: block;
+    margin: 10px auto;
+    width: 90%;
+    max-width: 520px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+.bloque-reporte {
+    padding: 8px;
+    text-align: left;
+}
+
+/* Estados */
+.positivo {
+    color: #1a7f1a;
+    font-weight: 700;
+}
+.negativo {
+    color: #c62828;
+    font-weight: 700;
+}
+
+/* Resaltados usados en reportes */
+.resaltado-verde { color: #1a7f1a; font-weight:700; }
+.resaltado-rojo { color: #c62828; font-weight:700; }

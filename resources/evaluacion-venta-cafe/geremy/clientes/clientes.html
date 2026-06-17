@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Clientes</title>
+    <link rel="stylesheet" href="/style.css"> </head>
+<body>
+    <div class="caja-modulo">
+        <h2>👥 Módulo de Clientes (Crédito Bs.)</h2>
+        <a href="../index.html">⬅️ Volver al Menú</a>
+        <br><br>
+
+        <form id="formulario" onsubmit="guardarCliente(event)">
+            <input type="hidden" id="id-editar">
+
+            <h3>Datos de Contacto</h3>
+            <p>Negocio: <input type="text" id="negocio" required></p>
+            <p>RIF: <input type="text" id="rif" required></p>
+            <p>Nombre: <input type="text" id="nombre" required></p>
+            <p>Cédula: <input type="text" id="cedula" required></p>
+            <p>Teléfono: <input type="text" id="telefono" required></p>
+            <p>Correo: <input type="email" id="correo" required></p>
+
+            <button type="submit">Guardar Cliente</button>
+        </form>
+
+        <h3>Lista de Clientes Registrados</h3>
+        <table border="1" id="tabla">
+            <thead>
+                <tr>
+                    <th>Negocio</th>
+                    <th>RIF</th>
+                    <th>Contacto</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="lista-clientes"></tbody>
+        </table>
+    </div>
+    <script src="clientes.js"></script>
+</body>
+</html>
