@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión Cafetalera</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="login-section" class="container">
+        <h2>Acceso al Sistema</h2>
+        <form id="login-form">
+            <input type="text" id="user" placeholder="Usuario" required>
+            <div class="pass-box">
+                <input type="password" id="pass" placeholder="Contraseña" required>
+                <button type="button" class="btn-eye" onclick="togglePassword('pass')">👁️</button>
+            </div>
+            <button type="submit">Ingresar</button>
+        </form>
+    </div>
+
+    <div id="app-section" class="hidden">
+        <header>
+            <h1>Gestión de Café</h1>
+            <nav>
+                <button onclick="showModule('proveedores')">Proveedores</button>
+                <button onclick="showModule('clientes')">Clientes</button>
+                <button onclick="showModule('transacciones')">Compra/Venta</button>
+                <button onclick="showModule('reportes')">Reportes</button>
+                <button onclick="showModule('ajustes')">Ajustes</button>
+                <button onclick="logout()" class="btn-danger">Salir</button>
+            </nav>
+        </header>
+
+        <main class="container">
+            <section id="mod-proveedores" class="module hidden">
+                <h2>Registro de Proveedores</h2>
+                <form id="form-prov">
+                    <input type="text" id="prov-negocio" placeholder="Nombre del Negocio" required>
+                    <input type="text" id="prov-rif" placeholder="RIF (Ej: J-123456789)" required>
+                    
+                    <h3>Datos de Contacto</h3>
+                    <input type="text" id="prov-nombre" placeholder="Nombre Contacto" required>
+                    <input type="text" id="prov-cedula" placeholder="Cédula" required>
+                    <input type="tel" id="prov-tel" placeholder="Teléfono" required>
+                    <input type="email" id="prov-correo" placeholder="Correo" required>
+
+                    <h3>Precios Fijos Acordados (USD por Kg)</h3>
+                    <div class="grid-3">
+                        <div>
+                            <h4>USD Suave</h4>
+                            <input type="number" step="0.01" id="prov-precio-suave" placeholder="0" required>
+                        </div>
+                        <div>
+                            <h4>USD Normal</h4>
+                            <input type="number" step="0.01" id="prov-precio-normal" placeholder="0" required>
+                        </div>
+                        <div>
+                            <h4>USD Fuerte</h4>
+                            <input type="number" step="0.01" id="prov-precio-fuerte" placeholder="0" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="btn-prov">Guardar Proveedor</button>
+                </form>
+                <div id="lista-proveedores" class="mt-20"></div>
+            </section>
+
+            <section id="mod-clientes" class="module hidden">
+                <h2>Registro de Clientes</h2>
+                <form id="form-cli">
+                    <input type="text" id="cli-negocio" placeholder="Nombre del Negocio" required>
+                    <input type="text" id="cli-rif" placeholder="RIF (Ej: V-12345678)" required>
+                    
+                    <h3>Datos de Contacto</h3>
+                    <input type="text" id="cli-nombre" placeholder="Nombre Contacto" required>
+                    <input type="text" id="cli-cedula" placeholder="Cédula" required>
+                    <input type="tel" id="cli-tel" placeholder="Teléfono" required>
+                    <input type="email" id="cli-correo" placeholder="Correo" required>
+                    
+                    <button type="submit" id="btn-cli">Guardar Cliente</button>
+                </form>
+                <div id="lista-clientes" class="mt-20"></div>
+            </section>
+
+            <section id="mod-transacciones" class="module hidden">
+                <h2>Gestión de Compra / Venta</h2>
+                <form id="form-trans">
+                    <select id="trans-tipo" onchange="toggleTransType()" required>
+                        <option value="">Seleccione Operación</option>
+                        <option value="compra">Compra (a Proveedor - Usa Precios Fijos)</option>
+                        <option value="venta">Venta (a Cliente)</option>
+                    </select>
+                    
+                    <select id="trans-entidad" onchange="actualizarPreciosVenta()" required>
+                        <option value="">Seleccione Negocio...</option>
+                    </select>
+                    
+                    <input type="date" id="trans-fecha" required>
+
+                    <h3>Cantidad (Kg)</h3>
+                    <div class="grid-3">
+                        <div>
+                            <h4>Café Suave</h4>
+                            <input type="number" id="kg-suave" placeholder="0" min="0" value="0">
+                        </div>
+                        <div>
+                            <h4>Café Normal</h4>
+                            <input type="number" id="kg-normal" placeholder="0" min="0" value="0">
+                        </div>
+                        <div>
+                            <h4>Café Fuerte</h4>
+                            <input type="number" id="kg-fuerte" placeholder="0" min="0" value="0">
+                        </div>
+                    </div>
+
+                    <h3>Precio Unitario (<span id="moneda-lbl">USD</span>)</h3>
+                    <div class="grid-3">
+                        <div>
+                            <h4>Precio Suave</h4>
+                            <input type="number" step="0.01" id="precio-suave" placeholder="0" min="0" value="0">
+                        </div>
+                        <div>
+                            <h4>Precio Normal</h4>
+                            <input type="number" step="0.01" id="precio-normal" placeholder="0" min="0" value="0">
+                        </div>
+                        <div>
+                            <h4>Precio Fuerte</h4>
+                            <input type="number" step="0.01" id="precio-fuerte" placeholder="0" min="0" value="0">
+                        </div>
+                    </div>
+
+                    <div class="total-box">
+                        <div id="total-ves">Total: 0.00 VES</div>
+                        <div class="text-usd" id="total-usd">(0.00 USD)</div>
+                    </div>
+
+                    <button type="submit">Procesar Transacción</button>
+                </form>
+            </section>
+
+            <section id="mod-reportes" class="module hidden">
+                <h2>Panel de Reportes</h2>
+                <div class="grid-2">
+                    <button onclick="generarReporte('ganancias')">Totales (Compras/Ventas)</button>
+                    <button onclick="generarReporte('cobrar')">Cuentas por Cobrar (VES)</button>
+                    <button onclick="generarReporte('inventario')">Inventario Actual (Kg)</button>
+                </div>
+                <div id="resultado-reporte" class="card"></div>
+            </section>
+
+            <section id="mod-ajustes" class="module hidden">
+                <h2>Ajustes del Sistema</h2>
+                
+                <form id="form-ajustes" class="card">
+                    <h3>Tasa de Cambio (VES por USD)</h3>
+                    <input type="number" step="0.01" id="ajuste-tasa" placeholder="Ej: 40.50" required>
+                    <button type="submit">Actualizar Tasa</button>
+                </form>
+
+                <form id="form-user" class="card mt-20">
+                    <h3>Gestión de Credenciales</h3>
+                    <p>Actualiza los datos de acceso al sistema.</p>
+                    <input type="text" id="new-user" placeholder="Nuevo Usuario" required>
+                    <div class="pass-box">
+                        <input type="password" id="new-pass" placeholder="Nueva Contraseña" required>
+                        <button type="button" class="btn-eye" onclick="togglePassword('new-pass')">👁️</button>
+                    </div>
+                    <button type="submit">Actualizar Credenciales</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/global.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/proveedores.js"></script>
+    <script src="js/clientes.js"></script>
+    <script src="js/transacciones.js"></script>
+    <script src="js/reportes.js"></script>
+    <script src="js/ajustes.js"></script>
+</body>
+</html>
