@@ -11,7 +11,7 @@
         <h2>☕ Iniciar Sesión</h2>
         <p>Usuario: <input type="text" id="usuario"></p>
         <p>Contraseña: <input type="password" id="clave"></p>
-        <button onclick="entrar()">Ingresar</button>
+        <button id="btn-entrar">Ingresar</button>
         <p id="mensaje-error" style="color: red;"></p>
     </div>
 
@@ -25,9 +25,9 @@
             <a href="reportes/reportes.html">📊 Módulo 4: Reportes</a>
         </div>
         <br><br>
-        <button onclick="salir()" style="background: red; color: rgb(0, 0, 0);">Cerrar Sesión</button>
+        <button id="btn-salir" style="background: red; color: rgb(0, 0, 0);">Cerrar Sesión</button>
     </div>
 
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
