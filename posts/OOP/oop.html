@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP - Paradigmas de Programación</title>
+    <script src="../../index.js" type="module" data-depth="2" defer></script>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../resources/highlight/styles/codepen-embed.css">
+</head>
+<body>
+    <h1>Programación Orientada a Objetos (OOP)</h1>
+    
+    <article>
+        <h2>Introducción</h2>
+        <p>La progrmación orientada a objetos es un paradigma de programación donde todo es un objeto con atributos y metodos. Los objetos 
+        son equivalentes a los que existen en la vida real, por ejemplo: Un gato tiene atributos como un color, un tamaño o un peso, ademas
+        el gato puede caminar, saltar, maullar todos estos son equivalentes a los metodos. OOP cambio por completo el desarrollo de software 
+        desde su llegada con Java y C++ hasta el dia de hoy que es uno de los pilares de la programación por lo que a continuación enseñaremos
+        como se aplica en JavaScrpit</p>
+    </article>
+    <article>
+        <h2>Objetos o Instancias</h2>
+        <p>Los objetos son equivalentes a los que existen en la vida real, por ejemplo: Un gato tiene un color, un peso y un tamaño, estos son
+        sus atributos, ademas, un gato puede caminar, saltar o maullar, estas son acciones que le permite interactuar con el mundo, asi mismo
+        funcionan los objetos en OOP, estos tienen sus atributos y acciones que pueden realizar, a estas ultimas se le conocen como metodos.
+        Los objetos tambien se le conocen como instancias de una clase, esto se refiere a la creación o instanciación de un nuevo objeto.</p>
+
+        <h2>Clases</h2>
+        <p>Las clases se podrian definir como el molde para un objeto, se crean utilizando para la palabra reservada <span class="code-inline">class</span>
+        y en este podemos determinar los atributos y metodos que tendra nuestros objetos.</p>
+
+        <h3>Ejemplo de clase en JavaScript</h3>
+        
+
+        <pre><code>class Persona {
+
+    // Metodo constructor
+    constructor(nombre, edad) {
+
+        // Atributos
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+
+    // Metodo
+    saludar() {
+        return "Hola, soy ${this.nombre} y tengo ${this.edad} años";
+    }
+}
+</code></pre>
+
+        <p>En este ejemplo creamos una clase <span class="code-inline">Persona</span> utilizando la palabra clave <span class="code-inline">class</span>
+        ademas de eso creamos un constructor con el cual creamos dos atributos, <span class="code-inline">nombre</span> y <span class="code-inline">edad</span>,
+        fuera del constructor se crea un metodo <span class="code-inline">saludar()</span> que retorna una cadena. A continuación se explicara
+        que es un constructor y para que se utiliza <span class="code-inline">this</span>.</p>
+
+        <h3>Constructor</h3>
+        <p>Un constructor es un metodo que nos permite instanciar una clase donde queramos. Para que un metodo sea constructor se tiene que llamar
+        así si o si, un constructor puede pedir argumentos y ejecutar un bloque de codigo como cualquier metodo.</p>
+
+        <h3 class="code-inline">this</h3>
+        <p>La palabra clave <span class="code-inline">this</span> se refiere al contexto en el que se deberia ejecutar una pieza de codigo.
+        Se suele utilizar para referirse al objeto o clase   al que pertenece un metodo como en el ejemplo anterior donde <span class="code-inline">this</span>
+        pasa a referirse a la clase <span class="code-inline">Persona</span>.</p>
+
+        <p>El valor de <span class="code-inline">this</span> depepnde de como ha invocado una función, si el metodo se creo dentro de un objeto
+        <span class="code-inline">this</span> equivaldrá al objeto, pero si se invoca una función no atada a un objeto se referirá a el
+        <a href="https://es.javascript.info/global-object" target="_blank">Global Object</a> (El contexto mas amplio posible donde encuentran
+        los objetos que estan disponibles en cualquier contexto).</p>
+
+        <pre><code>  class Persona {
+constructor() {
+        // this y Persona son equivalentes
+        this.nombre = "Alfonso";
+        Persona.apellido = "Hola";
+    }
+}</code></pre>
+
+        <h2>Instanciando una clase</h2>
+
+        <pre><code>const juan = new Persona("Juan", 20);
+console.log(juan.saludar());</code></pre>
+
+        <p>La instancia de nuestra clase la almacenamos en un objeto que llamamos <span class="code-inline">juan</span>, ahora, utilizamos la
+        palabra clave <span class="code-inline">new</span> (Esta keyword se utiliza para instanciar una clase mediante un constructor) seguida
+        del constructor a quien le pasamos los argumentos solicitados y ahora mediante el objeto <span class="code-inline">juan</span>
+        podemos usar el metodo <span class="code-inline">saludar()</span> de la clase <span class="code-inline">Persona</span>.</p>
+
+        <h2>Herencia</h2>
+        <p>Es una de las caracteristicas mas importantes de OOP que nos permite hederar los metodos y atributos de una clase padre a una
+        clase hija. </p>
+        <pre><code>// Clase padre
+class Videojuego {
+    constructor() {}
+
+    comprar() {
+        console.log("Compra exitosa");
+    }
+}
+
+// Clase hija
+class Minecraft extends Videojuego {
+}
+
+const mc = new Minecraft();
+
+// Hedera el metodo comprar()
+console.log(mc.comprar());</code></pre>
+
+        <p>En este ejemplo la clase <span class="code-inline">Videojuego</span> se convierte en la clase padre de la clase <span class="code-inline">Minecraft</span>
+        y le hereda el metodo <span class="code-inline">comprar()</span> que ahora puede ser utilizada por el objeto <span class="code-inline">mc</span>.</p>
+
+
+
+        <h2>Polimorfismo</h2>
+        <p>Es la habilidad que tiene el mismo metodo de realizar dos acciones distintas dependiendo de la clase o contexto en el que 
+        se encuentre.</p>
+
+        <pre><code>class Animal {
+    habla() {
+        console.log("Animal hace un sonido");
+    }
+}
+
+class Perro extends Animal {
+    habla() {
+        console.log("Perro ladra");
+    }
+}
+
+let animal = new Animal();
+let perro = new Perro();
+perro.habla(); // Animal hace sonido
+animal.habla(); // Perro ladra</code></pre>
+
+        <p>En este ejemplo el metodo <span class="code-inline">habla()</span> es cambiada por la clase <span class="code-inline">Perro</span>
+        para que imprima un texto diferente.</p>
+
+        <h2>Abstracción</h2>
+        <p>Abstracción significa modelar un objeto quedándote solo con las características esenciales para el problema que resuelves, 
+        ignorando los detalles irrelevantes. Es la misma idea que usamos en la vida real: cuando piensas en un "auto", no piensas 
+        en cada tornillo, cable o pistón del motor. Piensas en "algo que tiene volante, acelera, frena y te lleva de un lugar a otro". 
+        Esa simplificación mental es abstracción.</p>
+
+        <p>Basicamente, no se especifica que hace un metodo, solo creas el metodo como un molde para que las clases hijas hagan lo que
+        quieran con ese metodo. En JavaScript no existe manera de hacer clases abstractas (clases padre que son moldes para clases hijas,
+        pero se puede imitar.</p>
+
+        <pre><code>class Animal {
+    // Metodo que no realiza nada
+    hacerSonido() {}
+}
+
+class Perro extends Animal {
+    hacerSonido() {
+        console.log("Guau");
+    }
+}
+
+class Gato extends Animal {
+    hacerSonido() {
+        console.log("Miau");
+    }
+}
+
+let perro = new Perro();
+let gato = new Gato();
+
+// El mismo metodo imprimen texto distinto
+gato.hacerSonido();
+perro.hacerSonido();</code></pre>
+
+        <p>En este ejemplo en la clase <span class="code-inline">Animal</span> no se especifica como funciona el metodo <span class="code-inline">hacerSonido()</span>
+        es un molde para que la clase <span class="code-inline">Perro</span> y <span class="code-inline">Gato</span> la utilicen como quieran, aqui
+        tambien se aplica el polimorfismo, utilizando la misma funcion para imprimir un texto distinto.</p>
+
+        <h2>Encapsulamiento</h2>
+        <p>Consiste en diferentes niveles de acceso que se les pueden asignar a las propiedades y metodos de una clase, en los lenguajes
+        de programación orientada a objetos más clasicos existen las palabras clave <span class="code-inline">private</span>, <span class="code-inline">public</span>
+        y <span class="code-inline">protected.</span></p>
+
+        <p>En JavaScript no existen estas palabras claves, incluso no existe un equivalente para <span class="code-inline">protected</span>,
+        (Accesible desde la propia clase y desde cualquier clase que herede de ella (subclases), pero no desde fuera de esa jerarquía de clases),
+        cuando creas un metodo o atributo es publico por defecto, para convertirlos en privados sebe utilizar la almoadilla (#).</p>
+
+                <pre><code>class Cafetera {
+    hacerCafe() {
+        this.#hecharAgua();
+        this.#prepararCafe();
+        this.#tiempoPreparacion = 3;
+
+        console.log("Coffee is ready!");
+    }
+
+    #hecharAgua() {
+        console.log("Boiling water...");
+    }
+
+    #prepararCafe() {
+        console.log("Brewing coffee...");
+    }
+}
+
+const cafe = new Cafetera();
+cafe.hacerCafe();</code></pre>
+
+        <p>En este ejemplo se utiliza la almoadilla seguida de los metodos <span class="code-inline">hecharAgua()</span> y <span class="code-inline">prepararCafe()</span>,
+        ademas, de el atributo <span>tiempoPreparacion</span>para hacerlas privada, si se intenta utilizar fuera de la clase el interprete dará error.</p>
+
+        
+        <h2>JavaScript es un lenguaje basado en prototipos</h2>
+        <p>Aunque JavaScript existen las clases no es un lenguaje de programación orientado a objetos a raja tabla como si lo es Java por ejemplo.
+        En C++, Pyhtoh o C# la diferencia entre clase e instancia esta marcada mientras que en JavaScirpt a pesar de que existe la palabra clave
+        <span class="code-inline">class</span> estos tambien son objetos.</p>
+
+        <p>Los objetos tambien pueden hederar sus propiedades a otro objeto, en ese caso se les llaman prototipos. Todo objeto en javascript tiene una referencia interna a su prototipo. Cuando accedes a una propiedad que el objeto no tiene, 
+        javascript la busca automáticamente en su prototipo, y si tampoco está ahí, sube al prototipo del prototipo... y así sucesivamente. Esto se 
+        llama cadena de prototipos (prototype chain).</p>
+        
+        <pre><code>const animal = {
+  respirar() {
+    return "Respirando...";
+  }
+};
+
+const perro = {
+  ladrar() {
+    return "Guau!";
+  }
+};
+
+// conectamos perro -> animal
+Object.setPrototypeOf(perro, animal);
+
+perro.ladrar();   // "Guau!" (propiedad propia)
+perro.respirar(); // "Respirando..." (heredada del prototipo)</code></pre>
+
+    <p>En este ejemplo el objeto <span class="code-inline">animal</span> se convierte en el prototipo del objeto <span class="code-inline">perro</span>
+    utilizando la función <span class="code-inline">setPrototypeOf(prototipo, objeto)</span> el prototipo le hedera el metodo <span class="code-inline">respirar()</span>.
+    javascript en este caso primero intenta buscar en el objeto <span class="code-inline">perro</span> el metodo <span class="code-inline">respirar()</span>
+    pero como no lo encuentra lo busca y consigue en su prototipo <span class="code-inline">animal</span>.</p>
+
+    </article>
+    
+
+    <script src="../../resources/highlight/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

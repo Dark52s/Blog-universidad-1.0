@@ -5,7 +5,8 @@ export const NAV_LINKS = [
   { text: 'Manejo de CSS',  href: 'posts/manejo-css/manejo-css.html' },
   { text: 'Manejo de JavaScript', href: 'posts/manejo_js/manejo_js.html' },
   { text: 'DOM',           href: 'posts/DOM/DOM.html' },
-  { text: 'Formularios',   href: 'posts/formularios/formularios.html' }
+  { text: 'OOP',   href: 'posts/OOP/oop.html' },
+  { text: 'Formularios',   href: 'posts/formularios/formularios.html' },
 ];
 
 const depth = parseInt(document.querySelector('[data-depth]')?.getAttribute('data-depth') || '0');
@@ -23,3 +24,12 @@ header.innerHTML =
   `    <nav class="menu">\n${navHtml}    </nav>\n  `;
 
 document.body.insertBefore(header, document.body.firstChild);
+
+
+  class Persona {
+constructor() {
+        // Son equivalentes
+        this.nombre = "Alfonso"
+        Persona.apellido = "Hola"
+    }
+}
