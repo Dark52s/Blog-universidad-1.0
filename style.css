@@ -417,6 +417,11 @@ aside.toc-sidebar ~ article, aside.toc-sidebar ~ h1 {
     padding-left: 50px !important;
 }
 
+
+video {
+    display: block;
+    margin: 0 auto;
+}
 /* CSS para la pagina en telefono */
 @media (max-width: 767px) {
     img {
