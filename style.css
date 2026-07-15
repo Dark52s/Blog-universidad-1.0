@@ -180,7 +180,7 @@ iframe, .example-iframe {
     height: 600px;
     display: block;
     margin: 0 auto;
-    border: 2px so6lid var(--secundary-color);
+    border: 2px solid var(--secundary-color);
     border-radius: 8px;
     background: #ffffff;
     box-shadow: 0 6px 18px rgba(0,0,0,0.6);
@@ -230,7 +230,15 @@ li::marker {
 /* INTEGRANTES */
 .integrantes-title {
     text-align: center;
-    margin-top: 2%;
+    width: 100%;
+    max-width: 1000px;
+    height: 600px;
+    display: block;
+    margin: 0 auto;
+    border: 2px so6lid var(--secundary-color);
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.6);
 }
 
 .integrantes {
@@ -421,6 +429,15 @@ aside.toc-sidebar ~ article, aside.toc-sidebar ~ h1 {
 video {
     display: block;
     margin: 0 auto;
+    width: 100%;
+    max-width: 1000px;
+    height: 600px;
+    display: block;
+    margin: 0 auto;
+    border: 2px solid var(--secundary-color);
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.6);
 }
 /* CSS para la pagina en telefono */
 @media (max-width: 767px) {
